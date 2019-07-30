@@ -3,7 +3,7 @@ const app = require('./app');
 require('dotenv').config({ path: '.env' });
 
 const uri = process.env.ATLAS_URI;
-console.error(uri);
+
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
 const { connection } = mongoose;
 connection.once('open', () => {
@@ -11,6 +11,9 @@ connection.once('open', () => {
   Mongoose database connection established! 😎
 ================================================`);
 });
+
+// Import models
+require('./models/store');
 
 // Start the app
 const port = process.env.PORT || 5000;
