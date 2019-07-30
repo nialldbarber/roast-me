@@ -11,10 +11,7 @@ exports.addStore = (req, res) => {
 };
 
 exports.createStore = (req, res) => {
-  const { name } = req.body;
-  const { slug } = req.body;
-  const { description } = req.body;
-  const { tags } = req.body;
+  const { name, slug, description, tags } = req.body;
 
   const newStore = new Store({ name, slug, description, tags });
 
