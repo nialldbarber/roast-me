@@ -10,4 +10,5 @@ frontend/.idea
 frontend/.env
 frontend/public/
 
+.DS_Store
 *.log
