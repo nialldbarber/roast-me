@@ -9,10 +9,10 @@ That's the plan, but it's really just a project for me to improve my `node.js` s
 
 ## What is the MERN stack?!
 
-* M = MongoDB [MongoDB](https://github.com/mongodb/mongo)
-* E = Express [Express](https://github.com/expressjs/express)
-* R = React [React](https://github.com/facebook/react)
-* N = Node [Node](https://github.com/nodejs/node)
+* M = [MongoDB](https://github.com/mongodb/mongo)
+* E = [Express](https://github.com/expressjs/express)
+* R = [React](https://github.com/facebook/react)
+* N = [Node](https://github.com/nodejs/node)
 
 ## Installation
 
