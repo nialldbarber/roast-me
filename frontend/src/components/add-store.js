@@ -8,7 +8,7 @@ export default function AddStore() {
     tags: [],
   });
 
-  const { name, slug, description, tags } = store;
+  const { name, description, tags } = store;
 
   const handleChange = e => {
     setStore({ ...store, [e.target.name]: e.target.value });
@@ -29,7 +29,7 @@ export default function AddStore() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Add Store</h2>
       <form onSubmit={handleSubmit}>
         {/* NAME */}
@@ -37,10 +37,14 @@ export default function AddStore() {
           Name:
           <input type="text" value={name} name="name" onChange={handleChange} />
         </label>
-        {/* SLUG */}
-        <label htmlFor={slug}>
-          Slug:
-          <input type="text" value={slug} name="slug" onChange={handleChange} />
+        {/* DESCRIPTION */}
+        <label htmlFor={description}>
+          Description:
+          <textarea
+            value={description}
+            name="description"
+            onChange={handleChange}
+          />
         </label>
         <button type="submit">Add</button>
       </form>

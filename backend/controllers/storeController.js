@@ -1,9 +1,5 @@
 const Store = require('../models/store');
 
-exports.homePage = (req, res) => {
-  res.send(`<h1>home page</h1>`);
-};
-
 exports.addStore = (req, res) => {
   Store.find()
     .then(stores => res.json(stores))

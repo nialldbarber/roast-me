@@ -8,6 +8,7 @@ const storeSchema = new Schema({
     type: String,
     trim: true,
     required: 'Please enter a store name',
+    unique: true,
   },
   slug: String,
   description: {
