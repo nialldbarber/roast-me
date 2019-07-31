@@ -1,5 +1,6 @@
 # Backend
 
-## TODOS
+### TODOS
+* Routes
 - [x] Stores
 - [ ] Users
