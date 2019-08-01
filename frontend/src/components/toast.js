@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 export default function Toast({ error, message, link }) {
   return (
-    <div className={`toast ${error ? 'active' : ''}`}>
-      <div className="error">
-        <p>
-          <span>{message}</span>
-        </p>
-      </div>
+    <div className={`toast ${error ? 'active' : ''} toast-${error}`}>
+      <p>
+        <span>{message}</span>
+      </p>
     </div>
   );
 }

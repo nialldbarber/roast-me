@@ -9,7 +9,8 @@ export default function AddStore() {
     description: '',
     tags: [],
   });
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const { name, description, tags } = store;
 
@@ -19,31 +20,32 @@ export default function AddStore() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const newStore = {
-      name,
-      description,
-      tags,
-    };
+    if (name) {
+      const newStore = {
+        name,
+        description,
+        tags,
+      };
 
-    console.log(newStore);
-    axios
-      .post(`http://localhost:7777/add`, newStore)
-      .then(res => console.log(res.data))
-      .catch(err => {
-        if (!err.ok) {
-          setError(true);
-        }
-      });
+      axios
+        .post(`http://localhost:7777/add`, newStore)
+        .then(res => console.log(res.data))
+        .catch(err => {
+          if (!err.ok) {
+            setError('error');
+            setErrorMessage(`Noooo, ${name} already exists! 🤷‍♂️`);
+          }
+        });
+    } else {
+      setError('warning');
+      setErrorMessage(`Dude enter something!`);
+    }
   };
 
   return (
     <div className="container">
       <h2>Add Store</h2>
-      <Toast
-        error={error}
-        message={`Noooo, ${name} already exists! 🤷‍♂️`}
-        link={name}
-      />
+      <Toast error={error} message={errorMessage} link={name} />
       <form onSubmit={handleSubmit}>
         {/* NAME */}
         <label htmlFor={name}>
