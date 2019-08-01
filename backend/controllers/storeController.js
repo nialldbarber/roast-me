@@ -14,5 +14,5 @@ exports.createStore = (req, res) => {
   newStore
     .save()
     .then(() => res.json('Store added!'))
-    .catch(err => res.status(400).json(`Error: ${err}`));
+    .catch(err => res.status(400).json(`💩🔥☹️ Error: ${err}`));
 };

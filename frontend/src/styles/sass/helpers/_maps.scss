@@ -1,0 +1,13 @@
+@function map-deep-get($map, $keys...) {
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+	@return $map;
+}
+
+// Toast
+$toast: (
+	success: (background: green, color: #fff),
+	warning: (background: orange, color: #fff),
+	error: (background: red, color: #fff)
+);

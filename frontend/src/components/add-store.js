@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Toast from './toast';
 
 export default function AddStore() {
   const [store, setStore] = useState({
@@ -7,6 +8,7 @@ export default function AddStore() {
     description: '',
     tags: [],
   });
+  const [error, setError] = useState(false);
 
   const { name, description, tags } = store;
 
@@ -25,12 +27,22 @@ export default function AddStore() {
     console.log(newStore);
     axios
       .post(`http://localhost:7777/add`, newStore)
-      .then(res => console.log(res.data));
+      .then(res => console.log(res.data))
+      .catch(err => {
+        if (!err.ok) {
+          setError(true);
+        }
+      });
   };
 
   return (
     <div className="container">
       <h2>Add Store</h2>
+      <Toast
+        error={error}
+        message={`Noooo, ${name} already exists! 🤷‍♂️`}
+        link={name}
+      />
       <form onSubmit={handleSubmit}>
         {/* NAME */}
         <label htmlFor={name}>
