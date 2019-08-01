@@ -17,6 +17,10 @@
 		color: map-deep-get($toast, error, color);
 	}
 
+	&.toast-success {
+		background-color: map-deep-get($toast, success, background);
+	}
+
 	&.toast-error {
 		background-color: map-deep-get($toast, error, background);
 	}

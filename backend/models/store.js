@@ -11,7 +11,10 @@ const storeSchema = new Schema({
     required: true,
     unique: true,
   },
-  slug: String,
+  slug: {
+    type: String,
+    unique: true,
+  },
   description: {
     type: String,
     trim: true,

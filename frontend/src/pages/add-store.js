@@ -29,7 +29,11 @@ export default function AddStore() {
 
       axios
         .post(`http://localhost:7777/add`, newStore)
-        .then(res => console.log(res.data))
+        .then(res => {
+          console.log(res.data);
+          setError('success');
+          setErrorMessage(`Wooo, ${name} has been added! 🔥`);
+        })
         .catch(err => {
           if (!err.ok) {
             setError('error');
@@ -44,7 +48,7 @@ export default function AddStore() {
 
   return (
     <div className="container">
-      <h2>Add Store</h2>
+      <h2 className="title">Add Store</h2>
       <Toast error={error} message={errorMessage} link={name} />
       <form onSubmit={handleSubmit}>
         {/* NAME */}

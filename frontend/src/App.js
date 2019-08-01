@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import AddStore from './pages/add-store';
 import StoreList from './pages/store-list';
+import Store from './pages/store';
 import './styles/sass/main.scss';
 
 export default function App() {
@@ -10,7 +11,8 @@ export default function App() {
     <Router>
       <Navbar />
       <Route path="/" exact component={StoreList} />
-      <Route path="/add-store" exact component={AddStore} />
+      <Route path="/add-store" component={AddStore} />
+      <Route path="/store/:id" exact component={Store} />
     </Router>
   );
 }

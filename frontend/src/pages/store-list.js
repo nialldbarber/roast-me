@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Store from './store';
 
 export default function StoreList() {
   const [stores, setStores] = useState([]);
@@ -12,14 +14,21 @@ export default function StoreList() {
     fetchStores();
   }, []);
 
+  console.log(stores);
+
   return (
     <div className="container">
-      <h2>Store List</h2>
+      <h2 className="title">Store List</h2>
       <p>Most popular stores</p>
       <section className="cards">
-        {stores.map(({ name, _id }) => (
+        {stores.map(({ name, description, slug, _id }) => (
           <div className="card" key={_id}>
-            {name}
+            <Link to={`/store/${_id}`}>
+              <div id={_id} name={name} review={description}>
+                <h3>{name}</h3>
+                <p>{description}</p>
+              </div>
+            </Link>
           </div>
         ))}
       </section>

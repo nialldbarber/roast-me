@@ -7,7 +7,7 @@
 
 // Toast
 $toast: (
-	success: (background: green, color: #fff),
+	success: (background: $rag-green, color: #fff),
 	warning: (background: $rag-orange, color: #fff),
 	error: (background: $rag-red, color: #fff)
 );

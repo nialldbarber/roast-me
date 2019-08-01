@@ -3,8 +3,12 @@ const storeController = require('../controllers/storeController');
 
 const router = express.Router();
 
-router.get('/', storeController.addStore); // should show most popular stores
-router.get('/add', storeController.addStore);
+// Home
+router.get('/', storeController.store);
+// Specific store
+router.get('/store/:id', storeController.getStore);
+// Add store
+router.get('/add', storeController.store);
 router.post('/add', storeController.createStore);
 
 module.exports = router;
