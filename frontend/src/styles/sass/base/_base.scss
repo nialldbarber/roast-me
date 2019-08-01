@@ -1,3 +1,7 @@
+html {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: $font;
 }
@@ -13,4 +17,17 @@ h2 {
 
 ul {
 	list-style: none;
+}
+
+input,
+textarea {
+	border: none;
+	outline: none;
+}
+
+button {
+	appearance: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
 }

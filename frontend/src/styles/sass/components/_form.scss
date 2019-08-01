@@ -1,0 +1,10 @@
+form {
+	display: flex;
+	flex-direction: column;
+
+	input,
+	textarea {
+		background-color: #f6f9fc;
+		border-radius: 4px;
+	}
+}

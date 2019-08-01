@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Toast from './toast';
+import Toast from '../components/toast';
+import Button from '../components/button';
 
 export default function AddStore() {
   const [store, setStore] = useState({
@@ -51,14 +52,14 @@ export default function AddStore() {
         </label>
         {/* DESCRIPTION */}
         <label htmlFor={description}>
-          Description:
+          Review:
           <textarea
             value={description}
             name="description"
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Add</button>
+        <Button text="Add" />
       </form>
     </div>
   );
