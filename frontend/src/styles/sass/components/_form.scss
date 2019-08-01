@@ -1,10 +1,50 @@
 form {
 	display: flex;
 	flex-direction: column;
+	margin-top: 2rem;
+	padding: 1rem;
+	min-height: 440px;
+	justify-content: space-evenly;
+	border-radius: 4px;
+	box-shadow: $bs;
+	max-width: 645px;
 
 	input,
 	textarea {
 		background-color: #f6f9fc;
 		border-radius: 4px;
+		margin-top: 1rem;
+		padding: 0.7rem 20px;
+		width: calc(100% - 2.5rem);
+	}
+
+	textarea {
+		min-height: 140px;
+	}
+
+	button {
+		white-space: nowrap;
+		display: inline-block;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 14px;
+		box-shadow: $bs;
+		background: #6772e5;
+		border-radius: 4px;
+		font-size: 15px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: .025em;
+		color: #fff;
+		text-decoration: none;
+		-webkit-transition: all .15s ease;
+		transition: all .15s ease;
+
+		&:hover {
+			-webkit-transform: translateY(-1px);
+			transform: translateY(-1px);
+			box-shadow: 0 13px 27px -5px rgba(50, 50, 93, .25), 0 8px 16px -8px rgba(0, 0, 0, .3),
+				0 -6px 16px -6px rgba(0, 0, 0, .025);
+		}
 	}
 }
