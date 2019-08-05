@@ -20,6 +20,26 @@ const storeSchema = new Schema({
     trim: true,
   },
   tags: [String],
+  created: {
+    type: Date,
+    default: Date.now,
+  },
+  location: {
+    type: {
+      type: String,
+      default: 'Point',
+    },
+    coordinates: [
+      {
+        type: Number,
+        required: true,
+      },
+    ],
+    address: {
+      type: String,
+      required: true,
+    },
+  },
 });
 
 storeSchema.pre('save', function(next) {

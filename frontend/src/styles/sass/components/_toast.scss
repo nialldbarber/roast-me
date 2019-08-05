@@ -1,4 +1,6 @@
 .toast {
+	display: flex;
+	align-content: center;
 	position: fixed;
 	top: -5rem;
 	left: 50%;
@@ -27,5 +29,15 @@
 
 	&.toast-warning {
 		background-color: map-deep-get($toast, warning, background);
+	}
+
+	// Button
+	.btn {
+		background: none;
+		padding: 0;
+		margin-left: 0.5rem;
+		.close-btn {
+			height: 10px;
+		}
 	}
 }

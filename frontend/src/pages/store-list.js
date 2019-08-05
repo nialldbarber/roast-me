@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Store from './store';
 
 export default function StoreList() {
   const [stores, setStores] = useState([]);
@@ -24,7 +23,7 @@ export default function StoreList() {
         {stores.map(({ name, description, slug, _id }) => (
           <div className="card" key={_id}>
             <Link to={`/store/${_id}`}>
-              <div id={_id} name={name} review={description}>
+              <div className="inner" name={name} review={description}>
                 <h3>{name}</h3>
                 <p>{description}</p>
               </div>

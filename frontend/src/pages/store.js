@@ -18,14 +18,13 @@ export default function Store({ match }) {
   const { name, description } = stores;
 
   return (
-    <div id="yomama">
-      <h2>{name}</h2>
+    <div className="container">
+      <h2 className="store-name">{name}</h2>
       <p>{description}</p>
     </div>
   );
 }
 
 Store.propTypes = {
-  id: PropTypes.string.isRequired,
-  match: PropTypes.string,
+  match: PropTypes.object,
 };

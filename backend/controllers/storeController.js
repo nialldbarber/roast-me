@@ -1,13 +1,13 @@
 const Store = require('../models/store');
 
-exports.store = (req, res) => {
-  Store.find()
+exports.store = async (req, res) => {
+  await Store.find()
     .then(stores => res.json(stores))
     .catch(err => res.status(400).json(`Error: ${err}`));
 };
 
-exports.getStore = (req, res) => {
-  Store.findById(req.params.id)
+exports.getStore = async (req, res) => {
+  await Store.findById(req.params.id)
     .then(store => res.json(store))
     .catch(err => res.status(400).json(`Error: ${err}`));
 };

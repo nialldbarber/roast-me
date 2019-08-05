@@ -13,13 +13,17 @@ export default function Navbar() {
         </div>
       </header>
       <nav>
-        <div>
-          <ul>
-            <li>
-              <Link to="/add-store">Add Store</Link>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <Link to="/">Stores</Link>
+          </li>
+          <li>
+            <Link to="/add-store">Add Store</Link>
+          </li>
+          <li>
+            <Link to="/Login">Login</Link>
+          </li>
+        </ul>
       </nav>
     </div>
   );
