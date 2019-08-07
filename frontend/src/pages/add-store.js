@@ -3,21 +3,40 @@ import axios from 'axios';
 import Toast from '../components/toast';
 import Button from '../components/button';
 import Rating from '../components/rating';
+import Tags from '../components/tags';
+import { MiniTags } from '../styles/components/tags';
 
 export default function AddStore() {
+  // Store
   const [store, setStore] = useState({
     name: '',
     description: '',
     rating: '',
     tags: []
   });
+  // Tags
+  const [tag, setTag] = useState([]);
+  const [tagInput, setTagInput] = useState('');
+  // Catch errors
   const [error, setError] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Store model
   const { name, description, rating, tags } = store;
 
+  // Methods
   const handleChange = (e) => {
     setStore({ ...store, [e.target.name]: e.target.value });
+  };
+
+  const handleTagChange = (e) => {
+    setTagInput(e.target.value);
+    console.log(tagInput);
+  };
+
+  const handleTagSubmit = () => {
+    setTag([...tag, tagInput]);
+    setTagInput('');
   };
 
   const handleSubmit = (e) => {
@@ -78,7 +97,18 @@ export default function AddStore() {
           />
         </label>
         <Rating />
-        <Button text="Add" />
+        <div>
+          {tag.map((item) => (
+            <MiniTags className="tag">{item}</MiniTags>
+          ))}
+        </div>
+        <Tags
+          change={handleTagChange}
+          value={tagInput}
+          submit={handleTagSubmit}
+          tag={tag}
+        />
+        <Button type="button" text="Add" />
       </form>
     </div>
   );
