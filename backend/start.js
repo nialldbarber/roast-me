@@ -14,6 +14,7 @@ connection.once('open', () => {
 
 // Import models
 require('./models/store');
+require('./models/user');
 
 // Start the app
 const port = process.env.PORT || 5000;
