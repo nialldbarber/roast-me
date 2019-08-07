@@ -33,12 +33,15 @@
 			right: 0;
 
 			.inner {
-				padding: 0.5rem;
-
 				h3 {
 					background: $light-blue;
-					padding: .3rem;
+					margin: 0;
+					padding: 0.5rem 1rem;
 					color: $white;
+				}
+
+				p {
+					padding: 0.5rem 1rem;
 				}
 			}
 		}

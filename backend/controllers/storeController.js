@@ -13,12 +13,12 @@ exports.getStore = async (req, res) => {
 };
 
 exports.createStore = (req, res) => {
-  const { name, slug, description, tags } = req.body;
+  const { name, slug, description, rating, tags } = req.body;
 
-  const newStore = new Store({ name, slug, description, tags });
+  const newStore = new Store({ name, slug, description, rating, tags });
 
   newStore
     .save()
     .then(() => res.json('Store added!'))
     .catch(err => res.status(400).json(`Error: ${err}`));
-};
+}; 
