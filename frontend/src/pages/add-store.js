@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Toast from '../components/toast';
 import Button from '../components/button';
+import Rating from '../components/rating';
 
 export default function AddStore() {
   const [store, setStore] = useState({
@@ -76,6 +77,7 @@ export default function AddStore() {
             onChange={handleChange}
           />
         </label>
+        <Rating />
         <Button text="Add" />
       </form>
     </div>
