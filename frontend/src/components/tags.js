@@ -6,7 +6,13 @@ export default function Tags({ value, change, submit }) {
     <form onSubmit={submit} className="tag-container">
       <label htmlFor="something">
         Tags:
-        <input type="text" value={value} onChange={change} id="something" />
+        <input
+          type="text"
+          value={value}
+          onChange={change}
+          name="tags"
+          id="tags"
+        />
       </label>
     </form>
   );
