@@ -7,9 +7,15 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
 const { connection } = mongoose;
 connection.once('open', () => {
-  console.error(`================================================
-  Mongoose database connection established! 😎
-================================================`);
+  console.log('');
+  console.log('||====================================================');
+  console.log('||####################################################');
+  console.log('||');
+  console.log('|| 👉  Mongoose database connection established! 😎');
+  console.log('||');
+  console.log('||####################################################');
+  console.log('||====================================================');
+  console.log('');
 });
 
 // Import models
