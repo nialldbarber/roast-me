@@ -1,10 +1,9 @@
 # Backend
 
 ### TODOS
-* Routes
-- [x] Stores
-- [ ] Users
 
+- Routes
 
-ATLAS_URI=mongodb+srv://nialldbarber:mean123@cluster0-qc0cf.gcp.mongodb.net/test?retryWrites=true&w=majority
-PORT=7777
+* [x] Stores
+* [ ] Users
+* [ ] Use GraphQL instead

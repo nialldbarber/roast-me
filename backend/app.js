@@ -5,8 +5,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import { typeDefs } from './schema/typeDefs';
 import { resolvers } from './schema/resolvers'; 
-
-require('dotenv').config({ path: '.env' });
+ 
+require('dotenv').config({ path: '.env' }); 
 
 const startServer = async () => {
   const app = express();
@@ -36,5 +36,4 @@ const startServer = async () => {
     console.log(`🚀 Server ready at http://localhost:${port}${server.graphqlPath}`)
   );
 }
-
 startServer();
