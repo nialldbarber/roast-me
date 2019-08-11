@@ -1,36 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
 import axios from 'axios';
 
+export const GET_STORES = gql`
+	{
+		stores {
+			name
+			id
+		}
+	}
+`;
+
 export default function StoreList() {
-	const [ stores, setStores ] = useState([]);
+	const { loading, error, data } = useQuery(GET_STORES);
 
-	useEffect(() => {
-		const fetchStores = async () => {
-			const store = await axios('http://localhost:7777/');
-			setStores(store.data);
-		};
-		fetchStores();
-	}, []);
-
-	console.log(stores);
+	if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
 
 	return (
 		<div className="container">
-			<h2 className="title">Store List</h2>
-			<p>Most popular stores</p>
+		<h2 className="title">Store List</h2>
 			<section className="cards">
-				{stores.map(({ name, description, slug, _id }) => (
-					<div className="card" key={_id}>
-						<Link to={`/store/${_id}`}>
-							<div className="inner" name={name} review={description}>
-								<h3>{name}</h3>
-								<p>{description}</p>
-							</div>
+				{data.stores.map(({name, id}) => (
+					<div className="card" key={id}>
+						<Link to={`/store/${id}`}>
+							<div className="inner" name={name}>
+                <h3>{name}</h3>
+              </div>
 						</Link>
 					</div>
 				))}
-			</section>
+				</section>
 		</div>
 	);
 }
