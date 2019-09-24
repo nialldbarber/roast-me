@@ -2,10 +2,18 @@ import { Store } from '@models/Store'
 
 export const resolvers = {
   Query: {
-    async stores() {
+    async getAllStores() {
       try {
         const stores = await Store.find()
         return stores
+      } catch (err) {
+        throw new Error(err)
+      }
+    },
+    async getIndividualStore(_, { _id }) {
+      try {
+        const store = await Store.findById(_id)
+        return store
       } catch (err) {
         throw new Error(err)
       }

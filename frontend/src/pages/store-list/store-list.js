@@ -8,15 +8,17 @@ const StoreList = () => {
 	const { loading, error, data } = useQuery(GET_STORES)
 
 	if (loading) {return <Loading />}
-  if (error) {return `Error! ${error.message}`}
+	if (error) {return `Error! ${error.message}`}
+
+	console.log(data)
 
 	return (
 		<div className="container">
 		<h2 className="title">Store List</h2>
 			<section className="cards">
-				{data.stores.map(({ name, _id }) => (
+				{data.getAllStores.map(({ name, _id }) => (
 					<div className="card" key={_id}>
-						<Link to={`/store/${name.toLowerCase()}`}>
+						<Link to={`/store/${_id}`}>
 							<div className="inner" name={name}>
                 <h3>{name}</h3>
               </div>

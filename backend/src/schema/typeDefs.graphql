@@ -20,7 +20,8 @@ input UserInput {
 }
 
 type Query {
-  stores: [Store!]!
+  getIndividualStore(_id: ID!): Store
+  getAllStores: [Store!]!
   # login(email: String!, password: String!): User
   # verifyToken(token: String!): User
 }

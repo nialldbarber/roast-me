@@ -2,7 +2,7 @@ import { gql } from 'apollo-boost'
 
 export const GET_STORES = gql`
 	{
-		stores {
+		getAllStores {
 			_id
 			name
 			description

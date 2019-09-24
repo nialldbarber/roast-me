@@ -5,7 +5,7 @@ import { client } from '~@utils/apollo'
 import Navbar from '~@components/navbar'
 import AddStore from '~@pages/add-store'
 import StoreList from '~@pages/store-list/store-list'
-import Store from '~@pages/store'
+import Store from '~@pages/store/store'
 import Login from '~@pages/login'
 import '~@styles/sass/main.scss'
 
