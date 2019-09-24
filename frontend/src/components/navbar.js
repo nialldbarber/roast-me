@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SVG from 'react-inlinesvg'
 import logo from '~@assets/images/logo.svg'
 
 const Navbar = () => (
@@ -7,7 +8,7 @@ const Navbar = () => (
     <header>
       <div className="logo">
         <Link to="/">
-          <img src={logo} alt="Logo" />
+        <SVG src={logo} />
         </Link>
       </div>
     </header>

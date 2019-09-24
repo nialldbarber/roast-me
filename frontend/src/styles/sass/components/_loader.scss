@@ -1,0 +1,45 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - #{$header-height});
+
+  .loader-group {
+    position: relative;
+    $size: 60px;
+    height: $size;
+    width: $size;
+
+    .circle {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+
+    @for $i from 1 through 8 {
+      .circle-#{$i} {
+        border: 7px solid $light-blue;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 7px solid transparent;
+        animation: rotate 1.2s cubic-bezier(0, 0.58, 1, 0.3) infinite;
+        animation-delay: 30ms * $i;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  50% {
+    border: 1px solid $light-blue;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

@@ -20,7 +20,8 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'function-paren-newline': 0,
+    'allowSingleLine': true,
+    'function-paren-newline': 1,
     semi: ["error", "never"],
     "no-trailing-spaces": "error",
     "no-console": "off",
@@ -56,7 +57,7 @@ module.exports = {
     'import/imports-first': 1,
     'import/extensions': 0,
     'import/prefer-default-export': 0,
-    'object-curly-newline': 0,
+    'object-curly-newline': 1,
     'object-curly-spacing': ["error", "always"],
     curly: ['error', 'all']
   }

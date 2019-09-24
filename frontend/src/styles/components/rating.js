@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const RatingContainer = styled.div`
   display: flex;
@@ -15,4 +15,4 @@ export const RatingContainer = styled.div`
       padding: 0;
     }
   }
-`;
+`

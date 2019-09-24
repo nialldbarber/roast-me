@@ -1,21 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
-import { gql } from 'apollo-boost'
+import { GET_STORES } from '~@pages/store-list/schema'
+import Loading from '~@components/loading'
 
-export const GET_STORES = gql`
-	{
-		stores {
-			_id
-			name
-		} 
-	}
-`
-
-export default function StoreList() {
+const StoreList = () => {
 	const { loading, error, data } = useQuery(GET_STORES)
 
-	if (loading) {return 'Loading...'}
+	if (loading) {return <Loading />}
   if (error) {return `Error! ${error.message}`}
 
 	return (
@@ -24,7 +16,7 @@ export default function StoreList() {
 			<section className="cards">
 				{data.stores.map(({ name, _id }) => (
 					<div className="card" key={_id}>
-						<Link to={`/store/${_id}`}>
+						<Link to={`/store/${name.toLowerCase()}`}>
 							<div className="inner" name={name}>
                 <h3>{name}</h3>
               </div>
@@ -35,3 +27,5 @@ export default function StoreList() {
 		</div>
 	)
 }
+
+export default StoreList

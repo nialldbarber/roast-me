@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import Toast from '../components/toast'
-import Button from '../components/button'
-import Rating from '../components/rating'
+import Toast from '~@components/toast'
+import Button from '~@components/button'
+import Rating from '~@components/rating'
 
-export default function AddStore() {
+const AddStore = () => {
   // Store
   const [store, setStore] = useState({
     name: '',
     description: '',
     rating: '',
   })
+
   // Catch errors
   const [error, setError] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
@@ -85,3 +86,5 @@ export default function AddStore() {
     </div>
   )
 }
+
+export default AddStore
