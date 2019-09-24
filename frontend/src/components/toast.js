@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import Button from './button';
-import close from '../assets/icons/cross.svg';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import Button from '~@/components/button'
+import close from '~@assets/icons/cross.svg'
 
-export default function Toast({ error, message, link }) {
-  const [active, setActive] = useState(true);
+const Toast = ({ error, message, link }) => {
+  const [active, setActive] = useState(true)
 
   const handleClick = () => {
-    setActive(false);
-    console.log('clicked!');
-  };
+    setActive(false)
+    console.log('clicked!')
+  }
 
   return (
     <div className={`toast ${error && active ? 'active' : ''} toast-${error}`}>
@@ -18,11 +18,13 @@ export default function Toast({ error, message, link }) {
         <Button icon={close} removeToast={handleClick} />
       </p>
     </div>
-  );
+  )
 }
+
+export default Toast
 
 Toast.propTypes = {
   error: PropTypes.string,
   message: PropTypes.string,
   link: PropTypes.string,
-};
+}
