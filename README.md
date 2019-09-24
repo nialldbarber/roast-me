@@ -8,6 +8,7 @@ This is an app that users will be able to rate local coffee shops in their area.
 
 - [ ] Add location to shop
 - [ ] Make sure shops are individual
+- [ ] If store exists - link them to it
 - [ ] Husky git hooks to build
 - [ ] Custom hooks
 - [ ] Display reviews for place on page
