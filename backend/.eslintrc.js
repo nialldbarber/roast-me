@@ -35,7 +35,7 @@ module.exports = {
 		'padded-blocks': 0,
 		camelcase: 0,
 		'no-unused-vars': [ 1, { vars: 'local', args: 'after-used' } ],
-		'comma-dangle': 1,
+		'comma-dangle': 0,
 		'spaced-comment': 0,
 		'default-case': 0,
 		'no-param-reassign': 0,
@@ -52,8 +52,6 @@ module.exports = {
 		'import/imports-first': 1,
 		'import/extensions': 0,
 		'import/prefer-default-export': 0,
-		'object-curly-newline': 1,
-		'object-curly-spacing': [ 'error', 'always' ],
 		curly: 2
 	}
 }

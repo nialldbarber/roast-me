@@ -1,32 +1,38 @@
 # Stores
 type Store {
-  _id: ID!
-  name: String!
-  description: String!
-  rating: Int!
+	_id: ID!
+	name: String!
+	location: String!
+	description: String!
+	# image: String
+	rating: Int!
+	# taste: Int!
+	# atmosphere: Int!
+	# wifi: Int!
+	# facilities: Int!
 }
 
 # Users
 type User {
-  _id: ID!
-  email: String!
-  token: String!
+	_id: ID!
+	email: String!
+	token: String!
 }
 
 input UserInput {
-  email: String!
-  password: String!
-  confirm: String!
+	email: String!
+	password: String!
+	confirm: String!
 }
 
 type Query {
-  getIndividualStore(_id: ID!): Store
-  getAllStores: [Store!]!
-  # login(email: String!, password: String!): User
-  # verifyToken(token: String!): User
+	getIndividualStore(_id: ID!): Store
+	getAllStores: [Store!]!
+	# login(email: String!, password: String!): User
+	# verifyToken(token: String!): User
 }
 
 type Mutation {
-  createStore(name: String!, description: String!, rating: Int!): Store!
-  createUser(userInput: UserInput): User
+	createStore(name: String!, location: String!, description: String!, rating: Int!): Store!
+	createUser(userInput: UserInput): User
 }
