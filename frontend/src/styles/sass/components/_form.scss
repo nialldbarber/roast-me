@@ -11,7 +11,7 @@ form {
 
 	input,
 	textarea {
-		background-color: #f6f9fc;
+		background-color: $opaque-blue;
 		border-radius: 4px;
 		margin-top: 1rem;
 		padding: 0.7rem 20px;
@@ -23,7 +23,7 @@ form {
 	}
 
 	button {
-		background: #6772e5;
-		color: #fff;
+		background: $light-blue;
+		color: $white;
 	}
 }
