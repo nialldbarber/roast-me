@@ -5,7 +5,7 @@ const storeSchema = new Schema({
 		type: String,
 		trim: true,
 		required: true,
-		unique: true
+		unique: false
 	},
 	location: {
 		type: String,
