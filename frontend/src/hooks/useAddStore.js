@@ -6,6 +6,7 @@ const useAddStore = () => {
 	// state
 	const [ store, setStore ] = useState({
 		name: '',
+		location: '',
 		description: '',
 		rating: ''
 	})
@@ -15,12 +16,12 @@ const useAddStore = () => {
 		message: ''
 	})
 
-	const { name, description, rating } = store
+	const { name, location, description, rating } = store
 	const { status, message } = storeError
 
 	// apollo
 	const [ createStore, { error } ] = useMutation(CREATE_STORE, {
-		variables: { name, description, rating: parseInt(rating) },
+		variables: { name, location, description, rating: parseInt(rating) },
 		// re-fetch queries
 		refetchQueries: [ 'getAllStores' ]
 	})
@@ -42,6 +43,7 @@ const useAddStore = () => {
 			createStore()
 			setStore({
 				name: '',
+				location: '',
 				description: '',
 				rating: ''
 			})

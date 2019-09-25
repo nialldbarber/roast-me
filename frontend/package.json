@@ -56,6 +56,8 @@
     "react-inlinesvg": "^1.1.7",
     "react-router": "^5.1.0",
     "react-router-dom": "^5.0.1",
+    "react-select": "^3.0.5",
+    "react-select-places": "^1.1.8",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
