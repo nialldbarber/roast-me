@@ -1,9 +1,9 @@
 .title {
-  font-size: 8rem;
-  margin: 0.5rem 0;
+	font-size: 5rem;
+	margin: 0.5rem 0 2rem;
+	color: $light-blue;
 }
 
 .store-name {
-  font-size: 7rem;
-  margin: 0.5rem 0;
+	@extend .title;
 }
