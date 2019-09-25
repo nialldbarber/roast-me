@@ -1,56 +1,16 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React from 'react'
+import useAddStore from '~@hooks/useAddStore'
 import Toast from '~@components/toast'
 import Button from '~@components/button'
 import Rating from '~@components/rating'
 
 const AddStore = () => {
-  // Store
-  const [store, setStore] = useState({
-    name: '',
-    description: '',
-    rating: '',
-  })
+  const {
+    store, storeError, handleChange, handleSubmit,
+  } = useAddStore()
 
-  // Catch errors
-  const [error, setError] = useState({
-    status: '',
-    message: '',
-  })
-
-  // Store model
   const { name, description, rating } = store
-  const { status, message } = error
-
-  // Methods
-  const handleChange = (e) => {
-    setStore({ ...store, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (name) {
-      const newStore = {
-        name,
-        description,
-        rating,
-      }
-
-      axios
-        .post(`http://localhost:7777/add`, newStore)
-        .then((res) => {
-          console.log(res.data)
-          setError({ status: 'success', message: `Wooo, ${name} has been added! 🔥` })
-        })
-        .catch((err) => {
-          if (!err.ok) {
-            setError({ status: 'error', message: `Noooo, ${name} already exists! 🤷‍♂️` })
-          }
-        })
-    } else {
-      setError({ status: 'warning', message: `Dude enter something!` })
-    }
-  }
+  const { status, message } = storeError
 
   return (
     <div className="container">
