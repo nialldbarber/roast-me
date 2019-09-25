@@ -55,9 +55,15 @@ const useAddStore = () => {
         description: '',
         rating: '',
       })
-      setStoreError({ status: 'success', message: `Wooo, ${name} has been added! 🔥` })
+      setStoreError({
+        status: 'success',
+        message: `Wooo, ${name} has been added! 🔥`,
+      })
     } else {
-      setStoreError({ status: 'warning', message: `Dude enter something!` })
+      setStoreError({
+        status: 'warning',
+        message: `Dude enter something!`,
+      })
     }
   }
 

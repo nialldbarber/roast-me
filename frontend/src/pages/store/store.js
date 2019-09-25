@@ -9,8 +9,8 @@ const Store = ({ match }) => {
     variables: { _id: match.params.id },
   })
 
-  if (loading) {return <Loading />}
-  if (error) {return <p>Error :( ${error.message}</p>}
+  if (loading) { return <Loading /> }
+  if (error) { return <p>Error :( ${error.message}</p> }
 
   const { name, description, rating } = data.getIndividualStore
 
