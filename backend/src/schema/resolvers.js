@@ -1,4 +1,4 @@
-import { Store } from '@models/Store'
+import { Store } from '~@models/Store'
 
 export const resolvers = {
 	Query: {
