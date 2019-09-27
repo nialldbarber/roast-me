@@ -1,40 +1,79 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: $header-height;
-  padding: 0 1rem;
-  box-shadow: $bs;
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: $header-height;
+	background: $white;
+	box-shadow: $bs;
+	@include container;
 
-  header {
-    .logo {
-      svg {
-        margin-left: 0.5rem;
-        width: 55px;
-      }
-    }
-  }
+	header {
+		.logo {
+			// background: $brown;
+			// border-radius: 50%;
 
-  nav {
-    margin-right: 1rem;
+			&:hover {
+				svg {
+					transform: scale(1.1);
+				}
+			}
 
-    ul {
-      display: flex;
-      padding: 0;
-      margin: 0;
+			svg {
+				width: 55px;
+				transform: scale(1);
+				transition: transform .125s $transition;
+			}
+		}
+	}
 
-      li {
-        a {
-          color: $light-blue;
-          font-weight: 600;
-          padding: calc(#{$header-height} / 3) 1rem;
-          border-bottom: none;
+	nav {
+		margin-right: 1rem;
 
-          &:hover {
-            border-bottom: 2px solid $light-blue;
-          }
-        }
-      }
-    }
-  }
+		ul {
+			display: flex;
+			padding: 0;
+			margin: 0;
+
+			li {
+				a {
+					position: relative;
+					color: $green;
+					font-weight: 600;
+					padding: calc(#{$header-height} / 3) 1rem;
+					border-bottom: none;
+					min-width: 70px;
+					text-align: center;
+					display: block;
+
+					&:after {
+						content: '';
+						position: absolute;
+						top: 100%;
+						left: 0;
+						bottom: 0;
+						right: 0;
+						background: $green;
+						z-index: -1;
+						transition: all .125s $transition;
+					}
+
+					&:hover {
+						color: $white;
+						&:after {
+							top: 0;
+						}
+					}
+
+					&.active {
+						color: $white;
+						&:after {
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
 }

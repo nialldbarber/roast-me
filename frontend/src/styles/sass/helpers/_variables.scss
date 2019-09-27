@@ -1,8 +1,10 @@
 // Colours
 $black: #000;
 $white: #fff;
-$light-blue: #5a84c3;
-$opaque-blue: #f6f9fc;
+$off-white: #faf4e9;
+$green: #394439;
+$opaque-blue: #f0f3f5;
+$brown: #8b5a36;
 
 // Font
 $font: 'HKGrotesk', sans-serif;
@@ -16,3 +18,6 @@ $bs: 0 3px 6px rgba($black, 0.05), 0 3px 6px rgba($black, 0.02);
 
 // Heights & Widths
 $header-height: 80px;
+
+// Timings
+$transition: cubic-bezier(.91, .01, .37, .88);

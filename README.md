@@ -12,3 +12,6 @@ This is an app that users will be able to rate local coffee shops in their area.
 - [ ] Husky git hooks to build
 - [ ] Custom hooks
 - [ ] Display reviews for place on page
+
+## Ideas 
+- [ ] Badges (caffeine junkie) - the more you post, the more badges you earn

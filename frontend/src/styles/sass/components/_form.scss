@@ -2,9 +2,10 @@ form {
 	display: flex;
 	flex-direction: column;
 	margin-top: 2rem;
-	padding: 1rem;
+	padding: 2rem;
 	min-height: 440px;
 	justify-content: space-evenly;
+	background: $white;
 	border-radius: 4px;
 	box-shadow: $bs;
 	max-width: 645px;
@@ -23,7 +24,7 @@ form {
 	}
 
 	button {
-		background: $light-blue;
+		background: $green;
 		color: $white;
 	}
 }
