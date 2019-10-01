@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import jwt from 'express-jwt'
 import { ApolloServer } from 'apollo-server-express'
 import { importSchema } from 'graphql-import'
 import { resolvers } from '~@schema/resolvers'
@@ -11,14 +12,20 @@ import { resolvers } from '~@schema/resolvers'
 
 	const app = express()
 
-	app.use(cors(), bodyParser.json())
+	const auth = jwt({
+		secret: 'areallylongpassword',
+		credentialsRequired: false
+	})
+
+	app.use(cors(), bodyParser.json(), auth)
 
 	const server = new ApolloServer({
 		typeDefs: importSchema('src/schema/typeDefs.graphql'),
 		resolvers,
 		context: ({ req, res }) => ({
 			req,
-			res
+			res,
+			user: req.user
 		})
 	})
 

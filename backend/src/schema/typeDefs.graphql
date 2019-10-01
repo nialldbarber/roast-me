@@ -15,24 +15,26 @@ type Store {
 # Users
 type User {
 	_id: ID!
+	username: String!
 	email: String!
 	token: String!
+	createdAt: String!
 }
 
-input UserInput {
+input RegisterInput {
+	username: String!
 	email: String!
 	password: String!
-	confirm: String!
+	confirmPassword: String!
 }
 
 type Query {
 	getIndividualStore(_id: ID!): Store
 	getAllStores: [Store!]!
-	# login(email: String!, password: String!): User
-	# verifyToken(token: String!): User
 }
 
 type Mutation {
 	createStore(name: String!, location: String!, description: String!, rating: Int!): Store!
-	createUser(userInput: UserInput): User
+	register(registerInput: RegisterInput): User!
+	login(username: String!, password: String!): User!
 }
