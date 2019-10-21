@@ -7,7 +7,7 @@ const Form = ({ options }) => (
 		{options.map((option, i) => (
 			<label key={i}>
 				{option}:
-				<input type="text" />
+				<input type={option === 'password' ? 'password' : 'text'} />
 			</label>
 		))}
 		<Button type="button" text="Add" />
