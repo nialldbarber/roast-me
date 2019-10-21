@@ -20,10 +20,12 @@ module.exports = {
 	},
 	plugins: [ 'react' ],
 	rules: {
-		allowSingleLine: true,
+		'react/prop-types': 0,
+		indent: [ 2, 'tab' ],
+		'no-tabs': 0,
 		'function-paren-newline': 1,
 		semi: [ 'error', 'never' ],
-		'no-trailing-spaces': 'error',
+		'no-trailing-spaces': 0,
 		'no-console': 'off',
 		indent: 0,
 		'no-use-before-define': 0,
@@ -52,6 +54,7 @@ module.exports = {
 		'import/imports-first': 1,
 		'import/extensions': 0,
 		'import/prefer-default-export': 0,
-		curly: 2
+		curly: 2,
+		'object-curly-newline': 0
 	}
 }

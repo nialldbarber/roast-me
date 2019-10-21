@@ -4,12 +4,7 @@ type Store {
 	name: String!
 	location: String!
 	description: String!
-	# image: String
 	rating: Int!
-	# taste: Int!
-	# atmosphere: Int!
-	# wifi: Int!
-	# facilities: Int!
 }
 
 # Users
