@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
 import logo from '~@assets/images/logo.svg'
 
-const Navbar = () => (
+const Navbar: FC = () => (
 	<div className="navbar">
 		<header>
 			<div className="logo">
