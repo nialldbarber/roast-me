@@ -16,6 +16,13 @@ type User {
 	createdAt: String!
 }
 
+input RegisterInput {
+	username: String!
+	email: String!
+	password: String!
+	confirmPassword: String!
+}
+
 type Query {
 	getIndividualStore(_id: ID!): Store
 	getAllStores: [Store!]!

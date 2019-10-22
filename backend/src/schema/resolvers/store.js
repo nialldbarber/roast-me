@@ -1,7 +1,5 @@
 import { Store } from '~@models/Store'
 
-require('dotenv').config({ path: '.env' })
-
 export const store = {
 	Query: {
 		getAllStores: async () => {
