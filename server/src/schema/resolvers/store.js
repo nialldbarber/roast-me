@@ -23,9 +23,10 @@ export const store = {
 	Mutation: {
 		createStore: async (_, { _id, name, location, description, rating }, context) => {
 			const store = checkAuth(context)
-			console.log(store)
 
 			const newStore = new Store({
+				user: store.id,
+				username: store.username,
 				_id,
 				name,
 				location,

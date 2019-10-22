@@ -23,6 +23,7 @@ const storeSchema = new Schema({
 	rating: {
 		type: Number
 	},
+	username: String,
 	user: {
 		type: Schema.Types.ObjectId,
 		ref: 'user'

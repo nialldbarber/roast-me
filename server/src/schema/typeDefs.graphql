@@ -5,6 +5,7 @@ type Store {
 	location: String!
 	description: String!
 	rating: Int!
+	username: String!
 }
 
 # Users
