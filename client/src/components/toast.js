@@ -26,5 +26,5 @@ export default Toast
 Toast.propTypes = {
 	error: PropTypes.string,
 	message: PropTypes.string,
-	link: PropTypes.string,
+	link: PropTypes.string
 }

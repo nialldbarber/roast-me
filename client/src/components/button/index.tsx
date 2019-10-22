@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import SVG from 'react-inlinesvg'
 import { Btn } from '~@styles/components/button'
+import { Props } from '~@components/button/types'
 
-const Button = ({ text, icon, removeToast }) => (
+const Button: FC<Props> = ({ text, icon, removeToast }) => (
 	<Btn className="btn" type="submit" onClick={removeToast}>
 		<span>
 			<span>{text}</span>
@@ -13,9 +13,3 @@ const Button = ({ text, icon, removeToast }) => (
 )
 
 export default Button
-
-Button.propTypes = {
-	text: PropTypes.string,
-	icon: PropTypes.string,
-	removeToast: PropTypes.func,
-}
