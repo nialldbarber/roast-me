@@ -1,3 +1,4 @@
+import { UserInputError } from 'apollo-server-express'
 import { hash } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
 import { User } from '~@models/User'
@@ -9,7 +10,16 @@ export const user = {
 		registerUser: async (_, { registerInput: { username, email, password, confirmPassword } }) => {
 			// TODO: validate user data
 			// TODO: make sure user doesnt exist already
-			// TODO: hash password and create an auth token
+			const user = await User.findOne({ username })
+
+			if (user) {
+				throw new UserInputError('Username is taken', {
+					errors: {
+						username: 'This username is taken'
+					}
+				})
+			}
+			// hash password and create an auth token
 			password = await hash(password, 12)
 
 			const newUser = new User({
