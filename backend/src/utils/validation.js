@@ -1,3 +1,5 @@
+import { sign } from 'jsonwebtoken'
+
 export const validateRegisterInput = (username, email, password, confirmPassword) => {
 	const errors = {}
 
@@ -42,4 +44,16 @@ export const validateLoginInput = (username, password) => {
 		errors,
 		valid: Object.keys(errors).length < 1
 	}
+}
+
+export const generateToken = (user) => {
+	return sign(
+		{
+			id: user.id,
+			email: user.email,
+			username: user.username
+		},
+		process.env.JWT_SECRET,
+		{ expiresIn: '1h' }
+	)
 }

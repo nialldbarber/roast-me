@@ -1,22 +1,9 @@
 import { UserInputError } from 'apollo-server-express'
 import { hash, compare } from 'bcryptjs'
-import { sign } from 'jsonwebtoken'
 import { User } from '~@models/User'
-import { validateRegisterInput, validateLoginInput } from '~@utils/validation'
+import { validateRegisterInput, validateLoginInput, generateToken } from '~@utils/validation'
 
 require('dotenv').config({ path: '.env' })
-
-const generateToken = (user) => {
-	return sign(
-		{
-			id: user.id,
-			email: user.email,
-			username: user.username
-		},
-		process.env.JWT_SECRET,
-		{ expiresIn: '1h' }
-	)
-}
 
 export const user = {
 	Mutation: {
