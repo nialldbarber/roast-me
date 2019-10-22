@@ -2,8 +2,9 @@ import React, { FC } from 'react'
 import Button from '~@components/button'
 import { Props } from '~@components/form/types'
 
-const Form: FC<Props> = ({ options }) => (
+const Form: FC<Props> = ({ title, options }) => (
 	<form>
+		<p>{title}</p>
 		{options.map((option, i) => (
 			<label key={i}>
 				{option}:

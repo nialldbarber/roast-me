@@ -1,20 +1,16 @@
-import React from 'react'
+import React, { FC } from 'react'
 import PropTypes from 'prop-types'
 import { useQuery } from '@apollo/react-hooks'
 import { GET_INDIVIDUAL_STORE } from '~@pages/store/schema'
 import Loading from '~@components/loading'
 
-const Store = ({ match }) => {
+const Store: FC = ({ match }) => {
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_STORE, {
 		variables: { _id: match.params.id }
 	})
 
-	if (loading) {
-		return <Loading />
-	}
-	if (error) {
-		return <p>Error :( ${error.message}</p>
-	}
+	if (loading) return <Loading />
+	if (error) return <p>Error :( ${error.message}</p>
 
 	const { name, location, description, rating } = data.getIndividualStore
 

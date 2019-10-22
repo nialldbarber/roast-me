@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 import useAddStore from '~@hooks/useAddStore'
 import Toast from '~@components/toast'
 import Button from '~@components/button'
 import Rating from '~@components/rating'
 
-const AddStore = () => {
+const AddStore: FC = () => {
 	const { store, storeError, handleChange, handleSubmit } = useAddStore()
 	const { name, location, description, rating } = store
 	const { status, message } = storeError
