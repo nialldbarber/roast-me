@@ -1,3 +1,4 @@
+import { AuthenticationError } from 'apollo-server-express'
 import { Store } from '~@models/Store'
 import { checkAuth } from '~@utils/auth'
 
@@ -37,6 +38,23 @@ export const store = {
 
 			await newStore.save()
 			return newStore
+		},
+		deleteStore: async (_, { _id }, context) => {
+			const user = checkAuth(context)
+
+			try {
+				const store = await Store.findById(_id)
+
+				if (user.username === store.username) {
+					await store.delete()
+
+					return 'Store deleted successfully'
+				} else {
+					throw new AuthenticationError('Action not allowed')
+				}
+			} catch (err) {
+				throw new Error(err)
+			}
 		}
 	}
 }
