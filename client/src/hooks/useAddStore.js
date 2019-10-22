@@ -17,7 +17,6 @@ const useAddStore = () => {
 	})
 
 	const { name, location, description, rating } = store
-	const { status, message } = storeError
 
 	// apollo
 	const [ createStore, { error } ] = useMutation(CREATE_STORE, {

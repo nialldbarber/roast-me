@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import PropTypes from 'prop-types'
 import Button from '~@/components/button'
 import close from '~@assets/icons/cross.svg'
 
-const Toast = ({ error, message, link }) => {
+const Toast: FC = ({ error, message, link }) => {
 	const [ active, setActive ] = useState(true)
 
 	const handleClick = () => {
