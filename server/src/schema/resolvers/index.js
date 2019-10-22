@@ -1,6 +1,7 @@
 import { store } from '~@schema/resolvers/store'
 import { user } from '~@schema/resolvers/user'
 import { comments } from '~@schema/resolvers/comments'
+import { likes } from '~@schema/resolvers/likes'
 
 export const resolvers = {
 	Query: {
@@ -10,6 +11,7 @@ export const resolvers = {
 	Mutation: {
 		...store.Mutation,
 		...user.Mutation,
-		...comments.Mutation
+		...comments.Mutation,
+		...likes.Mutation
 	}
 }
