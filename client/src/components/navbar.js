@@ -2,13 +2,11 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
 import logo from '~@assets/images/logo.svg'
-import fire from '~@assets/images/fire.svg'
 
 const Navbar = () => (
 	<div className="navbar">
 		<header>
 			<div className="logo">
-				<SVG src={fire} />
 				<Link to="/">
 					<SVG src={logo} />
 				</Link>
