@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Form from '~@components/form'
 
-const Login = () => {
+const Login: FC = () => {
 	const options = [ 'username', 'password' ]
 	return (
 		<div className="container">
