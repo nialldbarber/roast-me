@@ -25,9 +25,7 @@ const useAddStore = () => {
 		refetchQueries: [ 'getAllStores' ]
 	})
 
-	if (error) {
-		console.log(`Error: ${error}`)
-	}
+	if (error) console.log(`Error: ${error}`)
 
 	// Change Inputs
 	const handleChange = (e) => {
