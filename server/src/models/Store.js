@@ -23,6 +23,19 @@ const storeSchema = new Schema({
 	rating: {
 		type: Number
 	},
+	comments: [
+		{
+			body: String,
+			username: String,
+			createdAt: String
+		}
+	],
+	likes: [
+		{
+			username: String,
+			createdAt: String
+		}
+	],
 	username: String,
 	user: {
 		type: Schema.Types.ObjectId,
