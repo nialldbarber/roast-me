@@ -1,31 +1,22 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import jwt from 'express-jwt'
 import { ApolloServer } from 'apollo-server-express'
 import { importSchema } from 'graphql-import'
 import { resolvers } from '~@schema/resolvers'
-;
 
-(async () => {
+const startServer = async () => {
 	require('~@db')
-
 	const app = express()
 
-	const auth = jwt({
-		secret: 'areallylongpassword',
-		credentialsRequired: false
-	})
-
-	app.use(cors(), bodyParser.json(), auth)
+	app.use(cors(), bodyParser.json())
 
 	const server = new ApolloServer({
 		typeDefs: importSchema('src/schema/typeDefs.graphql'),
 		resolvers,
 		context: ({ req, res }) => ({
 			req,
-			res,
-			user: req.user
+			res
 		})
 	})
 
@@ -33,4 +24,6 @@ import { resolvers } from '~@schema/resolvers'
 
 	const port = process.env.port || 4000
 	app.listen(port, () => console.log(`🚀  Schema is ready at http://localhost:${port}${server.graphqlPath}`))
-})()
+}
+
+startServer()
