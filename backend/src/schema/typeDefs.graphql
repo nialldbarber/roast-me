@@ -30,6 +30,7 @@ type Query {
 
 type Mutation {
 	createStore(name: String!, location: String!, description: String!, rating: Int!): Store!
+	deleteStore(_id: ID!): String!
 	registerUser(registerInput: RegisterInput): User!
 	userLogin(username: String!, password: String!): User!
 }
