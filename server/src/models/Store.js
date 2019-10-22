@@ -16,29 +16,17 @@ const storeSchema = new Schema({
 		type: String,
 		trim: true
 	},
-	created: {
+	createdAt: {
 		type: Date,
 		default: Date.now
 	},
 	rating: {
 		type: Number
+	},
+	user: {
+		type: Schema.Types.ObjectId,
+		ref: 'user'
 	}
-	// location: {
-	// 	type: {
-	// 		type: String,
-	// 		default: 'Point'
-	// 	},
-	// 	coordinates: [
-	// 		{
-	// 			type: Number,
-	// 			required: true
-	// 		}
-	// 	],
-	// 	address: {
-	// 		type: String,
-	// 		required: true
-	// 	}
-	// }
 })
 
 export const Store = model('Store', storeSchema)

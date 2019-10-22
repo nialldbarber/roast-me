@@ -1,4 +1,5 @@
 import { Store } from '~@models/Store'
+import { checkAuth } from '~@utils/auth'
 
 export const store = {
 	Query: {
@@ -20,16 +21,21 @@ export const store = {
 		}
 	},
 	Mutation: {
-		createStore: async (_, { _id, name, location, description, rating }) => {
-			const store = new Store({
+		createStore: async (_, { _id, name, location, description, rating }, context) => {
+			const store = checkAuth(context)
+			console.log(store)
+
+			const newStore = new Store({
 				_id,
 				name,
 				location,
 				description,
-				rating
+				rating,
+				createdAt: new Date().toISOString()
 			})
-			await store.save()
-			return store
+
+			await newStore.save()
+			return newStore
 		}
 	}
 }
