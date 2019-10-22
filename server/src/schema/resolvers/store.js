@@ -5,7 +5,7 @@ export const store = {
 	Query: {
 		getAllStores: async () => {
 			try {
-				const stores = await Store.find()
+				const stores = await Store.find().sort({ createdAt: -1 })
 				return stores
 			} catch (err) {
 				throw new Error(err)
