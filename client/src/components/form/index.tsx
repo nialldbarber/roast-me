@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import Button from '~@components/button'
+import { Props } from '~@components/form/types'
 
-const Form = ({ options }) => (
+const Form: FC<Props> = ({ options }) => (
 	<form>
 		{options.map((option, i) => (
 			<label key={i}>
@@ -15,7 +15,3 @@ const Form = ({ options }) => (
 )
 
 export default Form
-
-Form.propTypes = {
-	options: PropTypes.array
-}
