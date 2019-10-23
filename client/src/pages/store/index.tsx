@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import { useQuery } from '@apollo/react-hooks'
 import { GET_INDIVIDUAL_STORE } from '~@pages/store/schema'
 import Loading from '~@components/loading'
+import { Props } from '~@pages/store/types'
 
-const Store: FC = ({ match }) => {
+const Store: FC<Props> = ({ match }) => {
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_STORE, {
 		variables: { _id: match.params.id }
 	})
