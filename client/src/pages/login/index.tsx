@@ -3,7 +3,7 @@ import Form from '~@components/form'
 import Register from '~@components/register'
 import { Wrapper } from '~@pages/login/styles'
 
-const Login: FC = () => {
+const Login: FC = (props) => {
 	const [visibility, setVisibility] = useState({ signIn: true, register: false })
 	const options = ['username', 'password']
 
@@ -28,7 +28,7 @@ const Login: FC = () => {
 			</div>
 			<Wrapper>
 				<Form title="Sign In" options={options} visibility={signIn} />
-				<Register title="Register" visibility={register} />
+				<Register title="Register" visibility={register} redirect={props} />
 			</Wrapper>
 		</div>
 	)

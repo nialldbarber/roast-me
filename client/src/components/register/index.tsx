@@ -4,7 +4,7 @@ import Button from '~@components/button'
 import { Props } from '~@components/form/types'
 import { REGISTER_USER } from './schema'
 
-const Register: FC<Props> = ({ title, visibility }) => {
+const Register: FC<Props> = ({ title, visibility, redirect }) => {
   const [errors, setErrors] = useState<any>({})
   const [registerInfo, setRegisterInfo] = useState({
     username: '',
@@ -17,7 +17,7 @@ const Register: FC<Props> = ({ title, visibility }) => {
 
   const [registerUser, { loading, error }] = useMutation(REGISTER_USER, {
     update(proxy, result) {
-      console.log(result)
+      redirect.history.push('/')
     },
     onError(err) {
       setErrors(err.graphQLErrors[0].extensions.exception.errors)
