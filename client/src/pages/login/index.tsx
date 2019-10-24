@@ -1,7 +1,8 @@
 import React, { FC, useState } from 'react'
 import Form from '~@components/form'
 import Register from '~@components/register'
-import { Wrapper } from '~@pages/login/styles'
+import Tab from '~@components/tab'
+import { Wrapper, TabContainer } from '~@pages/login/styles'
 
 const Login: FC = () => {
 	const [ visibility, setVisibility ] = useState({ signIn: true, register: false })
@@ -18,14 +19,15 @@ const Login: FC = () => {
 	return (
 		<div className="container">
 			<h1>Sign in or create an account</h1>
-			<div>
-				<button onClick={handleVisibility} name="signIn">
+			<TabContainer>
+				<Tab text="Sign In" click={handleVisibility} name="signIn" active={signIn ? 'active' : ''}>
 					Sign In
-				</button>
-				<button onClick={handleVisibility} name="register">
+				</Tab>
+				<Tab text="Register" click={handleVisibility} name="register" active={register ? 'active' : ''}>
 					Register
-				</button>
-			</div>
+				</Tab>
+			</TabContainer>
+
 			<Wrapper>
 				<Form options={options} visibility={signIn} />
 				<Register visibility={register} />

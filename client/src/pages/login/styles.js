@@ -1,10 +1,17 @@
 import styled from 'styled-components'
 
+export const TabContainer = styled.div`
+	display: flex;
+	justitfy-content: space-between;
+	width: 100%;
+	max-width: 624px;
+	background: white;
+`
+
 export const Wrapper = styled.div`
 	form {
 		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
 		min-width: 560px;
+		margin-top: 0;
 	}
 `
