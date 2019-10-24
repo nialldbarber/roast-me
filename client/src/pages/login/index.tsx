@@ -4,8 +4,8 @@ import Register from '~@components/register'
 import { Wrapper } from '~@pages/login/styles'
 
 const Login: FC = () => {
-	const [visibility, setVisibility] = useState({ signIn: true, register: false })
-	const options = ['username', 'password']
+	const [ visibility, setVisibility ] = useState({ signIn: true, register: false })
+	const options = [ 'username', 'password' ]
 
 	const handleVisibility = (e: any) => {
 		const target = e.target.name
@@ -27,8 +27,8 @@ const Login: FC = () => {
 				</button>
 			</div>
 			<Wrapper>
-				<Form title="Sign In" options={options} visibility={signIn} />
-				<Register title="Register" visibility={register} />
+				<Form options={options} visibility={signIn} />
+				<Register visibility={register} />
 			</Wrapper>
 		</div>
 	)
