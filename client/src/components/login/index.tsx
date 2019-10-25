@@ -5,7 +5,7 @@ import Loading from '~@components/loading'
 import { Props } from '~@components/form/types'
 import { REGISTER_USER } from './schema'
 
-const Register: FC<Props> = ({ title, visibility, page }) => {
+const Login: FC<Props> = ({ title, visibility, page }) => {
 	const [ errors, setErrors ] = useState<any>({})
 	const [ registerInfo, setRegisterInfo ] = useState({
 		username: '',
