@@ -6,7 +6,7 @@ import Navbar from '~@components/navbar'
 import AddStore from '~@pages/add-store'
 import StoreList from '~@pages/store-list'
 import Store from '~@pages/store'
-import Login from '~@pages/login'
+import LoginRegister from '~@pages/login-register'
 import PageNotFound from '~@pages/page-not-found'
 import '~@styles/sass/main.scss'
 
@@ -18,7 +18,7 @@ const App: FC = () => (
 				<Route path="/" exact component={StoreList} />
 				<Route path="/add-store" component={AddStore} />
 				<Route path="/store/:id" component={Store} />
-				<Route path="/login" component={Login} />
+				<Route path="/login" component={LoginRegister} />
 				<Route component={PageNotFound} />
 			</Switch>
 		</Router>

@@ -1,5 +1,6 @@
 import React, { FC, Fragment, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
+import useForm from '~@hooks/useForm'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 import { Props } from '~@components/form/types'
@@ -7,18 +8,19 @@ import { REGISTER_USER } from './schema'
 
 const Register: FC<Props> = ({ title, visibility, page }) => {
 	const [ errors, setErrors ] = useState<any>({})
-	const [ registerInfo, setRegisterInfo ] = useState({
+	const { values, handleChange, handleSubmit } = useForm(handleRegisterUser, {
 		username: '',
 		email: '',
 		password: '',
 		confirmPassword: ''
 	})
 
-	const { username, email, password, confirmPassword } = registerInfo
+	const { username, email, password, confirmPassword } = values
 
 	const [ registerUser, { loading, error } ] = useMutation(REGISTER_USER, {
 		update(_, result) {
-			console.log(result), page.history.push('/')
+			console.log(result)
+			page.history.push('/')
 		},
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
@@ -29,20 +31,18 @@ const Register: FC<Props> = ({ title, visibility, page }) => {
 	if (error) console.log(`Error: ${error}`)
 	if (loading) return <Loading />
 
-	const handleChange = (e: any) => {
-		const { name, value } = e.target
-		setRegisterInfo({ ...registerInfo, [name]: value })
-	}
-
-	const handleSubmit = (e: any) => {
-		e.preventDefault()
+	function handleRegisterUser() {
 		registerUser()
 	}
 
 	return (
 		<Fragment>
 			{title}
-			<form style={{ opacity: visibility ? '1' : '0' }} onSubmit={handleSubmit} noValidate>
+			<form
+				style={{ opacity: visibility ? '1' : '0', zIndex: visibility ? '7' : '-1' }}
+				onSubmit={handleSubmit}
+				noValidate
+			>
 				<label htmlFor="">
 					Username
 					<input
