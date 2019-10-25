@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react'
 import Register from '~@components/register'
 import Login from '~@components/login'
 import Tab from '~@components/tab'
-import { TabContainer } from '~@pages/login-register/styles'
+import { TabContainer, Wrapper } from '~@pages/login-register/styles'
 
 const LoginRegister: FC = (props) => {
 	const [ visibility, setVisibility ] = useState({ signIn: true, register: false })
@@ -17,19 +17,19 @@ const LoginRegister: FC = (props) => {
 
 	return (
 		<div className="container">
-			<h1>Sign in or create an account</h1>
-			<TabContainer>
-				<Tab text="Sign In" click={handleVisibility} name="signIn" active={signIn ? 'active' : ''}>
-					Sign In
-				</Tab>
-				<Tab text="Register" click={handleVisibility} name="register" active={register ? 'active' : ''}>
-					Register
-				</Tab>
-			</TabContainer>
-			<div>
+			<h2 className="title">Sign In/Register</h2>
+			<Wrapper>
+				<TabContainer>
+					<Tab text="Sign In" click={handleVisibility} name="signIn" active={signIn ? 'active' : ''}>
+						Sign In
+					</Tab>
+					<Tab text="Register" click={handleVisibility} name="register" active={register ? 'active' : ''}>
+						Register
+					</Tab>
+				</TabContainer>
 				<Login visibility={signIn} page={props} />
 				<Register visibility={register} page={props} />
-			</div>
+			</Wrapper>
 		</div>
 	)
 }
