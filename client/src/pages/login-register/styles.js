@@ -5,7 +5,6 @@ export const TabContainer = styled.div`
 	justitfy-content: space-between;
 	width: 100%;
 	max-width: 624px;
-	background: white;
 `
 
 export const Wrapper = styled.div`

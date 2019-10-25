@@ -5,6 +5,8 @@ export const UserForm = styled.form`
 	z-index: -1;
 	max-width: 560px;
 	margin-top: 0;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
 
 	&.active {
 		display: block;
