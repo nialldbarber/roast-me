@@ -85,10 +85,7 @@ const Register: FC<Props> = ({ title, visibility, page }) => {
 				</label>
 				<Button type="submit" text="Register" />
 				<ul className="form-errors">
-					<ul>
-						{Object.keys(errors).length > 0 &&
-							Object.values(errors).map((val, i) => <li key={i}>{val}</li>)}
-					</ul>
+					{Object.keys(errors).length > 0 && Object.values(errors).map((val, i) => <li key={i}>{val}</li>)}
 				</ul>
 			</UserForm>
 		</Fragment>
