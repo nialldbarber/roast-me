@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
-import { GET_STORES } from '~@pages/store-list/schema'
+import { GET_STORES } from '~@pages/all-stores/schema'
 import Loading from '~@components/loading'
 import Error from '~@components/error'
-import { StoreProps } from '~@pages/store-list/types'
+import { StoreProps } from '~@pages/all-stores/types'
 
-const StoreList = () => {
+const AllStores = () => {
 	const { loading, error, data } = useQuery(GET_STORES)
 
 	if (loading) return <Loading />
@@ -30,4 +30,4 @@ const StoreList = () => {
 	)
 }
 
-export default StoreList
+export default AllStores

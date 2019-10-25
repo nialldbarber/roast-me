@@ -5,8 +5,8 @@ import { client } from '~@utils/apollo'
 import { AuthProvider } from './state/auth'
 import Navbar from '~@components/navbar'
 import AddStore from '~@pages/add-store'
-import StoreList from '~@pages/store-list'
-import Store from '~@pages/store'
+import AllStores from '~@pages/all-stores'
+import IndividualStore from '~@pages/individual-store'
 import LoginRegister from '~@pages/login-register'
 import PageNotFound from '~@pages/page-not-found'
 import '~@styles/sass/main.scss'
@@ -17,9 +17,9 @@ const App: FC = () => (
 			<Router>
 				<Navbar />
 				<Switch>
-					<Route path="/" exact component={StoreList} />
+					<Route path="/" exact component={AllStores} />
 					<Route path="/add-store" component={AddStore} />
-					<Route path="/store/:id" component={Store} />
+					<Route path="/store/:id" component={IndividualStore} />
 					<Route path="/login" component={LoginRegister} />
 					<Route component={PageNotFound} />
 				</Switch>
