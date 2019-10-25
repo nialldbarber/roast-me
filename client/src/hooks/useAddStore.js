@@ -21,6 +21,9 @@ const useAddStore = () => {
 	// apollo
 	const [ createStore, { error } ] = useMutation(CREATE_STORE, {
 		variables: { name, location, description, rating: parseInt(rating) },
+		update(_, result) {
+			console.log(result)
+		},
 		// re-fetch queries
 		refetchQueries: [ 'getAllStores' ]
 	})

@@ -47,7 +47,6 @@ const Register: FC<Props> = ({ title, visibility, page }) => {
 				<label htmlFor="username">
 					<input
 						type="text"
-						id="username"
 						name="username"
 						value={username}
 						placeholder="Username"
@@ -58,7 +57,6 @@ const Register: FC<Props> = ({ title, visibility, page }) => {
 				<label htmlFor="email">
 					<input
 						type="text"
-						id="email"
 						name="email"
 						value={email}
 						placeholder="Email"
@@ -69,7 +67,6 @@ const Register: FC<Props> = ({ title, visibility, page }) => {
 				<label htmlFor="password">
 					<input
 						type="password"
-						id="password"
 						name="password"
 						value={password}
 						placeholder="Password"
@@ -80,7 +77,6 @@ const Register: FC<Props> = ({ title, visibility, page }) => {
 				<label htmlFor="confirmPassword">
 					<input
 						type="password"
-						id="confirmPassword"
 						name="confirmPassword"
 						value={confirmPassword}
 						placeholder="Confirm Password"
