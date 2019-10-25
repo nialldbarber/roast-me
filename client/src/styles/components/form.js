@@ -15,8 +15,8 @@ export const UserForm = styled.form`
 
 	input {
 		&.error {
-			border: 1px dashed red;
-			background: rgba(0, 0, 0, 0.2);
+			border: 1px solid #394439;
+			background: #cfd2d3;
 		}
 	}
 `

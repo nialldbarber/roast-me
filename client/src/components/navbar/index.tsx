@@ -12,7 +12,7 @@ const Navbar: FC = () => {
 			<header>
 				<div className="logo">
 					<Link to="/">
-						<SVG src={logo} />
+						<SVG src={logo} alt="Logo" aria-label="Logo" />
 					</Link>
 				</div>
 			</header>
