@@ -19,7 +19,7 @@
 
 		@for $i from 1 through 8 {
 			.circle-#{$i} {
-				border: 7px solid $green;
+				border: 7px solid $white;
 				border-radius: 50%;
 				box-sizing: border-box;
 				border-right: 7px solid transparent;
@@ -34,7 +34,7 @@
 
 @keyframes rotate {
 	50% {
-		border: 1px solid $green;
+		border: 1px solid $white;
 		border-right: 1px solid transparent;
 		border-bottom: 1px solid transparent;
 		border-left: 1px solid transparent;

@@ -4,6 +4,7 @@ import { AuthContext } from '~@state/auth'
 import useForm from '~@hooks/useForm'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
+import FormErrors from '~@components/form-errors'
 import { Props } from '~@components/form/types'
 import { REGISTER_USER } from '~@components/register/schema'
 import { UserForm } from '~@styles/components/form'
@@ -84,9 +85,7 @@ const Register: FC<Props> = ({ title, visibility, page }) => {
 					/>
 				</label>
 				<Button type="submit" text="Register" />
-				<ul className="form-errors">
-					{Object.keys(errors).length > 0 && Object.values(errors).map((val, i) => <li key={i}>{val}</li>)}
-				</ul>
+				<FormErrors errors={errors} />
 			</UserForm>
 		</Fragment>
 	)

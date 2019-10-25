@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { Container } from './styles'
 
 const Loading: FC = () => {
 	let loader
@@ -7,9 +8,11 @@ const Loading: FC = () => {
 	}
 
 	return (
-		<div className="loader">
-			<div className="loader-group">{loader}</div>
-		</div>
+		<Container>
+			<div className="loader">
+				<div className="loader-group">{loader}</div>
+			</div>
+		</Container>
 	)
 }
 

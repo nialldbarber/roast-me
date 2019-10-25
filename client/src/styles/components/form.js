@@ -19,4 +19,9 @@ export const UserForm = styled.form`
 			background: #cfd2d3;
 		}
 	}
+
+	button {
+		width: 100%;
+		margin-top: 1rem;
+	}
 `
