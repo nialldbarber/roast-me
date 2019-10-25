@@ -1,5 +1,6 @@
-import React, { FC, Fragment, useState } from 'react'
+import React, { FC, Fragment, useState, useContext } from 'react'
 import { useMutation } from '@apollo/react-hooks'
+import { AuthContext } from '~@state/auth'
 import useForm from '~@hooks/useForm'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
@@ -8,6 +9,7 @@ import { REGISTER_USER } from '~@components/register/schema'
 import { UserForm } from '~@styles/components/form'
 
 const Register: FC<Props> = ({ title, visibility, page }) => {
+	const context = useContext(AuthContext)
 	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleRegisterUser, {
 		username: '',
@@ -19,8 +21,9 @@ const Register: FC<Props> = ({ title, visibility, page }) => {
 	const { username, email, password, confirmPassword } = values
 
 	const [ registerUser, { loading, error } ] = useMutation(REGISTER_USER, {
-		update(_, result) {
-			console.log(result)
+		update(_, { data: { registerUser: userData } }) {
+			console.log(userData)
+			context.login(userData)
 			page.history.push('/')
 		},
 		onError(err) {

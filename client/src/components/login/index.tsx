@@ -1,5 +1,6 @@
-import React, { FC, Fragment, useState } from 'react'
+import React, { FC, Fragment, useState, useContext } from 'react'
 import { useMutation } from '@apollo/react-hooks'
+import { AuthContext } from '~@state/auth'
 import useForm from '~@hooks/useForm'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
@@ -8,6 +9,7 @@ import { LOGIN_USER } from '~@components/login/schema'
 import { UserForm } from '~@styles/components/form'
 
 const Login: FC<Props> = ({ title, visibility, page }) => {
+	const context = useContext(AuthContext)
 	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleLoginUser, {
 		username: '',
@@ -17,7 +19,9 @@ const Login: FC<Props> = ({ title, visibility, page }) => {
 	const { username, password } = values
 
 	const [ userLogin, { loading, error } ] = useMutation(LOGIN_USER, {
-		update() {
+		update(_, { data: { userLogin: userData } }) {
+			context.login(userData)
+			console.log(userData)
 			page.history.push('/')
 		},
 		onError(err) {
