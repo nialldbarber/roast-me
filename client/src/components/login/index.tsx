@@ -42,22 +42,24 @@ const Login: FC<Props> = ({ title, visibility, page }) => {
 		<Fragment>
 			{title}
 			<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
-				<label htmlFor="">
-					Username
+				<label htmlFor="username">
 					<input
 						type="text"
+						id="username"
 						name="username"
 						value={username}
+						placeholder="Username"
 						className={errors.username ? 'error' : ''}
 						onChange={handleChange}
 					/>
 				</label>
-				<label htmlFor="">
-					Password
+				<label htmlFor="password">
 					<input
 						type="password"
+						id="password"
 						name="password"
 						value={password}
+						placeholder="Password"
 						className={errors.password ? 'error' : ''}
 						onChange={handleChange}
 					/>

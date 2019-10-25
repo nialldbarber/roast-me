@@ -4,6 +4,7 @@ export const UserForm = styled.form`
 	display: none;
 	z-index: -1;
 	max-width: 560px;
+	width: 100%;
 	margin-top: 0;
 	border-top-right-radius: 0;
 	border-top-left-radius: 0;
