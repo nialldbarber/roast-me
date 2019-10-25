@@ -4,7 +4,7 @@ import useForm from '~@hooks/useForm'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 import { Props } from '~@components/form/types'
-import { REGISTER_USER } from './schema'
+import { REGISTER_USER } from '~@components/register/schema'
 
 const Register: FC<Props> = ({ title, visibility, page }) => {
 	const [ errors, setErrors ] = useState<any>({})

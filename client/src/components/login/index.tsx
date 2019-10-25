@@ -4,7 +4,7 @@ import useForm from '~@hooks/useForm'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 import { Props } from '~@components/form/types'
-import { LOGIN_USER } from './schema'
+import { LOGIN_USER } from '~@components/login/schema'
 
 const Login: FC<Props> = ({ title, visibility, page }) => {
 	const [ errors, setErrors ] = useState<any>({})
@@ -16,7 +16,7 @@ const Login: FC<Props> = ({ title, visibility, page }) => {
 	const { username, password } = values
 
 	const [ userLogin, { loading, error } ] = useMutation(LOGIN_USER, {
-		update(_, result) {
+		update() {
 			page.history.push('/')
 		},
 		onError(err) {

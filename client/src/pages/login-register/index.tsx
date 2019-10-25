@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react'
-import Form from '~@components/form'
 import Register from '~@components/register'
 import Login from '~@components/login'
 import Tab from '~@components/tab'
@@ -7,7 +6,6 @@ import { Wrapper, TabContainer } from '~@pages/login-register/styles'
 
 const LoginRegister: FC = (props) => {
 	const [ visibility, setVisibility ] = useState({ signIn: true, register: false })
-	const options = [ 'username', 'password' ]
 
 	const handleVisibility = (e: any) => {
 		const target = e.target.name
