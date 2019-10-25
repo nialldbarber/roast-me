@@ -2,7 +2,6 @@ import React, { FC, Fragment, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
-import Error from '~@components/error'
 import { Props } from '~@components/form/types'
 import { REGISTER_USER } from './schema'
 
@@ -43,7 +42,7 @@ const Register: FC<Props> = ({ title, visibility }) => {
 	return (
 		<Fragment>
 			{title}
-			<form style={{ opacity: visibility ? '1' : '0' }} onSubmit={handleSubmit}>
+			<form style={{ opacity: visibility ? '1' : '0' }} onSubmit={handleSubmit} noValidate>
 				<label htmlFor="">
 					Username
 					<input type="text" name="username" value={username} onChange={handleChange} />
