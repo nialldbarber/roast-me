@@ -5,6 +5,7 @@ import Button from '~@components/button'
 import Loading from '~@components/loading'
 import { Props } from '~@components/form/types'
 import { LOGIN_USER } from '~@components/login/schema'
+import { UserForm } from '~@styles/components/form'
 
 const Login: FC<Props> = ({ title, visibility, page }) => {
 	const [ errors, setErrors ] = useState<any>({})
@@ -35,11 +36,7 @@ const Login: FC<Props> = ({ title, visibility, page }) => {
 	return (
 		<Fragment>
 			{title}
-			<form
-				style={{ opacity: visibility ? '1' : '0', zIndex: visibility ? '7' : '-1' }}
-				onSubmit={handleSubmit}
-				noValidate
-			>
+			<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
 				<label htmlFor="">
 					Username
 					<input
@@ -61,7 +58,7 @@ const Login: FC<Props> = ({ title, visibility, page }) => {
 					/>
 				</label>
 				<Button type="submit" text="Login" />
-			</form>
+			</UserForm>
 			<ul>{Object.keys(errors).length > 0 && Object.values(errors).map((val, i) => <li key={i}>{val}</li>)}</ul>
 		</Fragment>
 	)

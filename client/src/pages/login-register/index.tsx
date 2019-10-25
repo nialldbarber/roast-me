@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react'
 import Register from '~@components/register'
 import Login from '~@components/login'
 import Tab from '~@components/tab'
-import { Wrapper, TabContainer } from '~@pages/login-register/styles'
+import { TabContainer } from '~@pages/login-register/styles'
 
 const LoginRegister: FC = (props) => {
 	const [ visibility, setVisibility ] = useState({ signIn: true, register: false })
@@ -26,11 +26,10 @@ const LoginRegister: FC = (props) => {
 					Register
 				</Tab>
 			</TabContainer>
-
-			<Wrapper>
+			<div>
 				<Login visibility={signIn} page={props} />
 				<Register visibility={register} page={props} />
-			</Wrapper>
+			</div>
 		</div>
 	)
 }
