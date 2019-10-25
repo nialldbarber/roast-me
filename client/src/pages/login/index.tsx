@@ -4,7 +4,7 @@ import Register from '~@components/register'
 import Tab from '~@components/tab'
 import { Wrapper, TabContainer } from '~@pages/login/styles'
 
-const Login: FC = () => {
+const Login: FC = (props) => {
 	const [ visibility, setVisibility ] = useState({ signIn: true, register: false })
 	const options = [ 'username', 'password' ]
 
@@ -30,7 +30,7 @@ const Login: FC = () => {
 
 			<Wrapper>
 				<Form options={options} visibility={signIn} />
-				<Register visibility={register} />
+				<Register visibility={register} page={props} />
 			</Wrapper>
 		</div>
 	)

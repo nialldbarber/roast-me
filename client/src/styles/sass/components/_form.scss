@@ -27,4 +27,11 @@ form {
 		background: $green;
 		color: $white;
 	}
+
+	input {
+		&.error {
+			border: 1px dashed red;
+			background: rgba(0, 0, 0, 0.2);
+		}
+	}
 }
