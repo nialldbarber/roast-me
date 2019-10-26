@@ -3,8 +3,8 @@ import { useQuery } from '@apollo/react-hooks'
 import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import Loading from '~@components/loading'
 import { PageContainer } from '~@styles/components/container'
-import { Props } from '~@pages/individual-store/types'
 import { Title } from '~@styles/components/title'
+import { Props } from '~@pages/individual-store/types'
 
 const IndividualStore: FC<Props> = ({ match }) => {
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_STORE, {
