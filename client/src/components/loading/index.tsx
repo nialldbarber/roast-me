@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Container } from './styles'
+import { Container } from '~@components/loading/styles'
 
 const Loading: FC = () => {
 	let loader
