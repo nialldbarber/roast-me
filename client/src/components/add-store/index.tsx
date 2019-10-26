@@ -6,85 +6,85 @@ import Button from '~@components/button'
 import Loading from '~@components/loading'
 import FormErrors from '~@components/form-errors'
 import { Props } from '~@components/form/types'
-import { REGISTER_USER } from '~@components/register/schema'
+import { CREATE_STORE } from './schema'
+import { GET_STORES } from '../../pages/all-stores/schema'
 import { UserForm } from '~@styles/components/form'
 
 const AddStoreForm: FC<Props> = ({ title, visibility, page }) => {
 	const context = useContext(AuthContext)
 	const [ errors, setErrors ] = useState<any>({})
-	const { values, handleChange, handleSubmit } = useForm(handleRegisterUser, {
-		username: '',
-		email: '',
-		password: '',
-		confirmPassword: ''
+	const { values, handleChange, handleSubmit } = useForm(handleAddStore, {
+		name: '',
+		location: '',
+		description: '',
+		rating: ''
 	})
 
-	const { username, email, password, confirmPassword } = values
+	const { name, location, description, rating } = values
 
-	const [ registerUser, { loading, error } ] = useMutation(REGISTER_USER, {
-		update(_, { data: { registerUser: userData } }) {
-			console.log(userData)
-			context.login(userData)
+	const [ createStore, { loading, error } ] = useMutation(CREATE_STORE, {
+		variables: { name, location, description, rating: parseInt(rating) },
+		update() {
 			page.history.push('/')
 		},
 		onError(err) {
-			setErrors(err.graphQLErrors[0].extensions.exception.errors)
+			// setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
-		variables: { username, email, password, confirmPassword }
+		refetchQueries: [ { query: GET_STORES } ]
 	})
 
 	if (error) console.log(`Error: ${error}`)
 	if (loading) return <Loading />
 
-	function handleRegisterUser() {
-		registerUser()
+	function handleAddStore() {
+		createStore()
 	}
 
 	return (
 		<Fragment>
 			{title}
 			<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
-				<label htmlFor="username">
+				<label htmlFor="name">
 					<input
 						type="text"
-						name="username"
-						value={username}
-						placeholder="Username"
-						className={errors.username ? 'error' : ''}
+						name="name"
+						value={name}
+						placeholder="Name"
+						className={errors.name ? 'error' : ''}
 						onChange={handleChange}
 					/>
 				</label>
-				<label htmlFor="email">
+				<label htmlFor="location">
 					<input
 						type="text"
-						name="email"
-						value={email}
-						placeholder="Email"
-						className={errors.email ? 'error' : ''}
+						name="location"
+						value={location}
+						placeholder="Location"
+						className={errors.location ? 'error' : ''}
 						onChange={handleChange}
 					/>
 				</label>
-				<label htmlFor="password">
+				<label htmlFor="description">
+					<textarea
+						type="text"
+						name="description"
+						value={description}
+						placeholder="Description"
+						className={errors.description ? 'error' : ''}
+						onChange={handleChange}
+					/>
+				</label>
+				<label htmlFor="rating">
 					<input
-						type="password"
-						name="password"
-						value={password}
-						placeholder="Password"
-						className={errors.password ? 'error' : ''}
+						type="text"
+						name="rating"
+						value={rating}
+						placeholder="Rating"
+						className={errors.rating ? 'error' : ''}
 						onChange={handleChange}
 					/>
 				</label>
-				<label htmlFor="confirmPassword">
-					<input
-						type="password"
-						name="confirmPassword"
-						value={confirmPassword}
-						placeholder="Confirm Password"
-						className={errors.confirmPassword ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<Button type="submit" text="Register" />
+				<Button type="submit" text="Add" />
 				<FormErrors errors={errors} />
 			</UserForm>
 		</Fragment>
