@@ -13,9 +13,10 @@ const Navbar: FC = () => {
 		setModal(!modal)
 	}
 
-	const handleRemoveModal = () => {
-		logout()
-		setModal(false)
+	const handleRemoveModal = (e) => {
+		console.log(e.target)
+		// logout()
+		// setModal(false)
 	}
 
 	return (
