@@ -8,6 +8,7 @@ import AddStore from '~@pages/add-store'
 import AllStores from '~@pages/all-stores'
 import IndividualStore from '~@pages/individual-store'
 import LoginRegister from '~@pages/login-register'
+import UserStores from '~@pages/user-stores'
 import PageNotFound from '~@pages/page-not-found'
 import '~@styles/sass/main.scss'
 
@@ -21,6 +22,7 @@ const App: FC = () => (
 					<Route path="/add-store" component={AddStore} />
 					<Route path="/store/:id" component={IndividualStore} />
 					<Route path="/login" component={LoginRegister} />
+					<Route path="/profile" component={UserStores} />
 					<Route component={PageNotFound} />
 				</Switch>
 			</Router>
