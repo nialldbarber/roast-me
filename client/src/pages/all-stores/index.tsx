@@ -4,7 +4,9 @@ import { useQuery } from '@apollo/react-hooks'
 import { GET_STORES } from '~@pages/all-stores/schema'
 import Loading from '~@components/loading'
 import Error from '~@components/error'
+import { PageContainer } from '~@styles/components/container'
 import { StoreProps } from '~@pages/all-stores/types'
+import { Cards } from '~@pages/all-stores/styles'
 
 const AllStores = () => {
 	const { loading, error, data } = useQuery(GET_STORES)
@@ -13,9 +15,9 @@ const AllStores = () => {
 	if (error) return <Error message={error.message} />
 
 	return (
-		<div className="container">
+		<PageContainer>
 			<h2 className="title">Store List</h2>
-			<section className="cards">
+			<Cards>
 				{data.getAllStores.map(({ name, _id }: StoreProps) => (
 					<div className="card" key={_id}>
 						<Link to={`/store/${_id}`}>
@@ -25,8 +27,8 @@ const AllStores = () => {
 						</Link>
 					</div>
 				))}
-			</section>
-		</div>
+			</Cards>
+		</PageContainer>
 	)
 }
 

@@ -1,14 +1,13 @@
-@mixin timing-function {
-	animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-}
+import { keyframes } from 'styled-components'
+import { timingFunctionMixin } from '~@styles/utils/mixins'
 
-@keyframes bounceFromTop {
+export const bounceFromTop = keyframes`
 	from,
 	60%,
 	75%,
 	90%,
 	to {
-		@include timing-function;
+		${timingFunctionMixin};
 	}
 	0% {
 		opacity: 0;
@@ -27,4 +26,4 @@
 	to {
 		transform: translateX(-50%);
 	}
-}
+`

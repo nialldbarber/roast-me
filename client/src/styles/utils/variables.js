@@ -10,9 +10,11 @@ export const theme = {
 	// Fonts
 	font: "'HKGrotesk', sans-serif",
 	// RAG
-	ragRed: '#fa594e',
-	ragOrange: '#ff8d5d',
-	ragGreen: '#3ecf8e',
+	rag: {
+		error: '#fa594e',
+		warning: '#ff8d5d',
+		success: '#3ecf8e'
+	},
 	// Box shadow
 	bs: '0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.02)',
 	// Dimensions

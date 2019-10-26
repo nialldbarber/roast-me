@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
-import { FullPage } from '~@styles/layouts/full-page'
+import { PageContainer } from '~@styles/components/container'
 
 const PageNotFound: FC = () => (
-	<FullPage className="container">
+	<PageContainer>
 		<h2 className="title">This page does not exist!</h2>
 		<p />
-	</FullPage>
+	</PageContainer>
 )
 
 export default PageNotFound

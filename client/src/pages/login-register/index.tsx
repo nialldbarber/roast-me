@@ -3,6 +3,7 @@ import Register from '~@components/register'
 import Login from '~@components/login'
 import Tab from '~@components/tab'
 import { TabContainer, Wrapper } from '~@pages/login-register/styles'
+import { PageContainer } from '~@styles/components/container'
 
 const LoginRegister: FC = (props) => {
 	const [ visibility, setVisibility ] = useState({ signIn: true, register: false })
@@ -16,7 +17,7 @@ const LoginRegister: FC = (props) => {
 	const { signIn, register } = visibility
 
 	return (
-		<div className="container">
+		<PageContainer>
 			<h2 className="title">Sign In/Register</h2>
 			<Wrapper>
 				<TabContainer>
@@ -30,7 +31,7 @@ const LoginRegister: FC = (props) => {
 				<Login visibility={signIn} page={props} />
 				<Register visibility={register} page={props} />
 			</Wrapper>
-		</div>
+		</PageContainer>
 	)
 }
 

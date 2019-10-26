@@ -13,3 +13,5 @@ export const containerMixin = css`
     padding-left: 72px;
   `};
 `
+
+export const timingFunctionMixin = css`animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);`

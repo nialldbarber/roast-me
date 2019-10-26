@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import Loading from '~@components/loading'
+import { PageContainer } from '~@styles/components/container'
 import { Props } from '~@pages/individual-store/types'
 
 const IndividualStore: FC<Props> = ({ match }) => {
@@ -15,12 +16,12 @@ const IndividualStore: FC<Props> = ({ match }) => {
 	const { name, location, description, rating } = data.getIndividualStore
 
 	return (
-		<div className="container">
+		<PageContainer>
 			<h2 className="store-name">{name}</h2>
 			<p>{location}</p>
 			<p>{description}</p>
 			<p>{rating}</p>
-		</div>
+		</PageContainer>
 	)
 }
 
