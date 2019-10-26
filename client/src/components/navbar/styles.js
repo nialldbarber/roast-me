@@ -13,19 +13,17 @@ export const Nav = styled.header`
 	z-index: 9;
 	${containerMixin};
 
-	header {
-		.logo {
-			&:hover {
-				svg {
-					transform: scale(1.1);
-				}
-			}
-
+	.logo {
+		&:hover {
 			svg {
-				width: 55px;
-				transform: scale(1);
-				transition: transform .125s ${(props) => props.theme.transition};
+				transform: scale(1.1);
 			}
+		}
+
+		svg {
+			width: 55px;
+			transform: scale(1);
+			transition: transform .125s ${(props) => props.theme.transition};
 		}
 	}
 

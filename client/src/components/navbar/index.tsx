@@ -22,13 +22,11 @@ const Navbar: FC = (props) => {
 
 	return (
 		<Nav>
-			<header>
-				<div className="logo">
-					<Link to="/">
-						<SVG src={logo} alt="Logo" aria-label="Logo" />
-					</Link>
-				</div>
-			</header>
+			<div className="logo">
+				<Link to="/">
+					<SVG src={logo} alt="Logo" aria-label="Logo" />
+				</Link>
+			</div>
 			<nav>
 				<ul>
 					{user ? (
