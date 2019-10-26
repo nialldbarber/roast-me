@@ -1,23 +1,23 @@
 import React, { FC, useState, useContext, Fragment } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, withRouter } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
 import { AuthContext } from '~@state/auth'
 import Modal from '~@components/modal'
 import { Nav } from '~@components/navbar/styles'
 import logo from '~@assets/images/logo.svg'
 
-const Navbar: FC = () => {
+const Navbar: FC = (props) => {
 	const { user, logout } = useContext(AuthContext)
 	const [ modal, setModal ] = useState(false)
 
-	const handleModal = () => {
-		setModal(!modal)
-	}
-
 	const handleRemoveModal = (e) => {
-		console.log(e.target)
-		// logout()
-		// setModal(false)
+		if (e.target.id === 'close') {
+			setModal(false)
+		} else {
+			props.history.push('/')
+			logout()
+			setModal(false)
+		}
 	}
 
 	return (
@@ -60,7 +60,7 @@ const Navbar: FC = () => {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to="#" activeClassName="active" onClick={handleModal}>
+								<NavLink to="#" activeClassName="active" onClick={() => setModal(!modal)}>
 									Logout
 								</NavLink>
 							</li>
@@ -74,9 +74,16 @@ const Navbar: FC = () => {
 					)}
 				</ul>
 			</nav>
-			<Modal title="Logout" message="Sure ya wanna?" button="Logout" action={handleRemoveModal} active={modal} />
+			<Modal
+				title="Logout"
+				message="Sure ya wanna?"
+				button="Logout"
+				action={handleRemoveModal}
+				active={modal}
+				close={handleRemoveModal}
+			/>
 		</Nav>
 	)
 }
 
-export default Navbar
+export default withRouter(Navbar)

@@ -5,10 +5,12 @@ import Button from '~@components/button'
 import { Props } from '~@components/modal/types'
 import exit from '~@assets/icons/cross.svg'
 
-const Modal: FC<Props> = ({ title, message, button, action, active }) => (
+const Modal: FC<Props> = ({ title, message, button, action, active, close }) => (
 	<Container className={active ? `active` : ''}>
 		<Box>
-			<SVG src={exit} className="close-btn" />
+			<div className="close-container" id="close" onClick={close}>
+				<SVG src={exit} className="close-btn" />
+			</div>
 			<h3>{title}</h3>
 			<p>{message}</p>
 			<Button text={button} action={action} />

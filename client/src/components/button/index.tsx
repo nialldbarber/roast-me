@@ -3,8 +3,8 @@ import SVG from 'react-inlinesvg'
 import { Btn } from '~@styles/components/button'
 import { Props } from '~@components/button/types'
 
-const Button: FC<Props> = ({ text, icon, action }) => (
-	<Btn className="btn" type="submit" onClick={action}>
+const Button: FC<Props> = ({ text, icon, action, id }) => (
+	<Btn className="btn" type="submit" onClick={action} id={id}>
 		<span>
 			<span>{text}</span>
 			{icon ? <SVG src={icon} className="close-btn" /> : ''}
