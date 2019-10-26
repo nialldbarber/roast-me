@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
 import { AuthContext } from '~@state/auth'
 import Modal from '~@components/modal'
-import { Nav } from './styles'
+import { Nav } from '~@components/navbar/styles'
 import logo from '~@assets/images/logo.svg'
 
 const Navbar: FC = () => {
