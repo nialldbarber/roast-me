@@ -7,7 +7,7 @@ export const Container = styled.div`
 	bottom: 0;
 	right: 0;
 	opacity: 0;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0.6);
 	z-index: -1;
 	display: none;
 
@@ -33,14 +33,22 @@ export const Box = styled.div`
 	transform: translate(-50%, -50%);
 
 	h3 {
+		position: absolute;
+		top: 0;
+		width: 100%;
 		margin: 0;
+		text-align: center;
+		background: ${(props) => props.theme.green};
+		color: ${(props) => props.theme.white};
+		padding: 0.9rem 0;
+		z-index: -1;
 	}
 
 	.close-container {
 		position: absolute;
 		top: 0;
 		left: 0;
-		margin: 1rem;
+		margin: 1.1rem;
 
 		&:after {
 			content: '';
@@ -53,11 +61,11 @@ export const Box = styled.div`
 		}
 
 		svg {
-			width: 20px;
-			height: 20px;
+			width: 15px;
+			height: 15px;
 
 			path {
-				fill: ${(props) => props.theme.green};
+				fill: ${(props) => props.theme.white};
 			}
 		}
 	}
