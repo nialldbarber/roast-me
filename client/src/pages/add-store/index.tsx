@@ -4,6 +4,7 @@ import Toast from '~@components/toast'
 import Button from '~@components/button'
 import Rating from '~@components/rating'
 import { PageContainer } from '~@styles/components/container'
+import { Title } from '~@styles/components/title'
 
 const AddStore: FC = () => {
 	const { store, storeError, handleChange, handleSubmit } = useAddStore()
@@ -12,7 +13,7 @@ const AddStore: FC = () => {
 
 	return (
 		<PageContainer>
-			<h2 className="title">Add Store</h2>
+			<Title>Add Store</Title>
 			<Toast error={status} message={message} link={name} />
 			<form onSubmit={handleSubmit}>
 				<label htmlFor={name}>

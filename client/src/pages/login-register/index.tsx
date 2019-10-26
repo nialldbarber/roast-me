@@ -4,6 +4,7 @@ import Login from '~@components/login'
 import Tab from '~@components/tab'
 import { TabContainer, Wrapper } from '~@pages/login-register/styles'
 import { PageContainer } from '~@styles/components/container'
+import { Title } from '~@styles/components/title'
 
 const LoginRegister: FC = (props) => {
 	const [ visibility, setVisibility ] = useState({ signIn: true, register: false })
@@ -18,7 +19,7 @@ const LoginRegister: FC = (props) => {
 
 	return (
 		<PageContainer>
-			<h2 className="title">Sign In/Register</h2>
+			<Title>Sign In/Register</Title>
 			<Wrapper>
 				<TabContainer>
 					<Tab text="Sign In" click={handleVisibility} name="signIn" active={signIn ? 'active' : ''}>

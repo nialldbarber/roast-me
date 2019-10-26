@@ -7,6 +7,7 @@ import Error from '~@components/error'
 import { PageContainer } from '~@styles/components/container'
 import { StoreProps } from '~@pages/all-stores/types'
 import { Cards } from '~@pages/all-stores/styles'
+import { Title } from '~@styles/components/title'
 
 const AllStores = () => {
 	const { loading, error, data } = useQuery(GET_STORES)
@@ -16,7 +17,7 @@ const AllStores = () => {
 
 	return (
 		<PageContainer>
-			<h2 className="title">Store List</h2>
+			<Title>Store List</Title>
 			<Cards>
 				{data.getAllStores.map(({ name, _id }: StoreProps) => (
 					<div className="card" key={_id}>

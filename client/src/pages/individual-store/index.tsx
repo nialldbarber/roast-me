@@ -4,6 +4,7 @@ import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import Loading from '~@components/loading'
 import { PageContainer } from '~@styles/components/container'
 import { Props } from '~@pages/individual-store/types'
+import { Title } from '~@styles/components/title'
 
 const IndividualStore: FC<Props> = ({ match }) => {
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_STORE, {
@@ -17,7 +18,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 
 	return (
 		<PageContainer>
-			<h2 className="store-name">{name}</h2>
+			<Title>{name}</Title>
 			<p>{location}</p>
 			<p>{description}</p>
 			<p>{rating}</p>
