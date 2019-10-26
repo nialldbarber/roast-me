@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
 import { AuthContext } from '~@state/auth'
 import Modal from '~@components/modal'
+import { Nav } from './styles'
 import logo from '~@assets/images/logo.svg'
 
 const Navbar: FC = () => {
@@ -20,7 +21,7 @@ const Navbar: FC = () => {
 	}
 
 	return (
-		<div className="navbar">
+		<Nav>
 			<header>
 				<div className="logo">
 					<Link to="/">
@@ -74,7 +75,7 @@ const Navbar: FC = () => {
 				</ul>
 			</nav>
 			<Modal title="Logout" message="Sure ya wanna?" button="Logout" action={handleRemoveModal} active={modal} />
-		</div>
+		</Nav>
 	)
 }
 

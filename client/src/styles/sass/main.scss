@@ -7,18 +7,15 @@
 
 // Helpers
 @import './helpers/variables';
-@import './helpers/mixins';
 @import './helpers/media-queries';
 @import './helpers/maps';
 @import './helpers/animations';
 
 // Base
-@import './base/base';
 @import './base/layout';
 @import './base/typography';
 
 // Components
-@import './components/navbar';
 @import './components/toast';
 @import './components/form';
 @import './components/loader';
