@@ -8,6 +8,7 @@ import { PageContainer } from '~@styles/components/container'
 import { StoreProps } from '~@pages/all-stores/types'
 import { Cards } from '~@pages/all-stores/styles'
 import { Title } from '~@styles/components/title'
+import randomCoffeeImageGenerator from '~@utils/randomise'
 
 const AllStores = () => {
 	const { loading, error, data } = useQuery(GET_STORES)
@@ -24,6 +25,7 @@ const AllStores = () => {
 						<Link to={`/store/${_id}`}>
 							<div className="inner" name={name}>
 								<h3>{name}</h3>
+								<img src={randomCoffeeImageGenerator()} alt="Store images" />
 							</div>
 						</Link>
 					</div>

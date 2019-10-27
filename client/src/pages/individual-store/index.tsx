@@ -10,8 +10,8 @@ import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import { Props } from '~@pages/individual-store/types'
-import { ImgWrapper } from './styles'
-import img from '../../assets/images/coffee-background.jpg'
+import { ImgWrapper } from '~@pages/individual-store/styles'
+import img from '~@assets/images/coffee-background.jpg'
 
 const IndividualStore: FC<Props> = ({ match }) => {
 	const { user } = useContext(AuthContext)
@@ -36,7 +36,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 			<p>{description}</p>
 			<p>{rating}</p>
 			{user ? <AddComment id={_id} /> : ''}
-			<Comments comments={comments} />
+			{comments.length > 0 ? <Comments comments={comments} /> : ''}
 			<Likes likes={likes} />
 		</PageContainer>
 	)

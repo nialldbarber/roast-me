@@ -21,6 +21,7 @@ export const Cards = styled.section`
 		background: ${(props) => props.theme.white};
 		box-shadow: rgba(${(props) => props.theme.black}, 0.15) 0px 2px 8px;
 		border-radius: 3px;
+		overflow: hidden;
 
 		a {
 			position: absolute;
@@ -30,15 +31,24 @@ export const Cards = styled.section`
 			right: 0;
 
 			.inner {
+				overflow: hidden;
 				h3 {
-					background: ${(props) => props.theme.green};
 					margin: 0;
 					padding: 0.5rem 1rem;
+					background: ${(props) => props.theme.green};
 					color: ${(props) => props.theme.white};
 				}
 
 				p {
 					padding: 0.5rem 1rem;
+				}
+
+				img {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 150%;
+					height: auto;
 				}
 			}
 		}
