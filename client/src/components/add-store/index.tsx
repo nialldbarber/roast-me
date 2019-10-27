@@ -1,6 +1,5 @@
-import React, { FC, Fragment, useState, useContext } from 'react'
+import React, { FC, Fragment, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
-import { AuthContext } from '~@state/auth'
 import useForm from '~@hooks/useForm'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
@@ -10,8 +9,9 @@ import { CREATE_STORE } from './schema'
 import { GET_STORES } from '../../pages/all-stores/schema'
 import { UserForm } from '~@styles/components/form'
 
+import { Wrapper } from '~@pages/login-register/styles'
+
 const AddStoreForm: FC<Props> = ({ title, visibility, page }) => {
-	const context = useContext(AuthContext)
 	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddStore, {
 		name: '',
@@ -42,51 +42,52 @@ const AddStoreForm: FC<Props> = ({ title, visibility, page }) => {
 
 	return (
 		<Fragment>
-			{title}
-			<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
-				<label htmlFor="name">
-					<input
-						type="text"
-						name="name"
-						value={name}
-						placeholder="Name"
-						className={errors.name ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<label htmlFor="location">
-					<input
-						type="text"
-						name="location"
-						value={location}
-						placeholder="Location"
-						className={errors.location ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<label htmlFor="description">
-					<textarea
-						type="text"
-						name="description"
-						value={description}
-						placeholder="Description"
-						className={errors.description ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<label htmlFor="rating">
-					<input
-						type="text"
-						name="rating"
-						value={rating}
-						placeholder="Rating"
-						className={errors.rating ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<Button type="submit" text="Add" />
-				<FormErrors errors={errors} />
-			</UserForm>
+			<Wrapper>
+				<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
+					<label htmlFor="name">
+						<input
+							type="text"
+							name="name"
+							value={name}
+							placeholder="Name"
+							className={errors.name ? 'error' : ''}
+							onChange={handleChange}
+						/>
+					</label>
+					<label htmlFor="location">
+						<input
+							type="text"
+							name="location"
+							value={location}
+							placeholder="Location"
+							className={errors.location ? 'error' : ''}
+							onChange={handleChange}
+						/>
+					</label>
+					<label htmlFor="description">
+						<textarea
+							type="text"
+							name="description"
+							value={description}
+							placeholder="Description"
+							className={errors.description ? 'error' : ''}
+							onChange={handleChange}
+						/>
+					</label>
+					<label htmlFor="rating">
+						<input
+							type="text"
+							name="rating"
+							value={rating}
+							placeholder="Rating"
+							className={errors.rating ? 'error' : ''}
+							onChange={handleChange}
+						/>
+					</label>
+					<Button type="submit" text="Add" />
+					<FormErrors errors={errors} />
+				</UserForm>
+			</Wrapper>
 		</Fragment>
 	)
 }
