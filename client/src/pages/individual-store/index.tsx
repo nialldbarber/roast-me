@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import Loading from '~@components/loading'
+import Comments from '~@components/comments'
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
+import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import { Props } from '~@pages/individual-store/types'
 
 const IndividualStore: FC<Props> = ({ match }) => {
@@ -14,7 +15,9 @@ const IndividualStore: FC<Props> = ({ match }) => {
 	if (loading) return <Loading />
 	if (error) return <p>Error :( ${error.message}</p>
 
-	const { name, location, description, rating } = data.getIndividualStore
+	const { name, location, description, rating, likes, comments } = data.getIndividualStore
+
+	console.log(comments)
 
 	return (
 		<PageContainer>
@@ -22,6 +25,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 			<p>{location}</p>
 			<p>{description}</p>
 			<p>{rating}</p>
+			<Comments />
 		</PageContainer>
 	)
 }
