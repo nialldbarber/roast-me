@@ -72,6 +72,13 @@ export const Nav = styled.header`
 						}
 					}
 
+					&.logout {
+						color: ${(props) => props.theme.green};
+						&:after {
+							top: 100%;
+						}
+					}
+
 					&.inactive {
 						color: ${(props) => props.theme.green};
 						cursor: initial;

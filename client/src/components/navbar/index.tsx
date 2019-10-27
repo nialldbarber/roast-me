@@ -58,7 +58,7 @@ const Navbar: FC = (props) => {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to="#" activeClassName="active" onClick={() => setModal(!modal)}>
+								<NavLink to="#" activeClassName="logout" onClick={() => setModal(!modal)}>
 									Logout
 								</NavLink>
 							</li>
