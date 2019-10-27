@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import Loading from '~@components/loading'
 import Comments from '~@components/comments'
+import Likes from '~@components/likes'
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
@@ -25,7 +26,8 @@ const IndividualStore: FC<Props> = ({ match }) => {
 			<p>{location}</p>
 			<p>{description}</p>
 			<p>{rating}</p>
-			<Comments />
+			<Comments comments={comments} />
+			<Likes likes={likes} />
 		</PageContainer>
 	)
 }
