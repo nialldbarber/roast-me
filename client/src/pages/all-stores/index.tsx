@@ -6,7 +6,7 @@ import Loading from '~@components/loading'
 import Error from '~@components/error'
 import { PageContainer } from '~@styles/components/container'
 import { StoreProps } from '~@pages/all-stores/types'
-import { Cards } from '~@pages/all-stores/styles'
+import { Cards, LikeCount } from '~@pages/all-stores/styles'
 import { Title } from '~@styles/components/title'
 import randomCoffeeImageGenerator from '~@utils/randomise'
 
@@ -20,12 +20,13 @@ const AllStores = () => {
 		<PageContainer>
 			<Title>Store List</Title>
 			<Cards>
-				{data.getAllStores.map(({ name, _id }: StoreProps) => (
+				{data.getAllStores.map(({ _id, name, likes }: StoreProps) => (
 					<div className="card" key={_id}>
 						<Link to={`/store/${_id}`}>
 							<div className="inner" name={name}>
 								<h3>{name}</h3>
 								<img src={randomCoffeeImageGenerator()} alt="Store images" />
+								{likes.length > 0 ? <LikeCount>{likes.length}</LikeCount> : ''}
 							</div>
 						</Link>
 					</div>

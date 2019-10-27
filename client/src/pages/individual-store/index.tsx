@@ -28,7 +28,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 		<PageContainer>
 			<ImgWrapper>
 				<LazyLoad height={200}>
-					<img src={img} alt="" />
+					<img src={img} alt="Hero image" />
 				</LazyLoad>
 			</ImgWrapper>
 			<Title className="stores">{name}</Title>

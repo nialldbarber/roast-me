@@ -8,6 +8,17 @@ export const GET_STORES = gql`
 			location
 			description
 			rating
+			likes {
+				_id
+				createdAt
+				username
+			}
+			comments {
+				_id
+				createdAt
+				username
+				body
+			}
 		}
 	}
 `
