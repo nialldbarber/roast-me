@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
 import { ThemeProvider } from 'styled-components'
+import ScrollToTop from 'react-router-scroll-top'
 import { client } from '~@utils/apollo'
 import { AuthProvider } from '~@state/auth'
 import Navbar from '~@components/navbar'
@@ -21,15 +22,17 @@ const App: FC = () => (
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				<Router>
-					<Navbar />
-					<Switch>
-						<Route exact path="/" component={AllStores} />
-						<Route path="/add-store" component={AddStore} />
-						<Route path="/profile" component={UserProfile} />
-						<Route path="/login" component={LoginRegister} />
-						<Route path="/store/:id" component={IndividualStore} />
-						<Route component={PageNotFound} />
-					</Switch>
+					<ScrollToTop>
+						<Navbar />
+						<Switch>
+							<Route exact path="/" component={AllStores} />
+							<Route path="/add-store" component={AddStore} />
+							<Route path="/profile" component={UserProfile} />
+							<Route path="/login" component={LoginRegister} />
+							<Route path="/store/:id" component={IndividualStore} />
+							<Route component={PageNotFound} />
+						</Switch>
+					</ScrollToTop>
 				</Router>
 			</ThemeProvider>
 		</AuthProvider>
