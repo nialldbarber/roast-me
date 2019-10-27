@@ -3,7 +3,7 @@ import { media } from '~@styles/utils/media-queries'
 
 export const Cards = styled.section`
 	display: grid;
-	grid-template-columns: repeat(1, 1fr);
+	grid-template-columns: 1fr;
 	grid-auto-rows: 300px;
 	grid-gap: 20px;
 	${media.greaterThan('phablet')`

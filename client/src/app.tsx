@@ -12,8 +12,8 @@ import IndividualStore from '~@pages/individual-store'
 import LoginRegister from '~@pages/login-register'
 import UserProfile from '~@pages/user-profile'
 import PageNotFound from '~@pages/page-not-found'
-import { theme } from './styles/utils/variables'
-import { GlobalStyle } from './styles/components/base'
+import { theme } from '~@styles/utils/variables'
+import { GlobalStyle } from '~@styles/components/base'
 import '~@styles/sass/main.scss'
 
 const App: FC = () => (
