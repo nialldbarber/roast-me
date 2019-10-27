@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
       background: ${(props) => props.theme.offWhite};
       transform: skewY(-12deg);
       top: -200px;
-      z-index: -1;
+      z-index: -2;
     }
   }
 

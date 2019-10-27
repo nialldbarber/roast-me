@@ -1,15 +1,13 @@
 import React, { FC } from 'react'
 import useAddStore from '~@hooks/useAddStore'
 import Toast from '~@components/toast'
-import Button from '~@components/button'
-import Rating from '~@components/rating'
 import AddStoreForm from '~@components/add-store'
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 
 const AddStore: FC = (props) => {
-	const { store, storeError, handleChange, handleSubmit } = useAddStore()
-	const { name, location, description, rating } = store
+	const { store, storeError } = useAddStore()
+	const { name } = store
 	const { status, message } = storeError
 
 	return (

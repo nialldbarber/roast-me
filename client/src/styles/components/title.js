@@ -4,4 +4,8 @@ export const Title = styled.h2`
 	font-size: 5rem;
 	margin: 0.5rem 0 2rem;
 	color: ${(props) => props.theme.green};
+
+	&.stores {
+		color: ${(props) => props.theme.white};
+	}
 `

@@ -1,5 +1,6 @@
 import React, { FC, useContext } from 'react'
 import { useQuery } from '@apollo/react-hooks'
+import LazyLoad from 'react-lazyload'
 import { AuthContext } from '~@state/auth'
 import Loading from '~@components/loading'
 import Comments from '~@components/comments'
@@ -9,6 +10,8 @@ import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import { Props } from '~@pages/individual-store/types'
+import { ImgWrapper } from './styles'
+import img from '../../assets/images/coffee-background.jpg'
 
 const IndividualStore: FC<Props> = ({ match }) => {
 	const { user } = useContext(AuthContext)
@@ -23,7 +26,12 @@ const IndividualStore: FC<Props> = ({ match }) => {
 
 	return (
 		<PageContainer>
-			<Title>{name}</Title>
+			<ImgWrapper>
+				<LazyLoad height={200}>
+					<img src={img} alt="" />
+				</LazyLoad>
+			</ImgWrapper>
+			<Title className="stores">{name}</Title>
 			<p>{location}</p>
 			<p>{description}</p>
 			<p>{rating}</p>
