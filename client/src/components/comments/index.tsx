@@ -4,7 +4,6 @@ import { Container, Wrapper } from '~@components/comments/styles'
 const Comments: FC = ({ comments }) => {
 	return (
 		<Container>
-			<h3>Add a comment!</h3>
 			{comments.map(({ _id, body, username, createdAt }) => (
 				<Wrapper key={_id}>
 					<p>Username: {username}</p>

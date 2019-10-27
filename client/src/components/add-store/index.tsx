@@ -1,18 +1,16 @@
-import React, { FC, Fragment, useState, useContext } from 'react'
+import React, { FC, Fragment, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
-import { AuthContext } from '~@state/auth'
 import useForm from '~@hooks/useForm'
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 import FormErrors from '~@components/form-errors'
-import { Props } from '~@components/form/types'
 import { UserForm } from '~@styles/components/form'
 import { Wrapper } from '~@pages/login-register/styles'
 import { CREATE_STORE } from '~@components/add-store/schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
+import { Props } from '~@components/add-store/types'
 
 const AddStoreForm: FC<Props> = ({ visibility, page }) => {
-	const context = useContext(AuthContext)
 	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddStore, {
 		name: '',

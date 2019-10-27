@@ -1,7 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { useQuery } from '@apollo/react-hooks'
+import { AuthContext } from '~@state/auth'
 import Loading from '~@components/loading'
 import Comments from '~@components/comments'
+import AddComment from '~@components/add-comment'
 import Likes from '~@components/likes'
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
@@ -9,6 +11,7 @@ import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import { Props } from '~@pages/individual-store/types'
 
 const IndividualStore: FC<Props> = ({ match }) => {
+	const { user } = useContext(AuthContext)
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_STORE, {
 		variables: { _id: match.params.id }
 	})
@@ -16,9 +19,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 	if (loading) return <Loading />
 	if (error) return <p>Error :( ${error.message}</p>
 
-	const { name, location, description, rating, likes, comments } = data.getIndividualStore
-
-	console.log(comments)
+	const { _id, name, location, description, rating, likes, comments } = data.getIndividualStore
 
 	return (
 		<PageContainer>
@@ -26,6 +27,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 			<p>{location}</p>
 			<p>{description}</p>
 			<p>{rating}</p>
+			{user ? <AddComment id={_id} /> : ''}
 			<Comments comments={comments} />
 			<Likes likes={likes} />
 		</PageContainer>
