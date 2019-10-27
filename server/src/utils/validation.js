@@ -46,6 +46,31 @@ export const validateLoginInput = (username, password) => {
 	}
 }
 
+export const validateNewStoreInput = (name, location, description, rating) => {
+	const errors = {}
+
+	if (name.trim() === '') {
+		errors.name = 'Name must not be empty'
+	}
+
+	if (location.trim() === '') {
+		errors.location = 'Location must not be empty'
+	}
+
+	if (description.trim() === '') {
+		errors.description = 'Description must not be empty'
+	}
+
+	// if (rating.trim() === '') {
+	// 	errors.rating = 'Rating must not be empty'
+	// }
+
+	return {
+		errors,
+		valid: Object.keys(errors).length < 1
+	}
+}
+
 export const generateToken = (user) => {
 	return sign(
 		{

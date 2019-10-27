@@ -1,6 +1,7 @@
-import { AuthenticationError } from 'apollo-server-express'
+import { AuthenticationError, UserInputError } from 'apollo-server-express'
 import { Store } from '~@models/Store'
 import { checkAuth } from '~@utils/auth'
+import { validateNewStoreInput } from '~@utils/validation'
 
 export const store = {
 	Query: {
@@ -24,6 +25,12 @@ export const store = {
 	Mutation: {
 		createStore: async (_, { _id, name, location, description, rating }, context) => {
 			const store = checkAuth(context)
+
+			const { valid, errors } = validateNewStoreInput(name, location, description, rating)
+
+			if (!valid) {
+				throw new UserInputError('Errors', { errors })
+			}
 
 			const newStore = new Store({
 				user: store.id,
