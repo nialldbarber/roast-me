@@ -37,7 +37,7 @@ const Navbar: FC = (props) => {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to="profile/" activeClassName="active">
+								<NavLink to="/profile" activeClassName="active">
 									Me
 								</NavLink>
 							</li>
