@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ImgWrapper = styled.div`
 	position: absolute;
-	top: 80px;
+	top: 0;
 	left: -3pc;
 	right: -3pc;
 	overflow-y: hidden;

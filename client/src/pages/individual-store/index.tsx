@@ -30,7 +30,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 	const { _id, name, location, description, rating, likes, comments } = data.getIndividualStore
 
 	return (
-		<PageContainer>
+		<PageContainer className="store">
 			<ImgWrapper>
 				<LazyLoad height={200}>
 					<img src={img} alt="Hero image" />
