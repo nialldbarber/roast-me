@@ -5,7 +5,7 @@ import four from '~@assets/images/coffee/4.jpg'
 import five from '~@assets/images/coffee/5.jpg'
 import six from '~@assets/images/coffee/6.jpg'
 
-export default function randomCoffeeImageGenerator(arr) {
-	arr = [ one, two, three, four, five, six ]
+export const randomCoffeeImageGenerator = () => {
+	const arr: Array<string> = [one, two, three, four, five, six]
 	return arr[Math.floor(Math.random() * arr.length)]
 }

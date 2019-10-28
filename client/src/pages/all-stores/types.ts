@@ -1,4 +1,5 @@
 export interface StoreProps {
+  _id: string,
   name: string,
-  _id: string
+  likes: any
 }
