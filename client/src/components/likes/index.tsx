@@ -6,11 +6,14 @@ import Loading from '~@components/loading'
 // Types
 import { Props } from '~@components/likes/types'
 // Schema
-import { LIKE_STORE } from '~@components/likes/schema'
+import { LIKE_STORE } from './schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
 
 const Likes: FC<Props> = ({ likes, id }) => {
 	const [likeStore, { loading, error }] = useMutation(LIKE_STORE, {
+		update(_, result) {
+			console.log(result)
+		},
 		variables: { _id: id },
 		refetchQueries: [{ query: GET_STORES }]
 	})

@@ -4,8 +4,6 @@ export const LIKE_STORE = gql`
 	mutation likeStore($_id: ID!) {
 		likeStore(_id: $_id) {
       _id
-      name
-      username
 			likes {
 				_id
 				username
