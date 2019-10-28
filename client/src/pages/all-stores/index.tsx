@@ -1,14 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
-import { GET_STORES } from '~@pages/all-stores/schema'
+// Components
 import Loading from '~@components/loading'
 import Error from '~@components/error'
-import { PageContainer } from '~@styles/components/container'
+// Styles
 import { StoreProps } from '~@pages/all-stores/types'
 import { Cards, LikeCount } from '~@pages/all-stores/styles'
+import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
+// Utils
 import { randomCoffeeImageGenerator } from '~@utils'
+// Schema 
+import { GET_STORES } from '~@pages/all-stores/schema'
 
 const AllStores = () => {
 	const { loading, error, data } = useQuery(GET_STORES)

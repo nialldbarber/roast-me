@@ -1,16 +1,21 @@
 import React, { FC, useContext } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import LazyLoad from 'react-lazyload'
+// State
 import { AuthContext } from '~@state/auth'
+// Components
 import Loading from '~@components/loading'
 import Comments from '~@components/comments'
 import AddComment from '~@components/add-comment'
 import Likes from '~@components/likes'
+// Styles
+import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
+import { ImgWrapper } from '~@pages/individual-store/styles'
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
-import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
+// Types
 import { Props } from '~@pages/individual-store/types'
-import { ImgWrapper } from '~@pages/individual-store/styles'
+// Assets
 import img from '~@assets/images/coffee-background.jpg'
 
 const IndividualStore: FC<Props> = ({ match }) => {
