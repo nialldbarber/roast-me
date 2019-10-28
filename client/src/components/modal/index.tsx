@@ -1,8 +1,12 @@
 import React, { FC } from 'react'
 import SVG from 'react-inlinesvg'
-import { Container, Box } from '~@components/modal/styles'
+// Components
 import Button from '~@components/button'
+// Styles
+import { Container, Box } from '~@components/modal/styles'
+// Types
 import { Props } from '~@components/modal/types'
+// Assets
 import exit from '~@assets/icons/cross.svg'
 
 const Modal: FC<Props> = ({ title, message, button, action, active, close }) => (
