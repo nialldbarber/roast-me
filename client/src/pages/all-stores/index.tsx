@@ -8,7 +8,7 @@ import { PageContainer } from '~@styles/components/container'
 import { StoreProps } from '~@pages/all-stores/types'
 import { Cards, LikeCount } from '~@pages/all-stores/styles'
 import { Title } from '~@styles/components/title'
-import randomCoffeeImageGenerator from '~@utils/randomise'
+import { randomCoffeeImageGenerator } from '~@utils'
 
 const AllStores = () => {
 	const { loading, error, data } = useQuery(GET_STORES)
