@@ -9,12 +9,12 @@ import { UserForm } from '~@styles/components/form'
 import { ADD_COMMENT } from '~@components/add-comment/schema'
 
 const AddComment: FC<Props> = ({ id }) => {
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddComment, { _id: '', body: '' })
 
 	const { body } = values
 
-	const [ addComment, { loading, error } ] = useMutation(ADD_COMMENT, {
+	const [addComment, { loading, error }] = useMutation(ADD_COMMENT, {
 		update(_, result) {
 			console.log(result)
 		},
@@ -45,7 +45,7 @@ const AddComment: FC<Props> = ({ id }) => {
 						onChange={handleChange}
 					/>
 				</label>
-				<Button type="submit" text="Add" />
+				<Button text="Add" />
 				<FormErrors errors={errors} />
 			</UserForm>
 		</div>

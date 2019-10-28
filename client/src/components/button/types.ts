@@ -1,6 +1,6 @@
 export interface Props {
 	text: string
 	icon?: string
-	action: () => boolean
+	action?: () => boolean
 	id?: string
 }
