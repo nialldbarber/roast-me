@@ -1,17 +1,23 @@
 import React, { FC, Fragment, useState, useContext } from 'react'
 import { useMutation } from '@apollo/react-hooks'
+// State
 import { AuthContext } from '~@state/auth'
+// Hooks
 import useForm from '~@hooks/useForm'
+// Components
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 import FormErrors from '~@components/form-errors'
-import { Props } from '~@components/form/types'
-import { LOGIN_USER } from '~@components/login/schema'
+// Styles
 import { UserForm } from '~@styles/components/form'
+// Schema
+import { LOGIN_USER } from '~@components/login/schema'
+// Types
+import { Props } from '~@components/login/types'
 
-const Login: FC<Props> = ({ title, visibility, page }) => {
+const Login: FC<Props> = ({ visibility, page }) => {
 	const context = useContext(AuthContext)
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleLoginUser, {
 		username: '',
 		password: ''
@@ -19,7 +25,7 @@ const Login: FC<Props> = ({ title, visibility, page }) => {
 
 	const { username, password } = values
 
-	const [ userLogin, { loading, error } ] = useMutation(LOGIN_USER, {
+	const [userLogin, { loading, error }] = useMutation(LOGIN_USER, {
 		update(_, { data: { userLogin: userData } }) {
 			context.login(userData)
 			console.log(userData)
@@ -40,7 +46,6 @@ const Login: FC<Props> = ({ title, visibility, page }) => {
 
 	return (
 		<Fragment>
-			{title}
 			<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
 				<label htmlFor="username">
 					<input
@@ -64,7 +69,7 @@ const Login: FC<Props> = ({ title, visibility, page }) => {
 						onChange={handleChange}
 					/>
 				</label>
-				<Button type="submit" text="Login" />
+				<Button text="Login" />
 				<FormErrors errors={errors} />
 			</UserForm>
 		</Fragment>
