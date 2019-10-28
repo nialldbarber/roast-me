@@ -42,7 +42,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 			<p>{rating}</p>
 			{user ? <AddComment id={_id} /> : ''}
 			{comments.length > 0 ? <Comments comments={comments} /> : ''}
-			<Likes likes={likes} />
+			<Likes likes={likes} id={_id} />
 		</PageContainer>
 	)
 }
