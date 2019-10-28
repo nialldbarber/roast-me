@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const useForm = (callback, initialState = {}) => {
-	const [ values, setValues ] = useState(initialState)
+	const [values, setValues] = useState(initialState)
 
 	const handleChange = (e) => {
 		const { name, value } = e.target
