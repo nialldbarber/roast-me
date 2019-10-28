@@ -1,5 +1,6 @@
 export interface Props {
 	text: string
-	icon: string
-	removeToast: () => boolean
+	icon?: string
+	action: () => boolean
+	id?: string
 }
