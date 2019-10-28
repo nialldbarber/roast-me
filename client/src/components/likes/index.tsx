@@ -6,7 +6,7 @@ import Loading from '~@components/loading'
 // Types
 import { Props } from '~@components/likes/types'
 // Schema
-import { LIKE_STORE } from './schema'
+import { LIKE_STORE } from '~@components/likes/schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
 
 const Likes: FC<Props> = ({ likes, id }) => {
