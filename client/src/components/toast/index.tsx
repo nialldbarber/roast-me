@@ -1,8 +1,11 @@
 import React, { FC, useState } from 'react'
+// Components
 import Button from '~@components/button'
-import close from '~@assets/icons/cross.svg'
 import { Props } from '~@components/toast/types'
+// Styles
 import { Container } from '~@components/toast/styles'
+// Assets
+import close from '~@assets/icons/cross.svg'
 
 const Toast: FC<Props> = ({ error, message }) => {
 	const [active, setActive] = useState(true)
