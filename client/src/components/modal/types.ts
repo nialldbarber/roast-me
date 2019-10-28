@@ -4,4 +4,5 @@ export interface Props {
 	button: string
 	action: () => boolean
 	active: () => boolean
+	close: () => boolean
 }

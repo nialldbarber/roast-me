@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
+// Styles
 import { Wrapper } from '~@components/form-errors/styles'
+// Types 
+import { Props } from '~@components/form-errors/types'
 
-const FormErrors = ({ errors }) => (
+const FormErrors: FC<Props> = ({ errors }) => (
 	<Wrapper>
 		{Object.keys(errors).length > 0 &&
 			Object.values(errors).map((val, i) => (

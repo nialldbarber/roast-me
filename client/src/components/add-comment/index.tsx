@@ -1,20 +1,24 @@
 import React, { FC, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
+// Hooks
 import useForm from '~@hooks/useForm'
+// Components
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 import FormErrors from '~@components/form-errors'
 import { Props } from '~@components/add-comment/types'
+// Styles
 import { UserForm } from '~@styles/components/form'
+// Schema
 import { ADD_COMMENT } from '~@components/add-comment/schema'
 
 const AddComment: FC<Props> = ({ id }) => {
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddComment, { _id: '', body: '' })
 
 	const { body } = values
 
-	const [ addComment, { loading, error } ] = useMutation(ADD_COMMENT, {
+	const [addComment, { loading, error }] = useMutation(ADD_COMMENT, {
 		update(_, result) {
 			console.log(result)
 		},
@@ -45,7 +49,7 @@ const AddComment: FC<Props> = ({ id }) => {
 						onChange={handleChange}
 					/>
 				</label>
-				<Button type="submit" text="Add" />
+				<Button text="Add" />
 				<FormErrors errors={errors} />
 			</UserForm>
 		</div>

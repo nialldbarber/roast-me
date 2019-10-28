@@ -1,17 +1,22 @@
 import React, { FC, Fragment, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
+// Hooks
 import useForm from '~@hooks/useForm'
+// Components
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 import FormErrors from '~@components/form-errors'
-import { UserForm } from '~@styles/components/form'
+// Styles
 import { Wrapper } from '~@pages/login-register/styles'
+import { UserForm } from '~@styles/components/form'
+// Schema
 import { CREATE_STORE } from '~@components/add-store/schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
+// Types
 import { Props } from '~@components/add-store/types'
 
 const AddStoreForm: FC<Props> = ({ visibility, page }) => {
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddStore, {
 		name: '',
 		location: '',
@@ -21,7 +26,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 
 	const { name, location, description, rating } = values
 
-	const [ createStore, { loading, error } ] = useMutation(CREATE_STORE, {
+	const [createStore, { loading, error }] = useMutation(CREATE_STORE, {
 		update(_, result) {
 			page.history.push('/')
 			console.log(result)
@@ -30,7 +35,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
 		variables: { name, location, description, rating: parseInt(rating) },
-		refetchQueries: [ { query: GET_STORES } ]
+		refetchQueries: [{ query: GET_STORES }]
 	})
 
 	if (error) console.log(`Error: ${error}`)
@@ -84,7 +89,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 							onChange={handleChange}
 						/>
 					</label>
-					<Button type="submit" text="Add" />
+					<Button text="Add" />
 					<FormErrors errors={errors} />
 				</UserForm>
 			</Wrapper>
