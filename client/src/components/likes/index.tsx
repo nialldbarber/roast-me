@@ -11,9 +11,6 @@ import { GET_STORES } from '~@pages/all-stores/schema'
 
 const Likes: FC<Props> = ({ likes, id }) => {
 	const [likeStore, { loading, error }] = useMutation(LIKE_STORE, {
-		update(_, result) {
-			console.log(result)
-		},
 		variables: { _id: id },
 		refetchQueries: [{ query: GET_STORES }]
 	})
