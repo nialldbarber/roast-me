@@ -13,7 +13,6 @@ import exit from '~@assets/icons/cross.svg'
 
 const Modal: FC<Props> = ({ title, message, button, action, active, close }) => {
 	useLockBodyScroll()
-
 	return (
 		<Container className={active ? `active` : ''}>
 			<Box>
