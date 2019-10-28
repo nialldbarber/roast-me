@@ -76,14 +76,16 @@ const Navbar: FC = (props) => {
 						)}
 				</ul>
 			</nav>
-			<Modal
-				title="Logout"
-				message="Sure ya wanna?"
-				button="Logout"
-				action={handleRemoveModal}
-				active={modal}
-				close={handleRemoveModal}
-			/>
+			{modal && (
+				<Modal
+					title="Logout"
+					message="Sure ya wanna?"
+					button="Logout"
+					action={handleRemoveModal}
+					active={modal}
+					close={handleRemoveModal}
+				/>
+			)}
 		</Nav>
 	)
 }
