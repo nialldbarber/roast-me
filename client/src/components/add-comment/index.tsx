@@ -1,11 +1,15 @@
 import React, { FC, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
+// Hooks
 import useForm from '~@hooks/useForm'
+// Components
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 import FormErrors from '~@components/form-errors'
 import { Props } from '~@components/add-comment/types'
+// Styles
 import { UserForm } from '~@styles/components/form'
+// Schema
 import { ADD_COMMENT } from '~@components/add-comment/schema'
 
 const AddComment: FC<Props> = ({ id }) => {
