@@ -18,7 +18,6 @@ export const Cards = styled.section`
 	.card {
 		position: relative;
 		border-width: 0px 5px;
-		background: ${(props) => props.theme.white};
 		box-shadow: rgba(${(props) => props.theme.black}, 0.15) 0px 2px 8px;
 		border-radius: 3px;
 		overflow: hidden;
