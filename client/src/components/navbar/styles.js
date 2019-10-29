@@ -14,16 +14,16 @@ export const Nav = styled.header`
 	${containerMixin};
 
 	.logo {
-		&:hover {
-			svg {
-				transform: scale(1.1);
-			}
-		}
-
 		svg {
 			width: 55px;
 			transform: scale(1);
 			transition: transform .125s ${(props) => props.theme.transition};
+		}
+
+		&:hover {
+			svg {
+				transform: scale(1.1);
+			}
 		}
 	}
 
@@ -58,13 +58,7 @@ export const Nav = styled.header`
 						transition: all .125s ${(props) => props.theme.transition};
 					}
 
-					&:hover {
-						color: ${(props) => props.theme.white};
-						&:after {
-							top: 0;
-						}
-					}
-
+					&:hover,
 					&.active {
 						color: ${(props) => props.theme.white};
 						&:after {

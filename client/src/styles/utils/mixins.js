@@ -14,4 +14,10 @@ export const containerMixin = css`
   `};
 `
 
-export const timingFunctionMixin = css`animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);`
+export const timingFunctionMixin = css`animation-timing-function: cubic-bezier(.215, .610, .355, 1.000);`
+
+export const centerMixin = css`
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`

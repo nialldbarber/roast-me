@@ -7,7 +7,7 @@ export const Container = styled.div`
 	left: 50%;
 	display: flex;
 	align-content: center;
-	padding: 0.5rem;
+	padding: .5rem;
 	box-shadow: ${(props) => props.theme.bs};
 	transform: translateX(-50%);
 	transition: 1s ease;
@@ -37,7 +37,7 @@ export const Container = styled.div`
 
 	.btn {
 		padding: 0;
-		margin-left: 0.5rem;
+		margin-left: .5rem;
 		background: none;
 
 		.close-btn {

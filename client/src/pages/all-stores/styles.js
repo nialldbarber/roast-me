@@ -14,11 +14,12 @@ export const Cards = styled.section`
   `};
 	${media.greaterThan('desktop')`
     grid-template-columns: repeat(4, 1fr);
-  `};
+	`};
+	
 	.card {
 		position: relative;
 		border-width: 0px 5px;
-		box-shadow: rgba(${(props) => props.theme.black}, 0.15) 0px 2px 8px;
+		box-shadow: rgba(${(props) => props.theme.black}, .15) 0px 2px 8px;
 		border-radius: 3px;
 		overflow: hidden;
 
@@ -31,15 +32,16 @@ export const Cards = styled.section`
 
 			.inner {
 				overflow: hidden;
+
 				h3 {
 					margin: 0;
-					padding: 0.5rem 1rem;
+					padding: .5rem 1rem;
 					background: ${(props) => props.theme.green};
 					color: ${(props) => props.theme.white};
 				}
 
 				p {
-					padding: 0.5rem 1rem;
+					padding: .5rem 1rem;
 				}
 
 				img {
@@ -60,6 +62,6 @@ export const LikeCount = styled.span`
 	position: absolute;
 	bottom: .5rem;
 	left: .5rem;
-	padding: 0.5rem .7rem;
+	padding: .5rem .7rem;
 	border-radius: 4px;
 `

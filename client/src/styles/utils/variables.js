@@ -17,7 +17,7 @@ export const theme = {
 		success: '#3ecf8e'
 	},
 	// Box shadow
-	bs: '0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.02)',
+	bs: '0 3px 6px rgba(0, 0, 0, .05), 0 3px 6px rgba(0, 0, 0, .02)',
 	// Dimensions
 	headerHeight: '80px',
 	// Timings
