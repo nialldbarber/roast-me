@@ -1,6 +1,36 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'HKGrotesk';
+    font-weight: 100;
+    src: url('../fonts/HKGrotesk-Light.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'HKGrotesk';
+    font-weight: 300;
+    src: url('../fonts/HKGrotesk-Medium.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'HKGrotesk';
+    font-weight: 500;
+    src: url('../fonts/HKGrotesk-Regular.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'HKGrotesk';
+    font-weight: 700;
+    src: url('../fonts/HKGrotesk-SemiBold.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'HKGrotesk';
+    font-weight: 900;
+    src: url('../fonts/HKGrotesk-Bold.otf') format('opentype');
+  }
+
   * {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -11,9 +41,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${(props) => props.theme.font};
     position: relative;
     background: linear-gradient(90deg, ${(props) => props.theme.green}, ${(props) => props.theme.darkGreen} 200%);
+    margin: 0;
+    padding: 0;
+    font-family: ${(props) => props.theme.font};
 
     &:after {
       content: '';

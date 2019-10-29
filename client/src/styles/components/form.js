@@ -26,6 +26,8 @@ export const UserForm = styled.form`
 		margin: 1rem 0;
 		padding: .7rem 1.25rem;
 		width: calc(100% - 2.5rem);
+		font-size: 1rem;
+
 		&.error {
 			border: 1px solid ${(props) => props.theme.green};
 			background: ${(props) => props.theme.opaqueBlueDark};
