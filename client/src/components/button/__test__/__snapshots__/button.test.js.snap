@@ -26,3 +26,15 @@ exports[`<Button /> renders button text 1`] = `
   </span>
 </button>
 `;
+
+exports[`<Button /> return true when function called 1`] = `
+<button
+  className="sc-bdVaJa fyGyMf btn"
+  type="submit"
+>
+  <span>
+    <span />
+    
+  </span>
+</button>
+`;
