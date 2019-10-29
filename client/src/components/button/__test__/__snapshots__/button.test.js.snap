@@ -1,19 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> matches snapshot 1`] = `
-<button
-  className="sc-bdVaJa fyGyMf btn"
-  type="submit"
->
-  <span>
-    <span>
-      Button text
-    </span>
-    
-  </span>
-</button>
-`;
-
 exports[`<Button /> renders button id when passed 1`] = `
 <button
   className="sc-bdVaJa fyGyMf btn"

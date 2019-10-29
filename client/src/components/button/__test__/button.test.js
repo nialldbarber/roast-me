@@ -15,10 +15,4 @@ describe('<Button />', () => {
     const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })
-
-  it('matches snapshot', () => {
-    const message = 'Button text'
-    const tree = renderer.create(<Button text={message} />).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
 })

@@ -6,6 +6,7 @@
     "start": "webpack-dev-server -d",
     "build": "webpack --mode production",
     "test": "jest --watch",
+    "test:update": "jest --updateSnapshot",
     "cover": "jest --coverage",
     "typecheck": "tsc"
   },
