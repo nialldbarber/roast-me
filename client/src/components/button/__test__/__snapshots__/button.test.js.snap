@@ -13,3 +13,30 @@ exports[`<Button /> matches snapshot 1`] = `
   </span>
 </button>
 `;
+
+exports[`<Button /> renders button id when passed 1`] = `
+<button
+  className="sc-bdVaJa fyGyMf btn"
+  id="button-id"
+  type="submit"
+>
+  <span>
+    <span />
+    
+  </span>
+</button>
+`;
+
+exports[`<Button /> renders button text 1`] = `
+<button
+  className="sc-bdVaJa fyGyMf btn"
+  type="submit"
+>
+  <span>
+    <span>
+      Button text
+    </span>
+    
+  </span>
+</button>
+`;
