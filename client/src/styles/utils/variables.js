@@ -6,6 +6,7 @@ export const theme = {
 	green: '#394439',
 	darkGreen: '#687b68',
 	opaqueBlue: '#f0f3f5',
+	opaqueBlueDark: '#cfd2d3',
 	brown: '#8b5a36',
 	// Fonts
 	font: "'HKGrotesk', sans-serif",
