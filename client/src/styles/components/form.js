@@ -24,7 +24,7 @@ export const UserForm = styled.form`
 		background-color: ${(props) => props.theme.opaqueBlue};
 		border-radius: 4px;
 		margin: 1rem 0;
-		padding: 0.7rem 1.25rem;
+		padding: .7rem 1.25rem;
 		width: calc(100% - 2.5rem);
 		&.error {
 			border: 1px solid ${(props) => props.theme.green};
