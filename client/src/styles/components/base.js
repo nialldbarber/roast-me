@@ -38,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
+    line-height: 1.15;
   }
 
   body {
