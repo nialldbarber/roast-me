@@ -6,6 +6,24 @@ import { validateRegisterInput, validateLoginInput, generateToken } from '~@util
 require('dotenv').config({ path: '.env' })
 
 export const user = {
+	Query: {
+		getAllUsers: async () => {
+			try {
+				const user = await User.find().sort({ createdAt: -1 })
+				return user
+			} catch (err) {
+				throw new Error(err)
+			}
+		},
+		getIndividualUser: async (_, { _id }) => {
+			try {
+				const user = await User.findById(_id)
+				return user
+			} catch (err) {
+				throw new Error(err)
+			}
+		}
+	},
 	Mutation: {
 		userLogin: async (_, { username, password }) => {
 			const { valid, errors } = validateLoginInput(username, password)

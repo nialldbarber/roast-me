@@ -17,6 +17,7 @@ type User {
 	email: String!
 	token: String!
 	createdAt: String!
+	storesAdded: [Store!]!
 }
 
 input RegisterInput {
@@ -42,6 +43,8 @@ type Like {
 type Query {
 	getIndividualStore(_id: ID!): Store
 	getAllStores: [Store!]!
+	getIndividualUser(_id: ID!): User
+	getAllUsers: [User!]!
 }
 
 type Mutation {

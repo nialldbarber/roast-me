@@ -4,7 +4,16 @@ const UserSchema = new Schema({
 	username: String,
 	email: String,
 	password: String,
-	createdAt: String
+	createdAt: String,
+	storesAdded: [
+		{
+			name: String,
+			location: String,
+			description: String,
+			createdAt: String,
+			rating: String
+		}
+	]
 })
 
 export const User = model('User', UserSchema)
