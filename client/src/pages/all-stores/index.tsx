@@ -11,7 +11,7 @@ import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 // Utils
 import { randomCoffeeImageGenerator } from '~@utils'
-// Schema 
+// Schema
 import { GET_STORES } from '~@pages/all-stores/schema'
 
 const AllStores = () => {
@@ -19,8 +19,6 @@ const AllStores = () => {
 
 	if (loading) return <Loading />
 	if (error) return <Error message={error.message} />
-
-	console.log(data)
 
 	return (
 		<PageContainer>

@@ -1,35 +1,44 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
+import fontLight from '~@styles/fonts/HKGrotesk-Light.otf'
+import fontMedium from '~@styles/fonts/HKGrotesk-Medium.otf'
+import fontRegular from '~@styles/fonts/HKGrotesk-Regular.otf'
+import fontSemiBold from '~@styles/fonts/HKGrotesk-SemiBold.otf'
+import fontBold from '~@styles/fonts/HKGrotesk-Bold.otf'
+
+export const fontFaces = css`
+	@font-face {
+		font-family: 'HKGrotesk';
+		font-weight: 100;
+		src: url(${fontLight}) format('opentype');
+	}
+
+	@font-face {
+		font-family: 'HKGrotesk';
+		font-weight: 300;
+		src: url(${fontMedium}) format('opentype');
+	}
+
+	@font-face {
+		font-family: 'HKGrotesk';
+		font-weight: 500;
+		src: url(${fontRegular}) format('opentype');
+	}
+
+	@font-face {
+		font-family: 'HKGrotesk';
+		font-weight: 700;
+		src: url(${fontSemiBold}) format('opentype');
+	}
+
+	@font-face {
+		font-family: 'HKGrotesk';
+		font-weight: 900;
+		src: url(${fontBold}) format('opentype');
+	}
+`
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'HKGrotesk';
-    font-weight: 100;
-    src: url('../fonts/HKGrotesk-Light.otf') format('opentype');
-  }
-
-  @font-face {
-    font-family: 'HKGrotesk';
-    font-weight: 300;
-    src: url('../fonts/HKGrotesk-Medium.otf') format('opentype');
-  }
-
-  @font-face {
-    font-family: 'HKGrotesk';
-    font-weight: 500;
-    src: url('../fonts/HKGrotesk-Regular.otf') format('opentype');
-  }
-
-  @font-face {
-    font-family: 'HKGrotesk';
-    font-weight: 700;
-    src: url('../fonts/HKGrotesk-SemiBold.otf') format('opentype');
-  }
-
-  @font-face {
-    font-family: 'HKGrotesk';
-    font-weight: 900;
-    src: url('../fonts/HKGrotesk-Bold.otf') format('opentype');
-  }
+  ${fontFaces};
 
   * {
     text-rendering: optimizeLegibility;
