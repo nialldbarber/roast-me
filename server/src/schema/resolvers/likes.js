@@ -21,7 +21,7 @@ export const likes = {
 				await store.save()
 				return store
 			} else {
-				throw new UserInputError('Post not found')
+				throw new UserInputError('Store not found')
 			}
 		}
 	}

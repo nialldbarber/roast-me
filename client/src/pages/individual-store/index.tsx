@@ -10,7 +10,7 @@ import AddComment from '~@components/add-comment'
 import Likes from '~@components/likes'
 // Styles
 import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
-import { ImgWrapper } from '~@pages/individual-store/styles'
+import { ImgWrapper, StoreInfo } from '~@pages/individual-store/styles'
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 // Types
@@ -37,9 +37,10 @@ const IndividualStore: FC<Props> = ({ match }) => {
 				</LazyLoad>
 			</ImgWrapper>
 			<Title className="stores">{name}</Title>
-			<p>{location}</p>
-			<p>{description}</p>
-			<p>{rating}</p>
+			<StoreInfo>
+				<p>{location}</p>
+				<p>{rating}</p>
+			</StoreInfo>
 			{user ? <AddComment id={_id} /> : ''}
 			{comments.length > 0 ? <Comments comments={comments} /> : ''}
 			<Likes likes={likes} id={_id} />

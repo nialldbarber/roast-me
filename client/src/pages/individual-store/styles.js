@@ -14,3 +14,9 @@ export const ImgWrapper = styled.div`
 		filter: blur(5px);
 	}
 `
+
+export const StoreInfo = styled.div`
+	background: ${(props) => props.theme.white};
+	padding: ${(props) => props.theme.padding};
+	border-radius: ${(props) => props.theme.borderRadius};
+`
