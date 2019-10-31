@@ -38,7 +38,7 @@ const AddComment: FC<Props> = ({ id }) => {
 
 	return (
 		<Wrapper>
-			<h3>Add a comment!</h3>
+			<h3>Add a comment</h3>
 			<UserForm className="active" onSubmit={handleSubmit} noValidate>
 				<label htmlFor="body">
 					<input
