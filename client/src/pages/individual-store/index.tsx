@@ -39,10 +39,10 @@ const IndividualStore: FC<Props> = ({ match }) => {
 				</LazyLoad>
 			</ImgWrapper>
 			<Title className="stores">{name}</Title>
+			<Likes likes={likes} id={_id} />
 			<StoreInfo location={location} rating={rating} />
 			{user ? <AddComment id={_id} /> : ''}
 			{comments.length > 0 ? <Comments comments={comments} /> : ''}
-			<Likes likes={likes} id={_id} />
 		</PageContainer>
 	)
 }
