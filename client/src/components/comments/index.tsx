@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { NavLink } from 'react-router-dom'
 // Styles
 import { Container, Wrapper } from '~@components/comments/styles'
 // Types
@@ -9,7 +10,9 @@ const Comments: FC<Props> = ({ comments }) => (
 		<h3>Comments</h3>
 		{comments.map(({ _id, body, username, createdAt }: CommentProps) => (
 			<Wrapper key={_id}>
-				<p>Username: {username}</p>
+				<NavLink exact to={`/users/${_id}`}>
+					{username}
+				</NavLink>
 				<p>Commented at: {createdAt}</p>
 				<p>{body}</p>
 			</Wrapper>

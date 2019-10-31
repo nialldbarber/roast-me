@@ -72,6 +72,7 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+    transition: color .1s ease;
   }
 
   ul {

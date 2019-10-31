@@ -30,4 +30,13 @@ export const Wrapper = styled.div`
 	background: ${(props) => props.theme.white};
 	border-radius: ${(props) => props.theme.borderRadius};
 	width: 100%;
+
+	a {
+		text-transform: capitalize;
+		color: ${(props) => props.theme.green};
+
+		&:hover {
+			color: ${(props) => props.theme.lightGreen};
+		}
+	}
 `
