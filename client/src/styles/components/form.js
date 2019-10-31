@@ -10,16 +10,20 @@ export const UserForm = styled.form`
 	width: 100%;
 	background: ${(props) => props.theme.white};
 	box-shadow: ${(props) => props.theme.bs};
-	border-top-right-radius: 0;
-	border-top-left-radius: 0;
+	border-radius: ${(props) => props.theme.borderRadius};
 	z-index: -1;
 
 	&.active {
-		display: flex;		
+		display: flex;
 		z-index: 7;
 	}
 
-	input, 
+	&.login {
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+	}
+
+	input,
 	textarea {
 		background-color: ${(props) => props.theme.opaqueBlue};
 		border-radius: 4px;
@@ -35,7 +39,7 @@ export const UserForm = styled.form`
 	}
 
 	textarea {
-	  min-height: 140px;
+		min-height: 140px;
 	}
 
 	button {

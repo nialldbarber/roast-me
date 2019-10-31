@@ -17,7 +17,7 @@ import { Props } from '~@components/login/types'
 
 const Login: FC<Props> = ({ visibility, page }) => {
 	const context = useContext(AuthContext)
-	const [errors, setErrors] = useState<any>({})
+	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleLoginUser, {
 		username: '',
 		password: ''
@@ -25,7 +25,7 @@ const Login: FC<Props> = ({ visibility, page }) => {
 
 	const { username, password } = values
 
-	const [userLogin, { loading, error }] = useMutation(LOGIN_USER, {
+	const [ userLogin, { loading, error } ] = useMutation(LOGIN_USER, {
 		update(_, { data: { userLogin: userData } }) {
 			context.login(userData)
 			console.log(userData)
@@ -46,7 +46,7 @@ const Login: FC<Props> = ({ visibility, page }) => {
 
 	return (
 		<Fragment>
-			<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
+			<UserForm className={`login ${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
 				<label htmlFor="username">
 					<input
 						type="text"
