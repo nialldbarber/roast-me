@@ -21,15 +21,17 @@ const App: FC = () => (
 		<Router>
 			<ScrollToTop>
 				<Navbar />
-				<Switch>
-					<Route exact path="/" component={AllStores} />
-					<Route path="/add-store" component={AddStore} />
-					<Route path="/users" component={UserProfile} />
-					<Route path="/users:/id" component={UserProfile} />
-					<Route path="/login" component={LoginRegister} />
-					<Route path="/store/:id" component={IndividualStore} />
-					<Route component={PageNotFound} />
-				</Switch>
+				<main>
+					<Switch>
+						<Route exact path="/" component={AllStores} />
+						<Route path="/add-store" component={AddStore} />
+						<Route path="/users" component={UserProfile} />
+						<Route path="/users:/id" component={UserProfile} />
+						<Route path="/login" component={LoginRegister} />
+						<Route path="/store/:id" component={IndividualStore} />
+						<Route component={PageNotFound} />
+					</Switch>
+				</main>
 			</ScrollToTop>
 		</Router>
 	</ThemeProvider>
