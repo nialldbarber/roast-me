@@ -30,6 +30,7 @@ export const Wrapper = styled.div`
 	background: ${(props) => props.theme.white};
 	border-radius: ${(props) => props.theme.borderRadius};
 	width: 100%;
+	border-bottom: 1px solid ${(props) => props.theme.lightGreen};
 
 	a {
 		text-transform: capitalize;

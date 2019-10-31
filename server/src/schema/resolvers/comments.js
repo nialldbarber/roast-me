@@ -10,7 +10,7 @@ export const comments = {
 			if (body.trim() === '') {
 				throw new UserInputError('Empty comment', {
 					errors: {
-						body: 'Comment body must not be empty'
+						body: 'Please enter a comment'
 					}
 				})
 			}

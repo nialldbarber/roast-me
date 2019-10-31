@@ -23,7 +23,7 @@ const UserProfile: FC = () => {
 
 	return (
 		<PageContainer>
-			<Title>Hey, {data.getIndividualUser.username}</Title>
+			<Title>{data.getIndividualUser.username}</Title>
 		</PageContainer>
 	)
 }
