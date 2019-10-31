@@ -1,7 +1,7 @@
 import { AuthenticationError, UserInputError } from 'apollo-server-express'
 import { Store } from '~@models/Store'
 import { checkAuth } from '~@utils/auth'
-import { validateNewStoreInput } from '~@utils/validation'
+import { validateNewStoreInput } from '~@utils/validation/store'
 
 export const store = {
 	Query: {
