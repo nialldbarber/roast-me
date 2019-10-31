@@ -69,6 +69,10 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  main {
+    min-height: calc(100vh - ${(props) => props.theme.headerHeight} * 2);
+  }
+
   a {
     text-decoration: none;
     color: inherit;

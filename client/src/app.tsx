@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import ScrollToTop from 'react-router-scroll-top'
 // Components
 import Navbar from '~@components/navbar'
+import Footer from '~@components/footer'
 import AddStore from '~@pages/add-store'
 import AllStores from '~@pages/all-stores'
 import IndividualStore from '~@pages/individual-store'
@@ -32,6 +33,7 @@ const App: FC = () => (
 						<Route component={PageNotFound} />
 					</Switch>
 				</main>
+				<Footer />
 			</ScrollToTop>
 		</Router>
 	</ThemeProvider>
