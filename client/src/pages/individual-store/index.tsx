@@ -31,8 +31,6 @@ const IndividualStore: FC<Props> = ({ match }) => {
 
 	const { _id, name, location, rating, likes, comments } = data.getIndividualStore
 
-	console.log(comments)
-
 	return (
 		<PageContainer className="store">
 			<ImgWrapper>
