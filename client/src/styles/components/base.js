@@ -52,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     position: relative;
-    background: linear-gradient(90deg, ${(props) => props.theme.green}, ${(props) => props.theme.darkGreen} 200%);
+    background: linear-gradient(90deg, ${(props) => props.theme.green}, ${(props) => props.theme.lightGreen} 200%);
     margin: 0;
     padding: 0;
     font-family: ${(props) => props.theme.font};

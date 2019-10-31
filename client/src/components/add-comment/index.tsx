@@ -9,16 +9,17 @@ import FormErrors from '~@components/form-errors'
 import { Props } from '~@components/add-comment/types'
 // Styles
 import { UserForm } from '~@styles/components/form'
+import { Wrapper } from '~@components/add-comment/styles'
 // Schema
 import { ADD_COMMENT } from '~@components/add-comment/schema'
 
 const AddComment: FC<Props> = ({ id }) => {
-	const [errors, setErrors] = useState<any>({})
+	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddComment, { _id: '', body: '' })
 
 	const { body } = values
 
-	const [addComment, { loading, error }] = useMutation(ADD_COMMENT, {
+	const [ addComment, { loading, error } ] = useMutation(ADD_COMMENT, {
 		update(_, result) {
 			console.log(result)
 		},
@@ -36,7 +37,7 @@ const AddComment: FC<Props> = ({ id }) => {
 	}
 
 	return (
-		<div>
+		<Wrapper>
 			<h3>Add a comment!</h3>
 			<UserForm className="active" onSubmit={handleSubmit} noValidate>
 				<label htmlFor="body">
@@ -52,7 +53,7 @@ const AddComment: FC<Props> = ({ id }) => {
 				<Button text="Add" />
 				<FormErrors errors={errors} />
 			</UserForm>
-		</div>
+		</Wrapper>
 	)
 }
 

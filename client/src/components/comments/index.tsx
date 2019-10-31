@@ -6,6 +6,7 @@ import { Props, CommentProps } from '~@components/comments/types'
 
 const Comments: FC<Props> = ({ comments }) => (
 	<Container>
+		<h3>Comments</h3>
 		{comments.map(({ _id, body, username, createdAt }: CommentProps) => (
 			<Wrapper key={_id}>
 				<p>Username: {username}</p>
