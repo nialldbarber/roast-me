@@ -1,9 +1,11 @@
 import React, { FC } from 'react'
+// Styles
+import { Container } from '~@components/footer/styles'
 
 const Footer: FC = () => (
-	<footer>
+	<Container>
 		<p>The footer</p>
-	</footer>
+	</Container>
 )
 
 export default Footer
