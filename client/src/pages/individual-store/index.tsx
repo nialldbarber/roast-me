@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import LazyLoad from 'react-lazyload'
+import SVG from 'react-inlinesvg'
 // State
 import { AuthContext } from '~@state/auth'
 // Components
@@ -17,6 +18,7 @@ import { Title } from '~@styles/components/title'
 import { Props } from '~@pages/individual-store/types'
 // Assets
 import img from '~@assets/images/coffee-background.jpg'
+import finder from '~@assets/icons/finder.svg'
 
 const IndividualStore: FC<Props> = ({ match }) => {
 	const { user } = useContext(AuthContext)
@@ -38,7 +40,10 @@ const IndividualStore: FC<Props> = ({ match }) => {
 			</ImgWrapper>
 			<Title className="stores">{name}</Title>
 			<StoreInfo>
-				<p>{location}</p>
+				<div className="location">
+					<SVG src={finder} alt="Finder" aria-label="Finder" />
+					<h3>{location}</h3>
+				</div>
 				<p>{rating}</p>
 			</StoreInfo>
 			{user ? <AddComment id={_id} /> : ''}
