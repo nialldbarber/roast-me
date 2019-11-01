@@ -29,8 +29,6 @@ export const comments = {
 					createdAt: new Date().toISOString()
 				})
 
-				console.log(store)
-
 				await store.save()
 				return store
 			} else {
