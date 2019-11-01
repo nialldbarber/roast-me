@@ -7,17 +7,18 @@ import { AuthContext } from '~@state/auth'
 import Modal from '~@components/modal'
 // Styles
 import { Nav } from '~@components/navbar/styles'
+// Types
+import { Props } from '~@components/navbar/types'
 // Assets
 import logo from '~@assets/images/logo.svg'
 
-const Navbar: FC = (props) => {
+const Navbar: FC<Props> = (props) => {
 	const { user, logout } = useContext(AuthContext)
-	const [ modal, setModal ] = useState(false)
+	const [modal, setModal] = useState(false)
 
 	const handleRemoveModal = (e: any) => {
-		if (e.target.id === 'close') {
-			setModal(false)
-		} else {
+		if (e.target.id === 'close') setModal(false)
+		else {
 			props.history.push('/')
 			logout()
 			setModal(false)
@@ -47,8 +48,8 @@ const Navbar: FC = (props) => {
 							</li>
 						</Fragment>
 					) : (
-						''
-					)}
+							''
+						)}
 					<li>
 						<NavLink exact to="/" activeClassName="active">
 							Stores
@@ -68,12 +69,12 @@ const Navbar: FC = (props) => {
 							</li>
 						</Fragment>
 					) : (
-						<li>
-							<NavLink to="/login" activeClassName="active">
-								Login
+							<li>
+								<NavLink to="/login" activeClassName="active">
+									Login
 							</NavLink>
-						</li>
-					)}
+							</li>
+						)}
 				</ul>
 			</nav>
 			{modal && (
