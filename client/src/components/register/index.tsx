@@ -13,11 +13,11 @@ import { UserForm } from '~@styles/components/form'
 // Schema
 import { REGISTER_USER } from '~@components/register/schema'
 // Types
-import { Props } from '~@components/register/types'
+import { Props, Values } from '~@components/register/types'
 
 const Register: FC<Props> = ({ visibility, page }) => {
 	const context = useContext(AuthContext)
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleRegisterUser, {
 		username: '',
 		email: '',
@@ -25,9 +25,9 @@ const Register: FC<Props> = ({ visibility, page }) => {
 		confirmPassword: ''
 	})
 
-	const { username, email, password, confirmPassword } = values
+	const { username, email, password, confirmPassword }: Values = values
 
-	const [ registerUser, { loading, error } ] = useMutation(REGISTER_USER, {
+	const [registerUser, { loading, error }] = useMutation(REGISTER_USER, {
 		update(_, { data: { registerUser: userData } }) {
 			console.log(userData)
 			context.login(userData)
@@ -47,52 +47,50 @@ const Register: FC<Props> = ({ visibility, page }) => {
 	}
 
 	return (
-		<Fragment>
-			<UserForm className={`login ${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
-				<label htmlFor="username">
-					<input
-						type="text"
-						name="username"
-						value={username}
-						placeholder="Username"
-						className={errors.username ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<label htmlFor="email">
-					<input
-						type="text"
-						name="email"
-						value={email}
-						placeholder="Email"
-						className={errors.email ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<label htmlFor="password">
-					<input
-						type="password"
-						name="password"
-						value={password}
-						placeholder="Password"
-						className={errors.password ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<label htmlFor="confirmPassword">
-					<input
-						type="password"
-						name="confirmPassword"
-						value={confirmPassword}
-						placeholder="Confirm Password"
-						className={errors.confirmPassword ? 'error' : ''}
-						onChange={handleChange}
-					/>
-				</label>
-				<Button text="Register" />
-				<FormErrors errors={errors} />
-			</UserForm>
-		</Fragment>
+		<UserForm className={`login ${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
+			<label htmlFor="username">
+				<input
+					type="text"
+					name="username"
+					value={username}
+					placeholder="Username"
+					className={errors.username ? 'error' : ''}
+					onChange={handleChange}
+				/>
+			</label>
+			<label htmlFor="email">
+				<input
+					type="text"
+					name="email"
+					value={email}
+					placeholder="Email"
+					className={errors.email ? 'error' : ''}
+					onChange={handleChange}
+				/>
+			</label>
+			<label htmlFor="password">
+				<input
+					type="password"
+					name="password"
+					value={password}
+					placeholder="Password"
+					className={errors.password ? 'error' : ''}
+					onChange={handleChange}
+				/>
+			</label>
+			<label htmlFor="confirmPassword">
+				<input
+					type="password"
+					name="confirmPassword"
+					value={confirmPassword}
+					placeholder="Confirm Password"
+					className={errors.confirmPassword ? 'error' : ''}
+					onChange={handleChange}
+				/>
+			</label>
+			<Button text="Register" />
+			<FormErrors errors={errors} />
+		</UserForm>
 	)
 }
 
