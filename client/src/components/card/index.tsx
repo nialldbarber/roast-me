@@ -10,7 +10,7 @@ import { Props } from '~@components/card/types'
 const Card: FC<Props> = ({ id, name, likes }) => (
 	<div className="card">
 		<Link to={`/store/${id}`}>
-			<div className="inner" name={name}>
+			<div className="inner">
 				<h3>{name}</h3>
 				<img src={randomCoffeeImageGenerator()} alt="Store images" />
 				{likes.length > 0 ? <LikeCount>{likes.length}</LikeCount> : ''}
