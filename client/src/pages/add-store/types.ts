@@ -1,3 +1,3 @@
 export interface Props {
-  props: any
+  props: void
 }

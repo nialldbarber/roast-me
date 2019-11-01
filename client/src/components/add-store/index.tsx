@@ -71,7 +71,6 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 					</label>
 					<label htmlFor="description">
 						<textarea
-							type="text"
 							name="description"
 							value={description}
 							placeholder="Description"
