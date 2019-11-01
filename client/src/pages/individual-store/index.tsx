@@ -27,7 +27,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 	})
 
 	if (loading) return <Loading />
-	if (error) return <p>Error :( ${error.message}</p>
+	if (error) return <p>Error ${error.message}</p>
 
 	const { _id, name, location, rating, likes, comments } = data.getIndividualStore
 
