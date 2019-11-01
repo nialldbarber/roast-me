@@ -8,10 +8,10 @@ import { TabContainer, Wrapper } from '~@pages/login-register/styles'
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 // Types
-import { StateProps } from '~@pages/login-register/types'
+import { Props, StateProps } from '~@pages/login-register/types'
 
-const LoginRegister: FC = (props) => {
-	const [ visibility, setVisibility ] = useState<StateProps>({
+const LoginRegister: FC<Props> = (props) => {
+	const [visibility, setVisibility] = useState<StateProps>({
 		signIn: true,
 		register: false
 	})
