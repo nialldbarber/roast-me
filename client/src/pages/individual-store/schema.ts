@@ -18,6 +18,7 @@ export const GET_INDIVIDUAL_STORE = gql`
 				createdAt
 				username
 				body
+				userId
 			}
 		}
 	}

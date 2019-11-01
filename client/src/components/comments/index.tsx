@@ -10,9 +10,9 @@ const Comments: FC<Props> = ({ comments }) => {
 	return (
 		<Container>
 			<h3>Comments</h3>
-			{comments.map(({ _id, body, username, createdAt }: CommentProps) => (
+			{comments.map(({ _id, body, username, createdAt, userId }: CommentProps) => (
 				<Wrapper key={_id}>
-					<NavLink to={`/user/${_id}`}>
+					<NavLink to={`/user/${userId}`}>
 						{username}
 					</NavLink>
 					<p>Commented at: {createdAt}</p>

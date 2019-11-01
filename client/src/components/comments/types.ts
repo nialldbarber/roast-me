@@ -6,5 +6,6 @@ export interface CommentProps {
   _id: string,
   body: string,
   username: string,
-  createdAt: string
+  createdAt: string,
+  userId: string
 }
