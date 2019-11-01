@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 // Components
 import Loading from '~@components/loading'
+import Error from '~@components/error'
 // Styles
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
@@ -16,7 +17,10 @@ const UserProfile: FC<Props> = ({ match }) => {
 	})
 
 	if (loading) return <Loading />
-	if (error) return <p>Error :( ${error.message}</p>
+	if (error) {
+		console.log(error)
+		return <Error message="Shit" />
+	}
 
 	return (
 		<PageContainer>

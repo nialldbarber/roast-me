@@ -5,6 +5,7 @@ import useForm from '~@hooks/useForm'
 // Components
 import Button from '~@components/button'
 import Loading from '~@components/loading'
+import Error from '~@components/error'
 import FormErrors from '~@components/form-errors'
 import { Props } from '~@components/add-comment/types'
 // Styles
@@ -31,7 +32,7 @@ const AddComment: FC<Props> = ({ id }) => {
 		refetchQueries: [{ query: GET_STORES }]
 	})
 
-	if (error) console.log(`Error: ${error}`)
+	if (error) return <Error message="pooop" />
 	if (loading) return <Loading />
 
 	function handleAddComment() {
