@@ -13,7 +13,7 @@ import { UserForm } from '~@styles/components/form'
 import { CREATE_STORE } from '~@components/add-store/schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
 // Types
-import { Props } from '~@components/add-store/types'
+import { Props, Values } from '~@components/add-store/types'
 
 const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 	const [errors, setErrors] = useState<any>({})
@@ -24,7 +24,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 		rating: ''
 	})
 
-	const { name, location, description, rating } = values
+	const { name, location, description, rating }: Values = values
 
 	const [createStore, { loading, error }] = useMutation(CREATE_STORE, {
 		update(_, result) {
