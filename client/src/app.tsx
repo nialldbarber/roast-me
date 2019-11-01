@@ -30,7 +30,7 @@ const App: FC = () => (
 						<Route exact path="/users/:id" component={UserProfile} />
 						<Route path="/login" component={LoginRegister} />
 						<Route path="/store/:id" component={IndividualStore} />
-						<Route path="/users" component={AllUsers} />
+						<Route path="/community" component={AllUsers} />
 						<Route component={PageNotFound} />
 					</Switch>
 				</main>

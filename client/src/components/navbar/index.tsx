@@ -58,8 +58,8 @@ const Navbar: FC<Props> = (props) => {
 					{user ? (
 						<Fragment>
 							<li>
-								<NavLink to="/users" activeClassName="active">
-									Users
+								<NavLink to="/community" activeClassName="active">
+									Community
 								</NavLink>
 							</li>
 							<li>
