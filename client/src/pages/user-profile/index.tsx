@@ -1,7 +1,5 @@
-import React, { FC, useContext } from 'react'
+import React, { FC } from 'react'
 import { useQuery } from '@apollo/react-hooks'
-// State
-import { AuthContext } from '~@state/auth'
 // Components
 import Loading from '~@components/loading'
 // Styles
@@ -13,7 +11,6 @@ import { GET_INDIVIDUAL_USER } from '~@pages/user-profile/schema'
 import { Props } from '~@pages/user-profile/types'
 
 const UserProfile: FC<Props> = ({ match }) => {
-	const { user } = useContext(AuthContext)
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_USER, {
 		variables: { _id: match.params.id }
 	})
