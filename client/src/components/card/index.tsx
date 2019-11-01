@@ -7,12 +7,12 @@ import { LikeCount } from '~@components/card/styles'
 // Types
 import { Props } from '~@components/card/types'
 
-const Card: FC<Props> = ({ id, name, likes }) => (
+const Card: FC<Props> = ({ id, name, likes, type }) => (
 	<div className="card">
-		<Link to={`/store/${id}`}>
+		<Link to={`/${type}/${id}`}>
 			<div className="inner">
 				<h3>{name}</h3>
-				<img src={randomCoffeeImageGenerator()} alt="Store images" />
+				<img src={randomCoffeeImageGenerator()} alt={`${type} images`} />
 				{likes.length > 0 ? <LikeCount>{likes.length}</LikeCount> : ''}
 			</div>
 		</Link>
