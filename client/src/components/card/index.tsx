@@ -9,7 +9,7 @@ import { Props } from '~@components/card/types'
 
 const Card: FC<Props> = ({ id, name, likes, type }) => (
 	<div className="card">
-		<Link to={`/${type}/${id}`}>
+		<Link to={`/${type.toLowerCase()}/${id}`}>
 			<div className="inner">
 				<h3>{name}</h3>
 				<img src={randomCoffeeImageGenerator()} alt={`${type} images`} />

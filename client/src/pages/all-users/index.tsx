@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 // Components
 import Loading from '~@components/loading'
