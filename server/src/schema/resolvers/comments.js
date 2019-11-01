@@ -1,10 +1,11 @@
 import { AuthenticationError, UserInputError } from 'apollo-server-express'
 import { Store } from '~@models/Store'
+import { User } from '~@models/User'
 import { checkAuth } from '~@utils/auth'
 
 export const comments = {
 	Mutation: {
-		addComment: async (_, { _id, body }, context) => {
+		addComment: async (_, { _id, body, }, context) => {
 			const { username } = checkAuth(context)
 
 			if (body.trim() === '') {
@@ -16,11 +17,15 @@ export const comments = {
 			}
 
 			const store = await Store.findById(_id)
+			const results = await User.find({})
+			const test = results.filter(res => res.username === username)
+			const findUserId = test[0]._id
 
 			if (store) {
 				store.comments.unshift({
 					body,
 					username,
+					userId: findUserId,
 					createdAt: new Date().toISOString()
 				})
 

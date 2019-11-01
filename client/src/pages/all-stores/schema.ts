@@ -18,6 +18,7 @@ export const GET_STORES = gql`
 				createdAt
 				username
 				body
+				userId
 			}
 		}
 	}

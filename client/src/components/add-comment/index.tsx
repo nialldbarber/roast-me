@@ -12,6 +12,7 @@ import { UserForm } from '~@styles/components/form'
 import { Wrapper } from '~@components/add-comment/styles'
 // Schema
 import { ADD_COMMENT } from '~@components/add-comment/schema'
+import { GET_STORES } from '~@pages/all-stores/schema'
 
 const AddComment: FC<Props> = ({ id }) => {
 	const [errors, setErrors] = useState<any>({})
@@ -26,7 +27,8 @@ const AddComment: FC<Props> = ({ id }) => {
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
-		variables: { _id: id, body }
+		variables: { _id: id, body },
+		refetchQueries: [{ query: GET_STORES }]
 	})
 
 	if (error) console.log(`Error: ${error}`)

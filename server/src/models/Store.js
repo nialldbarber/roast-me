@@ -27,7 +27,8 @@ const storeSchema = new Schema({
 		{
 			body: String,
 			username: String,
-			createdAt: String
+			createdAt: String,
+			userId: String
 		}
 	],
 	likes: [
@@ -37,6 +38,7 @@ const storeSchema = new Schema({
 		}
 	],
 	username: String,
+	userId: String,
 	user: {
 		type: Schema.Types.ObjectId,
 		ref: 'user'
