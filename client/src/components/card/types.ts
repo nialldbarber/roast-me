@@ -1,7 +1,7 @@
 export interface Props {
-	id: string
-	name: string
-	likes: Array<LikeProps>
+	id?: string
+	name?: string
+	likes?: Array<LikeProps>
 }
 
 export interface LikeProps {
