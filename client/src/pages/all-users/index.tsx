@@ -24,7 +24,7 @@ const AllUsers: FC = () => {
       <Title>Store List</Title>
       <Cards>
         {data.getAllUsers.map(({ _id, username }: UserProps) => (
-          <Card key={_id} id={_id} name={username} likes={{}} />
+          <Card key={_id} id={_id} name={username} likes={{}} type="User" />
         ))}
       </Cards>
     </PageContainer>
