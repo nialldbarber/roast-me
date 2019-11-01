@@ -24,7 +24,7 @@ const AllStores = () => {
 			<Title>Store List</Title>
 			<Cards>
 				{data.getAllStores.map(({ _id, name, likes }: StoreProps) => (
-					<Card key={_id} id={_id} name={name} likes={likes} />
+					<Card key={_id} id={_id} name={name} likes={likes} type="Store" />
 				))}
 			</Cards>
 		</PageContainer>

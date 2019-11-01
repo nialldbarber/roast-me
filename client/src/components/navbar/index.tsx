@@ -42,7 +42,7 @@ const Navbar: FC<Props> = (props) => {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to={`/users/${user.id}`} activeClassName="active">
+								<NavLink to={`/user/${user.id}`} activeClassName="active">
 									Me
 								</NavLink>
 							</li>
@@ -50,18 +50,20 @@ const Navbar: FC<Props> = (props) => {
 					) : (
 							''
 						)}
-					<li>
-						<NavLink exact to="/" activeClassName="active">
-							Stores
+					<Fragment>
+						<li>
+							<NavLink exact to="/" activeClassName="active">
+								Stores
 						</NavLink>
-					</li>
+						</li>
+						<li>
+							<NavLink to="/community" activeClassName="active">
+								Community
+						</NavLink>
+						</li>
+					</Fragment>
 					{user ? (
 						<Fragment>
-							<li>
-								<NavLink to="/community" activeClassName="active">
-									Community
-								</NavLink>
-							</li>
 							<li>
 								<NavLink to="/add-store" activeClassName="active">
 									Add Store
