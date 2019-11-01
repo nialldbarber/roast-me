@@ -8,6 +8,8 @@ import { Title } from '~@styles/components/title'
 import { Cards } from '~@pages/all-stores/styles'
 // Schema 
 import { GET_ALL_USERS } from '~@pages/all-users/schema'
+// Types 
+import { UserProps } from '~@pages/all-users/types'
 
 const AllUsers: FC = () => {
   const { loading, error, data } = useQuery(GET_ALL_USERS)
@@ -18,7 +20,7 @@ const AllUsers: FC = () => {
     <PageContainer>
       <Title>Store List</Title>
       <Cards>
-        {data.getAllUsers.map(({ _id, username }) => (
+        {data.getAllUsers.map(({ _id, username }: UserProps) => (
           <Card key={_id} id={_id} name={username} />
         ))}
       </Cards>
