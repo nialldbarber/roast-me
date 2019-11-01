@@ -42,7 +42,7 @@ const Navbar: FC<Props> = (props) => {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to="/users" activeClassName="active">
+								<NavLink to={`/users/${user.id}`} activeClassName="active">
 									Me
 								</NavLink>
 							</li>
@@ -57,6 +57,11 @@ const Navbar: FC<Props> = (props) => {
 					</li>
 					{user ? (
 						<Fragment>
+							<li>
+								<NavLink to="/users" activeClassName="active">
+									Users
+								</NavLink>
+							</li>
 							<li>
 								<NavLink to="/add-store" activeClassName="active">
 									Add Store
