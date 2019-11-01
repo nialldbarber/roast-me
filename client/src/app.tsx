@@ -10,6 +10,7 @@ import AllStores from '~@pages/all-stores'
 import IndividualStore from '~@pages/individual-store'
 import LoginRegister from '~@pages/login-register'
 import UserProfile from '~@pages/user-profile'
+import AllUsers from '~@pages/all-users'
 import PageNotFound from '~@pages/page-not-found'
 // Styles
 import { theme } from '~@styles/utils/variables'
@@ -29,6 +30,7 @@ const App: FC = () => (
 						<Route exact path="/users/:id" component={UserProfile} />
 						<Route path="/login" component={LoginRegister} />
 						<Route path="/store/:id" component={IndividualStore} />
+						<Route path="/users" component={AllUsers} />
 						<Route component={PageNotFound} />
 					</Switch>
 				</main>
