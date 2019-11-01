@@ -9,8 +9,10 @@ import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 // Schema
 import { GET_INDIVIDUAL_USER } from '~@pages/user-profile/schema'
+// Types
+import { Props } from '~@pages/user-profile/types'
 
-const UserProfile: FC = ({ match }) => {
+const UserProfile: FC<Props> = ({ match }) => {
 	const { user } = useContext(AuthContext)
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_USER, {
 		variables: { _id: match.params.id }
