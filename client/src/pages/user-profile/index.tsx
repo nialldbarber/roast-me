@@ -10,10 +10,10 @@ import { Title } from '~@styles/components/title'
 // Schema
 import { GET_INDIVIDUAL_USER } from '~@pages/user-profile/schema'
 
-const UserProfile: FC = () => {
+const UserProfile: FC = ({ match }) => {
 	const { user } = useContext(AuthContext)
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_USER, {
-		variables: { _id: user.id }
+		variables: { _id: match.params.id }
 	})
 
 	if (loading) return <Loading />

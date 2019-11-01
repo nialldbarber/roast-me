@@ -27,7 +27,7 @@ const App: FC = () => (
 					<Switch>
 						<Route exact path="/" component={AllStores} />
 						<Route path="/add-store" component={AddStore} />
-						<Route exact path="/users/:id" component={UserProfile} />
+						<Route exact path="/user/:id" component={UserProfile} />
 						<Route path="/login" component={LoginRegister} />
 						<Route path="/store/:id" component={IndividualStore} />
 						<Route path="/community" component={AllUsers} />
