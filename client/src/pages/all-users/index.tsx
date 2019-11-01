@@ -21,7 +21,7 @@ const AllUsers: FC = () => {
 
   return (
     <PageContainer>
-      <Title>Store List</Title>
+      <Title>Community</Title>
       <Cards>
         {data.getAllUsers.map(({ _id, username }: UserProps) => (
           <Card key={_id} id={_id} name={username} likes={{}} type="User" />
