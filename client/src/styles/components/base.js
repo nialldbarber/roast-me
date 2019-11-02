@@ -37,12 +37,12 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
-    font-weight: 500;
+    font-weight: ${(props) => props.theme.fontWeight};
     transition: color .1s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+    font-weight: ${(props) => props.theme.fontWeight};
   }
 
   p {
