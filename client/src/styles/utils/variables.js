@@ -9,7 +9,7 @@ export const theme = {
 	opaqueBlueDark: '#cfd2d3',
 	brown: '#8b5a36',
 	// Fonts
-	font: "'HKGrotesk', sans-serif",
+	font: "'Ubuntu', sans-serif",
 	// RAG
 	rag: {
 		error: '#fa594e',

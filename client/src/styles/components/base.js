@@ -1,45 +1,6 @@
-import { createGlobalStyle, css } from 'styled-components'
-import fontLight from '~@styles/fonts/HKGrotesk-Light.otf'
-import fontMedium from '~@styles/fonts/HKGrotesk-Medium.otf'
-import fontRegular from '~@styles/fonts/HKGrotesk-Regular.otf'
-import fontSemiBold from '~@styles/fonts/HKGrotesk-SemiBold.otf'
-import fontBold from '~@styles/fonts/HKGrotesk-Bold.otf'
-
-export const fontFaces = css`
-	@font-face {
-		font-family: 'HKGrotesk';
-		font-weight: 100;
-		src: url(${fontLight}) format('opentype');
-	}
-
-	@font-face {
-		font-family: 'HKGrotesk';
-		font-weight: 300;
-		src: url(${fontMedium}) format('opentype');
-	}
-
-	@font-face {
-		font-family: 'HKGrotesk';
-		font-weight: 500;
-		src: url(${fontRegular}) format('opentype');
-	}
-
-	@font-face {
-		font-family: 'HKGrotesk';
-		font-weight: 700;
-		src: url(${fontSemiBold}) format('opentype');
-	}
-
-	@font-face {
-		font-family: 'HKGrotesk';
-		font-weight: 900;
-		src: url(${fontBold}) format('opentype');
-	}
-`
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  ${fontFaces};
-
   * {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -76,7 +37,16 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+    font-weight: 100;
     transition: color .1s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+
+  p {
+    font-weight: 400;
   }
 
   ul {
@@ -95,5 +65,5 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     border: none;
     cursor: pointer;
-  }  
+  }
 `
