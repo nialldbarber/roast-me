@@ -43,7 +43,6 @@ export const Nav = styled.header`
 					padding: calc(${(props) => props.theme.headerHeight} / 3) 1rem;
 					text-align: center;
 					color: ${(props) => props.theme.green};
-					font-weight: 600;
 					border-bottom: none;
 
 					&:after {

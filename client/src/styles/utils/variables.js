@@ -10,6 +10,7 @@ export const theme = {
 	brown: '#8b5a36',
 	// Fonts
 	font: "'Ubuntu', sans-serif",
+	fontWeight: '500',
 	// RAG
 	rag: {
 		error: '#fa594e',

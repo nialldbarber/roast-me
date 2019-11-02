@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
-    font-weight: 100;
+    font-weight: 500;
     transition: color .1s ease;
   }
 
