@@ -8,8 +8,8 @@ export const Container = styled.footer`
 	background: ${(props) => props.theme.green};
 	${containerMixin};
 
-	p {
-		margin: 0;
-		color: ${(props) => props.theme.white};
+	svg {
+		width: 50px;
+		height: 50px;
 	}
 `
