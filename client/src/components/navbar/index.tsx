@@ -25,8 +25,6 @@ const Navbar: FC<Props> = (props) => {
 		}
 	}
 
-	console.log(user)
-
 	return (
 		<Nav>
 			<div className="logo">
