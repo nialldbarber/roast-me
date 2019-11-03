@@ -32,7 +32,11 @@ const AddComment: FC<Props> = ({ id }) => {
 		refetchQueries: [ { query: GET_STORES } ]
 	})
 
-	if (error) return <Error message="Error" />
+	if (error) {
+		console.log(error)
+		return <Error message="Couldn't add comment" />
+	}
+
 	if (loading) return <Loading />
 
 	function handleAddComment() {
