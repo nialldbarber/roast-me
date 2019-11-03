@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import SVG from 'react-inlinesvg'
-// Hooks 
+// Hooks
 import useLockBodyScroll from '~@hooks/useLockBodyScroll'
 // Components
 import Button from '~@components/button'
@@ -18,10 +18,12 @@ const Modal: FC<Props> = ({ title, message, button, action, active, close }) => 
 			<Box>
 				<div className="close-container" id="close" onClick={close}>
 					<SVG src={exit} className="close-btn" />
+					<h3>{title}</h3>
 				</div>
-				<h3>{title}</h3>
-				<p>{message}</p>
-				<Button text={button} action={action} />
+				<div className="modal-body">
+					<p>{message}</p>
+					<Button text={button} action={action} />
+				</div>
 			</Box>
 		</Container>
 	)
