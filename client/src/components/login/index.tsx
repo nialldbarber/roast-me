@@ -12,12 +12,13 @@ import FormErrors from '~@components/form-errors'
 import { UserForm } from '~@styles/components/form'
 // Schema
 import { LOGIN_USER } from '~@components/login/schema'
+import { GET_INDIVIDUAL_USER } from '~@pages/user-profile/schema'
 // Types
 import { Props, Values } from '~@components/login/types'
 
 const Login: FC<Props> = ({ visibility, page }) => {
 	const context = useContext(AuthContext)
-	const [errors, setErrors] = useState<any>({})
+	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleLoginUser, {
 		username: '',
 		password: ''
@@ -25,16 +26,16 @@ const Login: FC<Props> = ({ visibility, page }) => {
 
 	const { username, password }: Values = values
 
-	const [userLogin, { loading, error }] = useMutation(LOGIN_USER, {
+	const [ userLogin, { loading, error } ] = useMutation(LOGIN_USER, {
 		update(_, { data: { userLogin: userData } }) {
 			context.login(userData)
-			console.log(userData)
 			page.history.push('/')
 		},
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
-		variables: { username, password }
+		variables: { username, password },
+		refetchQueries: [ { query: GET_INDIVIDUAL_USER } ]
 	})
 
 	if (error) console.log(`Error: ${error}`)

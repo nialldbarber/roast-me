@@ -14,7 +14,7 @@ import logo from '~@assets/images/logo.svg'
 
 const Navbar: FC<Props> = (props) => {
 	const { user, logout } = useContext(AuthContext)
-	const [modal, setModal] = useState(false)
+	const [ modal, setModal ] = useState(false)
 
 	const handleRemoveModal = (e: any) => {
 		if (e.target.id === 'close') setModal(false)
@@ -48,18 +48,18 @@ const Navbar: FC<Props> = (props) => {
 							</li>
 						</Fragment>
 					) : (
-							''
-						)}
+						''
+					)}
 					<Fragment>
 						<li>
 							<NavLink exact to="/" activeClassName="active">
 								Stores
-						</NavLink>
+							</NavLink>
 						</li>
 						<li>
 							<NavLink to="/community" activeClassName="active">
 								Community
-						</NavLink>
+							</NavLink>
 						</li>
 					</Fragment>
 					{user ? (
@@ -76,12 +76,12 @@ const Navbar: FC<Props> = (props) => {
 							</li>
 						</Fragment>
 					) : (
-							<li>
-								<NavLink to="/login" activeClassName="active">
-									Login
+						<li>
+							<NavLink to="/login" activeClassName="active">
+								Login
 							</NavLink>
-							</li>
-						)}
+						</li>
+					)}
 				</ul>
 			</nav>
 			{modal && (
