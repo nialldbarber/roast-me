@@ -28,8 +28,8 @@ export const Box = styled.div`
 	align-items: center;
 	background: ${(props) => props.theme.white};
 	border-radius: 4px;
-	height: 300px;
-	width: 380px;
+	height: 200px;
+	width: 320px;
 
 	h3 {
 		position: absolute;
