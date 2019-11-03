@@ -57,10 +57,7 @@ export const store = {
 			await currentUser.save()
 			await newStore.save()
 
-			return {
-				newStore,
-				currentUser
-			}
+			return newStore
 		},
 		deleteStore: async (_, { _id }, context) => {
 			const user = checkAuth(context)
