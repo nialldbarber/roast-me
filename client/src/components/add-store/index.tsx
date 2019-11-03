@@ -28,9 +28,8 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 	const { name, location, description, rating }: Values = values
 
 	const [ createStore, { loading, error } ] = useMutation(CREATE_STORE, {
-		update(_, result) {
+		update() {
 			page.history.push('/')
-			console.log(result)
 		},
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
