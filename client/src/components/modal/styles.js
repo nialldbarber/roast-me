@@ -22,6 +22,8 @@ export const Container = styled.div`
 export const Box = styled.div`
 	position: fixed;
 	${centerMixin};
+	display: grid;
+	grid-template-rows: 50px 1fr;
 	background: ${(props) => props.theme.white};
 	border-radius: 4px;
 	height: 200px;
@@ -60,6 +62,21 @@ export const Box = styled.div`
 			path {
 				fill: ${(props) => props.theme.white};
 			}
+		}
+	}
+
+	.modal-body {
+		display: grid;
+		grid-template-rows: 90px 1fr;
+
+		p {
+			align-self: center;
+			text-align: center;
+		}
+
+		button {
+			width: 120px;
+			margin: 0 auto;
 		}
 	}
 `
