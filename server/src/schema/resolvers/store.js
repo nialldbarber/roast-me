@@ -1,5 +1,6 @@
 import { AuthenticationError, UserInputError } from 'apollo-server-express'
 import { Store } from '~@models/Store'
+import { User } from '~@models/User'
 import { checkAuth } from '~@utils/auth'
 import { validateNewStoreInput } from '~@utils/validation/store'
 
@@ -32,8 +33,6 @@ export const store = {
 				throw new UserInputError('Errors', { errors })
 			}
 
-			console.log(user)
-
 			const newStore = new Store({
 				user: user.id,
 				username: user.username,
@@ -45,12 +44,23 @@ export const store = {
 				createdAt: new Date().toISOString()
 			})
 
-			// find user by id
+			// find user by id - add it to user
+			const currentUser = await User.findById(user.id)
+			currentUser.storesAdded.unshift({
+				name,
+				location,
+				description,
+				rating,
+				createdAt: new Date().toISOString()
+			})
 
-			// add the store to storesAdded
-
+			await currentUser.save()
 			await newStore.save()
-			return newStore
+
+			return {
+				newStore,
+				currentUser
+			}
 		},
 		deleteStore: async (_, { _id }, context) => {
 			const user = checkAuth(context)
