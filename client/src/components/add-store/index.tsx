@@ -13,6 +13,7 @@ import { UserForm } from '~@styles/components/form'
 // Schema
 import { CREATE_STORE } from '~@components/add-store/schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
+import { GET_ALL_USERS } from '~@pages/all-users/schema'
 // Types
 import { Props, Values } from '~@components/add-store/types'
 
@@ -35,7 +36,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
 		variables: { name, location, description, rating: parseInt(rating) },
-		refetchQueries: [ { query: GET_STORES } ]
+		refetchQueries: [ { query: GET_STORES }, { query: GET_ALL_USERS } ]
 	})
 
 	if (error) console.log(error)

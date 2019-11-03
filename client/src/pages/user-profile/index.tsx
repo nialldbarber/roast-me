@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { withRouter } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
 // Components
 import Loading from '~@components/loading'
@@ -22,8 +23,6 @@ const UserProfile: FC<Props> = ({ match, history }) => {
 		return <Error message="Shit" history={history} />
 	}
 
-	console.log(data)
-
 	return (
 		<PageContainer>
 			<Title>{data.getIndividualUser.username}</Title>
@@ -34,4 +33,4 @@ const UserProfile: FC<Props> = ({ match, history }) => {
 	)
 }
 
-export default UserProfile
+export default withRouter(UserProfile)
