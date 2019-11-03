@@ -25,6 +25,8 @@ const Navbar: FC<Props> = (props) => {
 		}
 	}
 
+	console.log(user)
+
 	return (
 		<Nav>
 			<div className="logo">
@@ -42,7 +44,7 @@ const Navbar: FC<Props> = (props) => {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to={`/user/${user.id}`} activeClassName="active">
+								<NavLink to={`/user/${user._id || user.id}`} activeClassName="active">
 									Me
 								</NavLink>
 							</li>
