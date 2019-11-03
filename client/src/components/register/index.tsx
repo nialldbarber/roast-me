@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useState, useContext } from 'react'
+import React, { FC, useState, useContext } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 // State
 import { AuthContext } from '~@state/auth'
