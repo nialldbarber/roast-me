@@ -43,6 +43,9 @@ export const store = {
 				createdAt: new Date().toISOString()
 			})
 
+			// find user
+			// add the store to storesAdded
+
 			await newStore.save()
 			return newStore
 		},
