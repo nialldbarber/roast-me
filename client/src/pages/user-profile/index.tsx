@@ -22,8 +22,6 @@ const UserProfile: FC<Props> = ({ match, history }) => {
 		return <Error message="Shit" history={history} />
 	}
 
-	console.log(match)
-
 	return (
 		<PageContainer>
 			<Title>{data.getIndividualUser.username}</Title>
