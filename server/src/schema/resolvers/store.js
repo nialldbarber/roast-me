@@ -24,7 +24,7 @@ export const store = {
 	},
 	Mutation: {
 		createStore: async (_, { _id, name, location, description, rating }, context) => {
-			const store = checkAuth(context)
+			const user = checkAuth(context)
 
 			const { valid, errors } = validateNewStoreInput(name, location, description, rating)
 
@@ -32,9 +32,11 @@ export const store = {
 				throw new UserInputError('Errors', { errors })
 			}
 
+			console.log(user)
+
 			const newStore = new Store({
-				user: store.id,
-				username: store.username,
+				user: user.id,
+				username: user.username,
 				_id,
 				name,
 				location,
@@ -43,7 +45,8 @@ export const store = {
 				createdAt: new Date().toISOString()
 			})
 
-			// find user
+			// find user by id
+
 			// add the store to storesAdded
 
 			await newStore.save()
