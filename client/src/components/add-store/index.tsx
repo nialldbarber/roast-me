@@ -5,6 +5,7 @@ import useForm from '~@hooks/useForm'
 // Components
 import Button from '~@components/button'
 import Loading from '~@components/loading'
+import Error from '~@components/error'
 import FormErrors from '~@components/form-errors'
 // Styles
 import { Wrapper } from '~@pages/login-register/styles'
@@ -16,7 +17,7 @@ import { GET_STORES } from '~@pages/all-stores/schema'
 import { Props, Values } from '~@components/add-store/types'
 
 const AddStoreForm: FC<Props> = ({ visibility, page }) => {
-	const [errors, setErrors] = useState<any>({})
+	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddStore, {
 		name: '',
 		location: '',
@@ -26,7 +27,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 
 	const { name, location, description, rating }: Values = values
 
-	const [createStore, { loading, error }] = useMutation(CREATE_STORE, {
+	const [ createStore, { loading, error } ] = useMutation(CREATE_STORE, {
 		update(_, result) {
 			page.history.push('/')
 			console.log(result)
@@ -35,10 +36,10 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
 		variables: { name, location, description, rating: parseInt(rating) },
-		refetchQueries: [{ query: GET_STORES }]
+		refetchQueries: [ { query: GET_STORES } ]
 	})
 
-	if (error) console.log(`Error: ${error}`)
+	if (error) return <Error />
 	if (loading) return <Loading />
 
 	function handleAddStore() {
