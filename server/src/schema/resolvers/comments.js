@@ -5,7 +5,7 @@ import { checkAuth } from '~@utils/auth'
 
 export const comments = {
 	Mutation: {
-		addComment: async (_, { _id, body, }, context) => {
+		addComment: async (_, { _id, body }, context) => {
 			const { username } = checkAuth(context)
 
 			if (body.trim() === '') {
@@ -17,15 +17,16 @@ export const comments = {
 			}
 
 			const store = await Store.findById(_id)
-			const results = await User.find({})
-			const test = results.filter(res => res.username === username)
-			const findUserId = test[0]._id
+			const getUser = await User.find({})
+
+			const getUserId = getUser.filter((res) => res.username === username)
+			const userId = getUserId[0]._id
 
 			if (store) {
 				store.comments.unshift({
 					body,
 					username,
-					userId: findUserId,
+					userId: userId,
 					createdAt: new Date().toISOString()
 				})
 
