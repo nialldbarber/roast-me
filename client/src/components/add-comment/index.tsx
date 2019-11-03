@@ -22,9 +22,6 @@ const AddComment: FC<Props> = ({ id }) => {
 	const { body }: any = values
 
 	const [ addComment, { loading, error } ] = useMutation(ADD_COMMENT, {
-		update(_, result) {
-			console.log(result)
-		},
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
