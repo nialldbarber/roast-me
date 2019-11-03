@@ -22,9 +22,14 @@ const UserProfile: FC<Props> = ({ match, history }) => {
 		return <Error message="Shit" history={history} />
 	}
 
+	console.log(data)
+
 	return (
 		<PageContainer>
 			<Title>{data.getIndividualUser.username}</Title>
+			<p>
+				{data.getIndividualUser.username} has added {data.getIndividualUser.storesAdded.length} stores
+			</p>
 		</PageContainer>
 	)
 }
