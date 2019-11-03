@@ -12,7 +12,6 @@ import FormErrors from '~@components/form-errors'
 import { UserForm } from '~@styles/components/form'
 // Schema
 import { LOGIN_USER } from '~@components/login/schema'
-import { GET_INDIVIDUAL_USER } from '~@pages/user-profile/schema'
 // Types
 import { Props, Values } from '~@components/login/types'
 
@@ -34,8 +33,7 @@ const Login: FC<Props> = ({ visibility, page }) => {
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
-		variables: { username, password },
-		refetchQueries: [ { query: GET_INDIVIDUAL_USER } ]
+		variables: { username, password }
 	})
 
 	if (error) console.log(`Error: ${error}`)

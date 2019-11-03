@@ -39,7 +39,11 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 		refetchQueries: [ { query: GET_STORES }, { query: GET_ALL_USERS } ]
 	})
 
-	if (error) console.log(error)
+	if (error) {
+		console.log(error)
+		return <Error message="Couldn't add store" />
+	}
+
 	if (loading) return <Loading />
 
 	function handleAddStore() {
