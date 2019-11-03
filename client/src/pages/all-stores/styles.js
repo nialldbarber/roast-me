@@ -19,7 +19,7 @@ export const Cards = styled.section`
 	.card {
 		position: relative;
 		border-width: 0px 5px;
-		box-shadow: rgba(${(props) => props.theme.black}, .15) 0px 2px 8px;
+		box-shadow: rgba(0, 0, 0, .15) 0px 2px 8px;
 		border-radius: 3px;
 		overflow: hidden;
 
