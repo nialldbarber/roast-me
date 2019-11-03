@@ -1,4 +1,4 @@
-# 🔥 Roast Me 🔥
+# ☕ 🔥 Roast Me 🔥 ☕
 
 > An app that rates/roasts local coffee joints.
 
