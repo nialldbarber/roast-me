@@ -16,12 +16,12 @@ import { ADD_COMMENT } from '~@components/add-comment/schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
 
 const AddComment: FC<Props> = ({ id }) => {
-	const [errors, setErrors] = useState<any>({})
+	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddComment, { _id: '', body: '' })
 
 	const { body }: any = values
 
-	const [addComment, { loading, error }] = useMutation(ADD_COMMENT, {
+	const [ addComment, { loading, error } ] = useMutation(ADD_COMMENT, {
 		update(_, result) {
 			console.log(result)
 		},
@@ -29,10 +29,10 @@ const AddComment: FC<Props> = ({ id }) => {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
 		variables: { _id: id, body },
-		refetchQueries: [{ query: GET_STORES }]
+		refetchQueries: [ { query: GET_STORES } ]
 	})
 
-	if (error) return <Error message="pooop" />
+	if (error) return <Error message="Error" />
 	if (loading) return <Loading />
 
 	function handleAddComment() {
