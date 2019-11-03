@@ -17,7 +17,7 @@ import { Props, Values } from '~@components/register/types'
 
 const Register: FC<Props> = ({ visibility, page }) => {
 	const context = useContext(AuthContext)
-	const [errors, setErrors] = useState<any>({})
+	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleRegisterUser, {
 		username: '',
 		email: '',
@@ -27,9 +27,8 @@ const Register: FC<Props> = ({ visibility, page }) => {
 
 	const { username, email, password, confirmPassword }: Values = values
 
-	const [registerUser, { loading, error }] = useMutation(REGISTER_USER, {
+	const [ registerUser, { loading, error } ] = useMutation(REGISTER_USER, {
 		update(_, { data: { registerUser: userData } }) {
-			console.log(userData)
 			context.login(userData)
 			page.history.push('/')
 		},
