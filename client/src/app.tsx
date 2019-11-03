@@ -9,7 +9,7 @@ import AddStore from '~@pages/add-store'
 import AllStores from '~@pages/all-stores'
 import IndividualStore from '~@pages/individual-store'
 import LoginRegister from '~@pages/login-register'
-import UserProfile from '~@pages/user-profile'
+import IndividualUser from '~@pages/individual-user'
 import AllUsers from '~@pages/all-users'
 import PageNotFound from '~@pages/page-not-found'
 // Styles
@@ -27,7 +27,7 @@ const App: FC = () => (
 					<Switch>
 						<Route exact path="/" component={AllStores} />
 						<Route path="/add-store" component={AddStore} />
-						<Route exact path="/user/:id" component={UserProfile} />
+						<Route exact path="/user/:id" component={IndividualUser} />
 						<Route path="/login" component={LoginRegister} />
 						<Route path="/store/:id" component={IndividualStore} />
 						<Route path="/community" component={AllUsers} />
