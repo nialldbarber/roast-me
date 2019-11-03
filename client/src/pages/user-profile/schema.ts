@@ -6,6 +6,11 @@ export const GET_INDIVIDUAL_USER = gql`
 			_id
 			email
 			username
+			storesAdded {
+				_id
+				location
+				name
+			}
 		}
 	}
 `
