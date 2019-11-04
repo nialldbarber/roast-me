@@ -67,7 +67,7 @@ export const Box = styled.div`
 
 	.modal-body {
 		display: grid;
-		grid-template-rows: 90px 1fr;
+		grid-template-rows: 80px 1fr;
 
 		p {
 			align-self: center;
@@ -77,6 +77,8 @@ export const Box = styled.div`
 		button {
 			width: 120px;
 			margin: 0 auto;
+			background: ${(props) => props.theme.green};
+			color: ${(props) => props.theme.white};
 		}
 	}
 `
