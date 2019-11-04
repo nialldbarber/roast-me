@@ -12,7 +12,7 @@ const PageNotFound: FC<Props> = ({ history }) => (
 	<PageContainer>
 		<Title>This page does not exist!</Title>
 		<Container>
-			<Button text="Return home?" action={() => history.push('/')} />
+			<Button type="button" text="Return home?" action={() => history.push('/')} />
 		</Container>
 	</PageContainer>
 )
