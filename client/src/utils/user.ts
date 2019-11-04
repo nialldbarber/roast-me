@@ -1,5 +1,5 @@
-export const getUserBadgeFromStoresAdded = (storesAdded: number) => {
-  if (storesAdded < 0) return
+export const getUserBadgeFromStoresAdded = (storesAdded: number): string => {
+  if (storesAdded < 0) return ''
   if (storesAdded >= 1 && storesAdded <= 5) {
     return 'its between 1 and 5'
   } else if (storesAdded >= 6 && storesAdded <= 15) {
@@ -10,5 +10,7 @@ export const getUserBadgeFromStoresAdded = (storesAdded: number) => {
     return 'its between 26 and 35'
   } else if (storesAdded >= 36 && storesAdded <= 45) {
     return 'its between 36 and 45'
+  } else {
+    return ''
   }
 }
