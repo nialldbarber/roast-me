@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 import { withRouter } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
+// Utils 
+import { getUserBadgeFromStoresAdded } from '~@utils/user'
 // Components
 import Loading from '~@components/loading'
 import Error from '~@components/error'
@@ -29,6 +31,7 @@ const IndividualUser: FC<Props> = ({ match, history }) => {
 			<p>
 				{data.getIndividualUser.username} has added {data.getIndividualUser.storesAdded.length} stores
 			</p>
+			<p>{getUserBadgeFromStoresAdded(data.getIndividualUser.storesAdded.length)}</p>
 		</PageContainer>
 	)
 }
