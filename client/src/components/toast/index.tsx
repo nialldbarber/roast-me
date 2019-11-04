@@ -14,7 +14,7 @@ const Toast: FC<Props> = ({ error, message }) => {
 		<Container className={`toast ${error && active ? 'active' : ''} toast-${error}`}>
 			<p>
 				<span>{message}</span>
-				<Button className="toaster" icon={close} action={() => setActive(false)} />
+				<Button type="button" className="toaster" icon={close} action={() => setActive(false)} />
 			</p>
 		</Container>
 	)

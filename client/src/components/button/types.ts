@@ -3,4 +3,5 @@ export interface Props {
 	icon?: string
 	action?: () => boolean
 	id?: string
+	type: string
 }

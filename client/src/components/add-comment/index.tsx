@@ -16,17 +16,17 @@ import { ADD_COMMENT } from '~@components/add-comment/schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
 
 const AddComment: FC<Props> = ({ id }) => {
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddComment, { _id: '', body: '' })
 
 	const { body }: any = values
 
-	const [ addComment, { loading, error } ] = useMutation(ADD_COMMENT, {
+	const [addComment, { loading, error }] = useMutation(ADD_COMMENT, {
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
 		variables: { _id: id, body },
-		refetchQueries: [ { query: GET_STORES } ]
+		refetchQueries: [{ query: GET_STORES }]
 	})
 
 	if (error) {
@@ -54,7 +54,7 @@ const AddComment: FC<Props> = ({ id }) => {
 						onChange={handleChange}
 					/>
 				</label>
-				<Button text="Add" />
+				<Button type="submit" text="Add" />
 				<FormErrors errors={errors} />
 			</UserForm>
 		</Wrapper>

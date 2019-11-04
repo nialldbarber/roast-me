@@ -22,7 +22,7 @@ const Modal: FC<Props> = ({ title, message, button, action, active, close }) => 
 				</div>
 				<div className="modal-body">
 					<p>{message}</p>
-					<Button text={button} action={action} />
+					<Button type="button" text={button} action={action} />
 				</div>
 			</Box>
 		</Container>

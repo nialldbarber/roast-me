@@ -38,7 +38,7 @@ const Likes: FC<Props> = ({ likes, id }) => {
 	return (
 		<Container>
 			<Wrapper className={liked ? 'active' : ''}>
-				{user ? <Button text={liked ? 'Liked' : 'Like'} action={likeStore} /> : ''}
+				{user ? <Button type="button" text={liked ? 'Liked' : 'Like'} action={likeStore} /> : ''}
 			</Wrapper>
 		</Container>
 	)
