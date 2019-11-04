@@ -2,8 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
+    box-sizing: inherit;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+
+    &:before, 
+    &:after {
+      box-sizing: inherit;
+    }
   }
 
   html {
@@ -36,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: ${(props) => props.theme.green};
     font-weight: ${(props) => props.theme.fontWeight};
     transition: color .1s ease;
   }

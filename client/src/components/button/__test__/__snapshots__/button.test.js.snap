@@ -2,9 +2,8 @@
 
 exports[`<Button /> renders button id when passed 1`] = `
 <button
-  className="sc-bdVaJa fyGyMf btn"
+  className="sc-bdVaJa hrVbaZ btn"
   id="button-id"
-  type="submit"
 >
   <span>
     <span />
@@ -15,8 +14,7 @@ exports[`<Button /> renders button id when passed 1`] = `
 
 exports[`<Button /> renders button text 1`] = `
 <button
-  className="sc-bdVaJa fyGyMf btn"
-  type="submit"
+  className="sc-bdVaJa hrVbaZ btn"
 >
   <span>
     <span>
@@ -29,8 +27,7 @@ exports[`<Button /> renders button text 1`] = `
 
 exports[`<Button /> return true when function called 1`] = `
 <button
-  className="sc-bdVaJa fyGyMf btn"
-  type="submit"
+  className="sc-bdVaJa hrVbaZ btn"
 >
   <span>
     <span />
