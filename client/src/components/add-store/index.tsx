@@ -18,7 +18,7 @@ import { GET_ALL_USERS } from '~@pages/all-users/schema'
 import { Props, Values } from '~@components/add-store/types'
 
 const AddStoreForm: FC<Props> = ({ visibility, page }) => {
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddStore, {
 		name: '',
 		location: '',
@@ -28,7 +28,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 
 	const { name, location, description, rating }: Values = values
 
-	const [ createStore, { loading, error } ] = useMutation(CREATE_STORE, {
+	const [createStore, { loading, error }] = useMutation(CREATE_STORE, {
 		update() {
 			page.history.push('/')
 		},
@@ -36,7 +36,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
 		variables: { name, location, description, rating: parseInt(rating) },
-		refetchQueries: [ { query: GET_STORES }, { query: GET_ALL_USERS } ]
+		refetchQueries: [{ query: GET_STORES }, { query: GET_ALL_USERS }]
 	})
 
 	if (error) {
@@ -93,7 +93,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 							onChange={handleChange}
 						/>
 					</label>
-					<Button text="Add" />
+					<Button type="submit" text="Add" />
 					<FormErrors errors={errors} />
 				</UserForm>
 			</Wrapper>
