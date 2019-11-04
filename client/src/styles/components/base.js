@@ -42,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: ${(props) => props.theme.green};
     font-weight: ${(props) => props.theme.fontWeight};
     transition: color .1s ease;
   }
