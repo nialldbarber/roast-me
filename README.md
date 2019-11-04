@@ -4,7 +4,7 @@
 
 Roast Me is a fullstack app that users will be able to rate local coffee shops in their area. After some time user will be able to get a good understanding of where the best roast is near them.
 
-This app is built using the follwing tech (aka the MERNG stack)...
+This app is built using the following tech (aka the MERNG stack)...
 
 ![Site](static/tech-stack.jpg?raw=true 'Tech')
 
