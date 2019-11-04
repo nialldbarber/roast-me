@@ -20,7 +20,7 @@ const IndividualUser: FC<Props> = ({ match, history }) => {
 	if (loading) return <Loading />
 	if (error) {
 		console.log(error)
-		return <Error message="Shit" history={history} />
+		return <Error message="Error getting user profile" history={history} />
 	}
 
 	return (
