@@ -6,7 +6,7 @@ export const UserForm = styled.form`
 	justify-content: space-evenly;
 	margin-top: 0;
 	padding: 2rem 2rem 1.5rem;
-	max-width: 560px;
+	max-width: ${(props => props.theme.formMaxWidth)};
 	width: 100%;
 	background: ${(props) => props.theme.white};
 	box-shadow: ${(props) => props.theme.bs};
