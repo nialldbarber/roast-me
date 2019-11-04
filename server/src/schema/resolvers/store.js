@@ -33,6 +33,7 @@ export const store = {
 				throw new UserInputError('Errors', { errors })
 			}
 
+			// Create new store
 			const newStore = new Store({
 				user: user.id,
 				username: user.username,
@@ -44,7 +45,7 @@ export const store = {
 				createdAt: new Date().toISOString()
 			})
 
-			// find user by id - add it to user
+			// Add new store to the user that added it
 			const currentUser = await User.findById(user.id)
 			currentUser.storesAdded.unshift({
 				name,
