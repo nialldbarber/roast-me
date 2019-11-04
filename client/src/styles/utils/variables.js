@@ -23,6 +23,7 @@ export const theme = {
 	headerHeight: '80px',
 	padding: '2rem',
 	borderRadius: '4px',
+	formMaxWidth: '560px',
 	// Timings
 	transition: 'cubic-bezier(.91, .01, .37, .88)'
 }
