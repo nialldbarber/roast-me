@@ -63,12 +63,24 @@ export const user = {
 				throw new UserInputError('Errors', { errors })
 			}
 
-			const user = await User.findOne({ username })
+			// Check if username already exists in DB
+			const checkUser = await User.findOne({ username })
 
-			if (user) {
+			if (checkUser) {
 				throw new UserInputError('Username is taken', {
 					errors: {
 						username: 'This username is taken'
+					}
+				})
+			}
+
+			// Check if email exists in DB
+			const checkEmail = await User.findOne({ email })
+
+			if (checkEmail) {
+				throw new UserInputError('Email is taken', {
+					errors: {
+						email: 'This email is taken'
 					}
 				})
 			}

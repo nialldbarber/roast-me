@@ -19,9 +19,7 @@ export const validateRegisterInput = (username, email, password, confirmPassword
 		errors.password = 'Password must not empty'
 	} else if (password !== confirmPassword) {
 		errors.confirmPassword = 'Passwords must match'
-	}
-
-	if (!password.length > 8) {
+	} else if (!password > 8) {
 		errors.password = 'Password must be more than 8 characters'
 	}
 

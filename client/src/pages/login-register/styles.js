@@ -4,7 +4,7 @@ export const TabContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	max-width: 624px;
+	max-width: ${(props => props.theme.formMaxWidth)};
 `
 
 export const Wrapper = styled.div`
