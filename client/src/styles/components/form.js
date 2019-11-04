@@ -29,7 +29,7 @@ export const UserForm = styled.form`
 		border-radius: 4px;
 		margin: 1rem 0;
 		padding: .7rem 1.25rem;
-		width: calc(100% - 2.5rem);
+		width: 100%;
 		font-size: 1rem;
 
 		&.error {
