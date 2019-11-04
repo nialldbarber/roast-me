@@ -15,7 +15,6 @@ import PageNotFound from '~@pages/page-not-found'
 // Styles
 import { theme } from '~@styles/utils/variables'
 import { GlobalStyle } from '~@styles/components/base'
-import '~@styles/sass/main.scss'
 
 const App: FC = () => (
 	<ThemeProvider theme={theme}>
