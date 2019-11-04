@@ -2,8 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
+    box-sizing: inherit;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+
+    &:before, 
+    &:after {
+      box-sizing: inherit;
+    }
   }
 
   html {
