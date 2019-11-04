@@ -1,4 +1,4 @@
-export const getUserBadgeFromStoresAdded = (storesAdded) => {
+export const getUserBadgeFromStoresAdded = (storesAdded: number) => {
   if (storesAdded < 0) return
   if (storesAdded >= 1 && storesAdded <= 5) {
     return 'its between 1 and 5'
