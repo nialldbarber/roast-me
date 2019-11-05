@@ -10,7 +10,7 @@ import mug from '~@assets/images/mug.svg'
 const LikeCount: FC<Props> = ({ likes }) => (
 	<Wrapper>
 		<SVG src={mug} alt="Mug" aria-label="Mug" />
-		<span>{likes.length}</span>
+		<span>{likes && likes.length}</span>
 	</Wrapper>
 )
 

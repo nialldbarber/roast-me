@@ -24,7 +24,7 @@ const Likes: FC<Props> = ({ likes, id }) => {
 
 	useEffect(
 		() => {
-			if (user && likes.find((like) => like.username === user.username)) {
+			if (user && likes && likes.find((like) => like.username === user.username)) {
 				setLiked(true)
 			} else {
 				setLiked(false)
