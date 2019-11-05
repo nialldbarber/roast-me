@@ -2,8 +2,8 @@ import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 // Utils
 import { randomCoffeeImageGenerator } from '~@utils'
-// Styles
-import { LikeCount } from '~@components/card/styles'
+// Components
+import LikeCount from '~@components/like-count'
 // Types
 import { Props } from '~@components/card/types'
 
@@ -13,7 +13,7 @@ const Card: FC<Props> = ({ id, name, likes, type }) => (
 			<div className="inner">
 				<h3>{name}</h3>
 				<img src={type === 'User' ? '' : randomCoffeeImageGenerator()} alt={`${type} images`} />
-				{likes.length > 0 ? <LikeCount>{likes.length}</LikeCount> : ''}
+				{likes.length > 0 ? <LikeCount likes={likes} /> : ''}
 			</div>
 		</Link>
 	</div>
