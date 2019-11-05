@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
 import { withRouter } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
-// Utils 
+// Utils
 import { getUserBadgeFromStoresAdded } from '~@utils/user'
 // Components
 import Loading from '~@components/loading'
 import Error from '~@components/error'
+import Card from '~@components/card'
 // Styles
+import { Cards } from '~@pages/all-stores/styles'
 import { PageContainer } from '~@styles/components/container'
 import { Title } from '~@styles/components/title'
 // Schema
@@ -25,13 +27,17 @@ const IndividualUser: FC<Props> = ({ match, history }) => {
 		return <Error message="Error getting user profile" history={history} />
 	}
 
+	const { username, storesAdded } = data.getIndividualUser
+
+	console.log(storesAdded)
+
 	return (
 		<PageContainer>
-			<Title>{data.getIndividualUser.username}</Title>
-			<p>
-				{data.getIndividualUser.username} has added {data.getIndividualUser.storesAdded.length} stores
-			</p>
-			<p>{getUserBadgeFromStoresAdded(data.getIndividualUser.storesAdded.length)}</p>
+			<Title>{username}</Title>
+			<Cards>
+				{storesAdded.map(({ _id, name }) => <Card key={_id} id={_id} name={name} likes={{}} type="Store" />)}
+			</Cards>
+			<p>{getUserBadgeFromStoresAdded(storesAdded.length)}</p>
 		</PageContainer>
 	)
 }
