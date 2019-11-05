@@ -1,17 +1,20 @@
 import React, { FC, useState, useEffect, useContext } from 'react'
 import { useMutation } from '@apollo/react-hooks'
+import SVG from 'react-inlinesvg'
 // State
 import { AuthContext } from '~@state/auth'
 // Components
 import Button from '~@components/button'
 import Loading from '~@components/loading'
 // Styles
-import { Container, Wrapper } from '~@components/likes/styles'
+import { Container, Wrapper, LikeCount } from '~@components/likes/styles'
 // Schema
 import { LIKE_STORE } from '~@components/likes/schema'
 import { GET_STORES } from '~@pages/all-stores/schema'
 // Types
 import { Props } from '~@components/likes/types'
+// Assets
+import mug from '~@assets/images/mug.svg'
 
 const Likes: FC<Props> = ({ likes, id }) => {
 	const [ liked, setLiked ] = useState<boolean>(false)
@@ -39,9 +42,10 @@ const Likes: FC<Props> = ({ likes, id }) => {
 		<Container>
 			<Wrapper className={liked ? 'active' : ''}>
 				{user ? <Button type="button" text={liked ? 'Liked' : 'Like'} action={likeStore} /> : ''}
-				<div>
-					<div className="like-count">{likes.length}</div>
-				</div>
+				<LikeCount>
+					<SVG src={mug} alt="Mug" aria-label="Mug" />
+					<span>{likes.length}</span>
+				</LikeCount>
 			</Wrapper>
 		</Container>
 	)
