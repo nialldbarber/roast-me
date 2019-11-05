@@ -7,7 +7,7 @@ export const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin: 5rem auto 2rem;
-	padding: 0 1rem .5rem;
+	padding: 0 0 .5rem;
 	max-width: 1000px;
 	background: ${(props) => props.theme.white};
 	border-radius: ${(props) => props.theme.borderRadius};
@@ -27,6 +27,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
 	margin: 1rem 0;
+	padding: 0 2rem;
 	background: ${(props) => props.theme.white};
 	border-radius: ${(props) => props.theme.borderRadius};
 	width: 100%;
