@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 	position: relative;
 	display: flex;
 	width: 40px;
+	height: 160px;
 	margin-left: auto;
 
 	button {
