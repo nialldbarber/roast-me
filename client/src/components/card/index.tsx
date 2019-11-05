@@ -13,7 +13,7 @@ const Card: FC<Props> = ({ id, name, likes, type }) => (
 			<div className="inner">
 				<h3>{name}</h3>
 				<img src={type === 'User' ? '' : randomCoffeeImageGenerator()} alt={`${type} images`} />
-				{likes.length > 0 ? <LikeCount likes={likes} /> : ''}
+				{likes && likes.length > 0 ? <LikeCount likes={likes} /> : ''}
 			</div>
 		</Link>
 	</div>

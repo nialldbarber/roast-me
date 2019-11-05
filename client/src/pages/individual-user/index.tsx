@@ -29,17 +29,17 @@ const IndividualUser: FC<Props> = ({ match, history }) => {
 
 	const { username, storesAdded } = data.getIndividualUser
 
-	console.log(storesAdded)
-
 	return (
 		<PageContainer>
 			<Title>{username}</Title>
 			<Cards>
-				{storesAdded.map(({ _id, name }) => <Card key={_id} id={_id} name={name} likes={{}} type="Store" />)}
+				{storesAdded.map(({ _id, name, likes }) => (
+					<Card key={_id} id={_id} name={name} likes={likes} type="Store" />
+				))}
 			</Cards>
 			<p>{getUserBadgeFromStoresAdded(storesAdded.length)}</p>
 		</PageContainer>
 	)
 }
 
-export default withRouter(IndividualUser)
+export default IndividualUser

@@ -24,7 +24,7 @@ type Store {
 	rating: Int!
 	username: String!
 	comments: [Comment]!
-	likes: [Like]!
+	likes: [Like]
 }
 
 type Comment {

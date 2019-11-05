@@ -10,6 +10,10 @@ export const GET_INDIVIDUAL_USER = gql`
 				_id
 				location
 				name
+				likes {
+					_id
+					createdAt
+				}
 			}
 		}
 	}
