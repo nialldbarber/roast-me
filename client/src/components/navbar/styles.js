@@ -39,7 +39,7 @@ export const Nav = styled.header`
 				a {
 					position: relative;
 					display: block;
-					min-width: 70px;
+					min-width: 115px;
 					padding: calc(${(props) => props.theme.headerHeight} / 3) 1rem;
 					text-align: center;
 					text-transform: capitalize;
