@@ -45,15 +45,8 @@ export const store = {
 				createdAt: new Date().toISOString()
 			})
 
-			// Add new store to the user that added it
 			const currentUser = await User.findById(user.id)
-			currentUser.storesAdded.unshift({
-				name,
-				location,
-				description,
-				rating,
-				createdAt: new Date().toISOString()
-			})
+			currentUser.storesAdded.unshift(newStore)
 
 			await currentUser.save()
 			await newStore.save()

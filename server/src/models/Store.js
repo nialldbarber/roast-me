@@ -41,7 +41,7 @@ const storeSchema = new Schema({
 	userId: String,
 	user: {
 		type: Schema.Types.ObjectId,
-		ref: 'user'
+		ref: 'User'
 	}
 })
 

@@ -19,6 +19,8 @@ const AllStores = () => {
 	if (loading) return <Loading />
 	if (error) return <Error message={error.message} />
 
+	console.log(data)
+
 	return (
 		<PageContainer>
 			<Title>Store List</Title>
