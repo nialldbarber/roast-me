@@ -18,7 +18,7 @@ This app is built using the following tech (aka the MERNG stack)...
 
 - [ ] Add user profile
   - [ ] Profile picture
-  - [ ] Stores user has posted
+  - [x] Stores user has posted
   - [ ] Liked stores
   - [ ] Award badges (milestones) when adding stores
 
