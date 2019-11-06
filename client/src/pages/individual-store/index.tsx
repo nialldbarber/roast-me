@@ -1,6 +1,5 @@
 import React, { FC, useContext } from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import LazyLoad from 'react-lazyload'
 // State
 import { AuthContext } from '~@state/auth'
 // Components
@@ -34,9 +33,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 	return (
 		<PageContainer className="store">
 			<ImgWrapper>
-				<LazyLoad height={200}>
-					<img src={img} alt="Hero image" />
-				</LazyLoad>
+				<img src={img} alt="Hero image" />
 			</ImgWrapper>
 			<Title className="stores">{name}</Title>
 			<Likes likes={likes} id={_id} />
