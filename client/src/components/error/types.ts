@@ -1,4 +1,4 @@
 export interface Props {
-	message: string
-	history: any
+	message?: string
+	history?: any
 }
