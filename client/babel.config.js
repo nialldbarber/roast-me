@@ -8,6 +8,7 @@ module.exports = (api) => {
 			'@babel/plugin-proposal-nullish-coalescing-operator',
 			'@babel/proposal-class-properties',
 			'@babel/proposal-object-rest-spread',
+			'babel-plugin-ts-optchain',
 			[
 				'babel-plugin-root-import',
 				{

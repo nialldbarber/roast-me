@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import { ApolloProvider } from 'react-apollo'
 // State
 import { AuthProvider } from '~@state/auth'
@@ -8,11 +8,10 @@ import { client } from '~@utils/apollo'
 // Components
 import App from '~@app'
 
-render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <ApolloProvider client={client}>
     <AuthProvider>
       <App />
     </AuthProvider>
-  </ApolloProvider>,
-  document.getElementById('root')
+  </ApolloProvider>
 )

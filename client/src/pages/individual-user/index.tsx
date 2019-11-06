@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { withRouter } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
 // Utils
 import { getUserBadgeFromStoresAdded } from '~@utils/user'
@@ -14,7 +13,7 @@ import { Title } from '~@styles/components/title'
 // Schema
 import { GET_INDIVIDUAL_USER } from '~@pages/individual-user/schema'
 // Types
-import { Props } from '~@pages/individual-user/types'
+import { Props, StoresProps } from '~@pages/individual-user/types'
 
 const IndividualUser: FC<Props> = ({ match, history }) => {
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_USER, {
@@ -33,7 +32,7 @@ const IndividualUser: FC<Props> = ({ match, history }) => {
 		<PageContainer>
 			<Title>{username}</Title>
 			<Cards>
-				{storesAdded.map(({ _id, name, likes }) => (
+				{storesAdded.map(({ _id, name, likes }: StoresProps) => (
 					<Card key={_id} id={_id} name={name} likes={likes} type="Store" />
 				))}
 			</Cards>
