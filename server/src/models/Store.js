@@ -23,6 +23,16 @@ const storeSchema = new Schema({
 	rating: {
 		type: Number
 	},
+	ratingAverage: [
+		{
+			taste: Number,
+			variety: Number,
+			atmosphere: Number,
+			wifi: Number,
+			seating: Number,
+			restroomQuality: Number
+		}
+	],
 	comments: [
 		{
 			body: String,
