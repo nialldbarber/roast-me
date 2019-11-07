@@ -30,7 +30,8 @@ const storeSchema = new Schema({
 			atmosphere: Number,
 			wifi: Number,
 			seating: Number,
-			restroomQuality: Number
+			restroomQuality: Number,
+			userId: String
 		}
 	],
 	comments: [
