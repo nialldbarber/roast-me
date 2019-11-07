@@ -1,60 +1,69 @@
 type Query {
-	getIndividualStore(_id: ID!): Store
-	getAllStores: [Store!]!
-	getIndividualUser(_id: ID!): User
-	getAllUsers: [User!]!
+  getIndividualStore(_id: ID!): Store
+  getAllStores: [Store!]!
+  getIndividualUser(_id: ID!): User
+  getAllUsers: [User!]!
 }
 
 type Mutation {
-	createStore(name: String!, location: String!, description: String!, rating: Int!): Store!
-	deleteStore(_id: ID!): String!
-	registerUser(registerInput: RegisterInput): User!
-	userLogin(username: String!, password: String!): User!
-	addComment(_id: String!, body: String!): Store!
-	deleteComment(_id: ID!, commentId: ID!): Store!
-	likeStore(_id: ID!): Store!
+  createStore(name: String!, location: String!, description: String!, rating: Int!): Store!
+  deleteStore(_id: ID!): String!
+  registerUser(registerInput: RegisterInput): User!
+  userLogin(username: String!, password: String!): User!
+  addComment(_id: String!, body: String!): Store!
+  deleteComment(_id: ID!, commentId: ID!): Store!
+  likeStore(_id: ID!): Store!
 }
 
 # Stores
 type Store {
-	_id: ID!
-	name: String!
-	location: String!
-	description: String!
-	rating: Int!
-	username: String!
-	comments: [Comment]!
-	likes: [Like]
+  _id: ID!
+  name: String!
+  location: String!
+  description: String!
+  rating: Int!
+  username: String!
+  comments: [Comment]!
+  likes: [Like]
+}
+
+type Rating {
+  taste: Int!
+  variety: Int!
+  atmosphere: Int!
+  wifi: Int!
+	seating: Int!
+	restroomQuality; Int!
 }
 
 type Comment {
-	_id: ID!
-	createdAt: String!
-	username: String!
-	userId: String
-	body: String!
+  _id: ID!
+  createdAt: String!
+  username: String!
+  userId: String
+  body: String!
 }
 
 type Like {
-	_id: ID!
-	createdAt: String!
-	username: String!
+  _id: ID!
+  createdAt: String!
+  username: String!
 }
 
 # Users
 type User {
-	_id: ID!
-	username: String!
-	email: String!
-	token: String!
-	createdAt: String!
-	storesAdded: [Store]!
+  _id: ID!
+  username: String!
+  email: String!
+  token: String!
+  createdAt: String!
+  storesAdded: [Store]!
 }
 
 # Inputs
 input RegisterInput {
-	username: String!
-	email: String!
-	password: String!
-	confirmPassword: String!
+  username: String!
+  email: String!
+  password: String!
+  confirmPassword: String!
 }
