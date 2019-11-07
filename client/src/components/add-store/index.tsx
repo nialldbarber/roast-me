@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useState } from 'react'
+import React, { FC, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 // Hooks
 import useForm from '~@hooks/useForm'
@@ -51,53 +51,51 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 	}
 
 	return (
-		<Fragment>
-			<Wrapper>
-				<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
-					<label htmlFor="name">
-						<input
-							type="text"
-							name="name"
-							value={name}
-							placeholder="Name"
-							className={errors.name ? 'error' : ''}
-							onChange={handleChange}
-						/>
-					</label>
-					<label htmlFor="location">
-						<input
-							type="text"
-							name="location"
-							value={location}
-							placeholder="Location"
-							className={errors.location ? 'error' : ''}
-							onChange={handleChange}
-						/>
-					</label>
-					<label htmlFor="description">
-						<textarea
-							name="description"
-							value={description}
-							placeholder="Description"
-							className={errors.description ? 'error' : ''}
-							onChange={handleChange}
-						/>
-					</label>
-					<label htmlFor="rating">
-						<input
-							type="text"
-							name="rating"
-							value={rating}
-							placeholder="Rating"
-							className={errors.rating ? 'error' : ''}
-							onChange={handleChange}
-						/>
-					</label>
-					<Button type="submit" text="Add" />
-					<FormErrors errors={errors} />
-				</UserForm>
-			</Wrapper>
-		</Fragment>
+		<Wrapper>
+			<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
+				<label htmlFor="name">
+					<input
+						type="text"
+						name="name"
+						value={name}
+						placeholder="Name"
+						className={errors.name ? 'error' : ''}
+						onChange={handleChange}
+					/>
+				</label>
+				<label htmlFor="location">
+					<input
+						type="text"
+						name="location"
+						value={location}
+						placeholder="Location"
+						className={errors.location ? 'error' : ''}
+						onChange={handleChange}
+					/>
+				</label>
+				<label htmlFor="description">
+					<textarea
+						name="description"
+						value={description}
+						placeholder="Description"
+						className={errors.description ? 'error' : ''}
+						onChange={handleChange}
+					/>
+				</label>
+				<label htmlFor="rating">
+					<input
+						type="text"
+						name="rating"
+						value={rating}
+						placeholder="Rating"
+						className={errors.rating ? 'error' : ''}
+						onChange={handleChange}
+					/>
+				</label>
+				<Button type="submit" text="Add" />
+				<FormErrors errors={errors} />
+			</UserForm>
+		</Wrapper>
 	)
 }
 
