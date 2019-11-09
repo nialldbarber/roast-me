@@ -17,10 +17,6 @@ export const rating = {
 			const getUserId = getUser.filter((user) => user.username === username)
 			const userId = getUserId[0]._id
 
-			// console.log(userId)
-			// console.log('---------------------')
-			// console.log(getStore.ratingAverage)
-
 			//console.log(getStore.ratingAverage.filter((store) => store.userId === userId))
 
 			if (getStore.ratingAverage.find((person) => person._id === userId)) {
