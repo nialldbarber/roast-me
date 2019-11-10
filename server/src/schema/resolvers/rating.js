@@ -6,9 +6,6 @@ import { checkAuth } from '~@utils/auth'
 export const rating = {
 	Mutation: {
 		rateStore: async (_, { _id, taste, variety, atmosphere, wifi, seating, restroomQuality }, context) => {
-			// TODOS:
-			// Make sure that a user can only rate a shop once
-
 			const { username } = checkAuth(context)
 
 			const getStore = await Store.findById(_id)
@@ -16,8 +13,6 @@ export const rating = {
 
 			const getUserId = getUser.filter((user) => user.username === username)
 			const userId = getUserId[0]._id
-
-			//console.log(getStore.ratingAverage.filter((store) => store.userId === userId))
 
 			if (getStore.ratingAverage.find((person) => person._id === userId)) {
 				console.log('it exists on the DB')
@@ -35,26 +30,8 @@ export const rating = {
 				})
 			}
 
-			// if (getStore) {
-			// 	if (getStore.ratingAverage.filter((user) => user.userId === userId)) {
-			// 		getStore.ratingAverage.unshift({
-			// 			taste,
-			// 			variety,
-			// 			atmosphere,
-			// 			wifi,
-			// 			seating,
-			// 			restroomQuality,
-			// 			userId: userId
-			// 		})
-			// 	}
-			// } else {
-			// 	throw new UserInputError('Store not found')
-			// }
-
 			await getStore.save()
 			return getStore
 		}
 	}
 }
-
-// loop through
