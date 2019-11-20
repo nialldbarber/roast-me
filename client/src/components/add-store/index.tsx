@@ -52,7 +52,7 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 
 	return (
 		<Wrapper>
-			<UserForm className={`${visibility ? 'active' : ''}`} onSubmit={handleSubmit} noValidate>
+			<UserForm className={visibility ? 'active' : ''} onSubmit={handleSubmit} noValidate>
 				<label htmlFor="name">
 					<input
 						type="text"
