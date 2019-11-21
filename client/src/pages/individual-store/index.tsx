@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react'
+import React, { FC, useState, useContext } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 // State
 import { AuthContext } from '~@state/auth'
@@ -8,6 +8,7 @@ import Comments from '~@components/comments'
 import AddComment from '~@components/add-comment'
 import Likes from '~@components/likes'
 import StoreInfo from '~@components/store-info'
+import Ratings from '~@components/ratings'
 // Styles
 import { ImgWrapper } from '~@pages/individual-store/styles'
 import { PageContainer } from '~@styles/components/container'
@@ -18,8 +19,11 @@ import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import { Props } from '~@pages/individual-store/types'
 // Assets
 import img from '~@assets/images/coffee-background.jpg'
+// Utils
+import { getAverageRating } from '~@utils/index'
 
 const IndividualStore: FC<Props> = ({ match }) => {
+
 	const { user } = useContext(AuthContext)
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_STORE, {
 		variables: { _id: match.params.id }
@@ -28,9 +32,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 	if (loading) return <Loading />
 	if (error) return <p>Error ${error.message}</p>
 
-	const { _id, name, location, rating, likes, comments } = data.getIndividualStore
-
-	console.log(data)
+	const { _id, name, location, rating, likes, comments, ratingAverage } = data.getIndividualStore
 
 	return (
 		<PageContainer className="store">
@@ -40,6 +42,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 			<Title className="stores">{name}</Title>
 			<Likes likes={likes} id={_id} />
 			<StoreInfo location={location} rating={rating} />
+			<Ratings ratingAverage={ratingAverage} />
 			{user ? <AddComment id={_id} /> : ''}
 			{comments.length > 0 ? <Comments comments={comments} /> : ''}
 		</PageContainer>
