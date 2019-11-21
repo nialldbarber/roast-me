@@ -14,7 +14,7 @@ export const rating = {
 			const getUserId = getUser.filter((user) => user.username === username)
 			const userId = getUserId[0]._id
 
-			if (getStore.ratingAverage.find((person) => person._id === userId)) {
+			if (getStore.ratingAverage.find((person) => person.userId == userId)) {
 				console.log('it exists on the DB')
 				throw new UserInputError('Store not found')
 			} else {
