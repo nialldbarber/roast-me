@@ -1,19 +1,19 @@
 import React, { FC, useState, useEffect } from 'react'
 
-interface MummaProps {
+interface RatingProps {
   ratingAverage: Array<Props>
 }
 
 interface Props {
-  taste: string,
-  variety: string,
-  atmosphere: string,
-  wifi: string,
-  seating: string,
-  restroomQuality: string,
+  taste: any,
+  variety: any,
+  atmosphere: any,
+  wifi: any,
+  seating: any,
+  restroomQuality: any,
 }
 
-const Ratings: FC<MummaProps> = ({ ratingAverage }) => {
+const Ratings: FC<RatingProps> = ({ ratingAverage }) => {
   const [ratings, setRatings] = useState({
     taste: '',
     variety: '',
