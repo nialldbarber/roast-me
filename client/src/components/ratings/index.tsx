@@ -1,17 +1,5 @@
 import React, { FC, useState, useEffect } from 'react'
-
-interface RatingProps {
-  ratingAverage: Array<Props>
-}
-
-interface Props {
-  taste: any,
-  variety: any,
-  atmosphere: any,
-  wifi: any,
-  seating: any,
-  restroomQuality: any,
-}
+import { RatingProps } from '~@components/ratings/types'
 
 const Ratings: FC<RatingProps> = ({ ratingAverage }) => {
   const [ratings, setRatings] = useState({
