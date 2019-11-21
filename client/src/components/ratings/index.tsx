@@ -22,9 +22,7 @@ const Ratings: FC<RatingProps> = ({ ratingAverage }) => {
       seating: Math.round(ratingAverage.reduce((a, { seating }) => a + seating, 0) / ratingAverage.length),
       restroomQuality: Math.round(ratingAverage.reduce((a, { restroomQuality }) => a + restroomQuality, 0) / ratingAverage.length),
     })
-  }, [])
-
-  console.log(ratings)
+  }, [ratingAverage])
 
   return (
     <div>
