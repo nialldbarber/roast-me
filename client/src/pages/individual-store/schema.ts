@@ -20,6 +20,15 @@ export const GET_INDIVIDUAL_STORE = gql`
 				body
 				userId
 			}
+			ratingAverage {
+				taste
+				variety
+				atmosphere
+				wifi
+				seating
+				restroomQuality
+				userId
+			}
 		}
 	}
 `
