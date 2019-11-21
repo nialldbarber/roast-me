@@ -6,6 +6,10 @@ import five from '~@assets/images/coffee/5.jpg'
 import six from '~@assets/images/coffee/6.jpg'
 
 export const randomCoffeeImageGenerator = () => {
-	const arr: Array<string> = [ one, two, three, four, five, six ]
+	const arr: Array<string> = [one, two, three, four, five, six]
 	return arr[Math.floor(Math.random() * arr.length)]
+}
+
+export const getAverageRating = (rating, arr) => {
+	return arr.reduce((a, { rating }) => a + rating, 0) / arr.length
 }
