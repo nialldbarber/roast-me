@@ -1,4 +1,4 @@
-import React, { FC, useState, useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 // State
 import { AuthContext } from '~@state/auth'
@@ -19,8 +19,6 @@ import { GET_INDIVIDUAL_STORE } from '~@pages/individual-store/schema'
 import { Props } from '~@pages/individual-store/types'
 // Assets
 import img from '~@assets/images/coffee-background.jpg'
-// Utils
-import { getAverageRating } from '~@utils/index'
 
 const IndividualStore: FC<Props> = ({ match }) => {
 
