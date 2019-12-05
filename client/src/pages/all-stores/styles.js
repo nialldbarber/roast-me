@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { media } from '~@styles/utils/media-queries'
+import { media } from '~/styles/utils/media-queries'
 
 export const Cards = styled.section`
 	display: grid;

@@ -11,7 +11,7 @@
     "jsx": "react",
     "baseUrl": "src",
     "paths": {
-      "~@*": ["*"]
+      "~/*": ["*"]
     },
     "lib": ["es2015", "dom.iterable", "es2016.array.include", "es2017.object", "dom"],
     "plugins": [{ "transform": "ts-optchain/transform" }],

@@ -2,7 +2,7 @@ module.exports = (api) => {
 	api.cache(true)
 
 	return {
-		presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
+		presets: [ '@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react' ],
 		plugins: [
 			'@babel/plugin-proposal-optional-chaining',
 			'@babel/plugin-proposal-nullish-coalescing-operator',
@@ -12,7 +12,7 @@ module.exports = (api) => {
 			[
 				'babel-plugin-root-import',
 				{
-					rootPathPrefix: '~@',
+					rootPathPrefix: '~',
 					rootPathSuffix: 'src'
 				}
 			]

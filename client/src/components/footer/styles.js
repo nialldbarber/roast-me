@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { containerMixin } from '~@styles/utils/mixins'
+import { containerMixin } from '~/styles/utils/mixins'
 
 export const Container = styled.footer`
 	display: flex;

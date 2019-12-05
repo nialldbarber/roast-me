@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import { rotateSpinner, dashSpinner } from '~@styles/utils/keyframes'
-import { centerMixin } from '~@styles/utils/mixins'
+import styled from 'styled-components'
+import { rotateSpinner, dashSpinner } from '~/styles/utils/keyframes'
+import { centerMixin } from '~/styles/utils/mixins'
 
 export const Container = styled.div`
 	position: fixed;
@@ -18,13 +18,13 @@ export const SpinnerContainer = styled.div`
 `
 
 export const StyledSpinner = styled.svg`
-  animation: ${rotateSpinner} 1s linear infinite;
-  width: 70px;
-  height: 70px;
+	animation: ${rotateSpinner} 1s linear infinite;
+	width: 70px;
+	height: 70px;
 
-  & .path {
-    stroke: ${(props) => props.theme.white};
-    stroke-linecap: round;
-    animation: ${dashSpinner} 2s ease-in-out infinite;
-  }
+	& .path {
+		stroke: ${(props) => props.theme.white};
+		stroke-linecap: round;
+		animation: ${dashSpinner} 2s ease-in-out infinite;
+	}
 `

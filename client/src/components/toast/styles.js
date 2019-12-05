@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { bounceFromTop } from '~@styles/utils/keyframes'
+import { bounceFromTop } from '~/styles/utils/keyframes'
 
 export const Container = styled.div`
 	position: fixed;

@@ -3,10 +3,10 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import { ApolloServer } from 'apollo-server-express'
 import { importSchema } from 'graphql-import'
-import { resolvers } from '~@schema/resolvers'
+import { resolvers } from '~/schema/resolvers'
 
 const startServer = async () => {
-	require('~@db')
+	require('~/db')
 	const app = express()
 
 	app.use(cors(), bodyParser.json())

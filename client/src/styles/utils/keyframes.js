@@ -1,5 +1,5 @@
 import { keyframes } from 'styled-components'
-import { timingFunctionMixin } from '~@styles/utils/mixins'
+import { timingFunctionMixin } from '~/styles/utils/mixins'
 
 export const bounceFromTop = keyframes`
 	from,

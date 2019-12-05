@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { buttonMixin } from '~@styles/utils/mixins'
+import { buttonMixin } from '~/styles/utils/mixins'
 
 export const Wrapper = styled.button`
 	${buttonMixin};

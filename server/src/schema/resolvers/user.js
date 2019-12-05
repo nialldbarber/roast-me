@@ -1,9 +1,9 @@
 import { UserInputError } from 'apollo-server-express'
 import { hash, compare } from 'bcryptjs'
-import { User } from '~@models/User'
-import { validateRegisterInput } from '~@utils/validation/register'
-import { validateLoginInput } from '~@utils/validation/login'
-import { generateToken } from '~@utils/validation/token'
+import { User } from '~/models/User'
+import { validateRegisterInput } from '~/utils/validation/register'
+import { validateLoginInput } from '~/utils/validation/login'
+import { generateToken } from '~/utils/validation/token'
 
 require('dotenv').config({ path: '.env' })
 

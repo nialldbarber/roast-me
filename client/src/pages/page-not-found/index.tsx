@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 // Components
-import Button from '~@components/button'
+import Button from '~/components/button'
 // Styles
-import { PageContainer } from '~@styles/components/container'
-import { Title } from '~@styles/components/title'
-import { Container } from '~@pages/page-not-found/styles'
+import { PageContainer } from '~/styles/components/container'
+import { Title } from '~/styles/components/title'
+import { Container } from '~/pages/page-not-found/styles'
 // Types
-import { Props } from '~@pages/page-not-found/types'
+import { Props } from '~/pages/page-not-found/types'
 
 const PageNotFound: FC<Props> = ({ history }) => (
 	<PageContainer>

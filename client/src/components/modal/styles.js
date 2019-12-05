@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { centerMixin } from '~@styles/utils/mixins'
+import { centerMixin } from '~/styles/utils/mixins'
 
 export const Container = styled.div`
 	display: none;

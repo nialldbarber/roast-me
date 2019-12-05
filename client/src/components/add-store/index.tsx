@@ -1,21 +1,21 @@
 import React, { FC, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 // Hooks
-import useForm from '~@hooks/useForm'
+import useForm from '~/hooks/useForm'
 // Components
-import Button from '~@components/button'
-import Loading from '~@components/loading'
-import Error from '~@components/error'
-import FormErrors from '~@components/form-errors'
+import Button from '~/components/button'
+import Loading from '~/components/loading'
+import Error from '~/components/error'
+import FormErrors from '~/components/form-errors'
 // Styles
-import { Wrapper } from '~@pages/login-register/styles'
-import { UserForm } from '~@styles/components/form'
+import { Wrapper } from '~/pages/login-register/styles'
+import { UserForm } from '~/styles/components/form'
 // Schema
-import { CREATE_STORE } from '~@components/add-store/schema'
-import { GET_STORES } from '~@pages/all-stores/schema'
-import { GET_ALL_USERS } from '~@pages/all-users/schema'
+import { CREATE_STORE } from '~/components/add-store/schema'
+import { GET_STORES } from '~/pages/all-stores/schema'
+import { GET_ALL_USERS } from '~/pages/all-users/schema'
 // Types
-import { Props, Values } from '~@components/add-store/types'
+import { Props, Values } from '~/components/add-store/types'
 
 const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 	const [ errors, setErrors ] = useState<any>({})

@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 // Components
-import Toast from '~@components/toast'
-import AddStoreForm from '~@components/add-store'
+import Toast from '~/components/toast'
+import AddStoreForm from '~/components/add-store'
 // Styles
-import { PageContainer } from '~@styles/components/container'
-import { Title } from '~@styles/components/title'
+import { PageContainer } from '~/styles/components/container'
+import { Title } from '~/styles/components/title'
 // Types
-import { Props } from '~@pages/add-store/types'
+import { Props } from '~/pages/add-store/types'
 
 const AddStore: FC<Props> = (props) => (
 	<PageContainer>

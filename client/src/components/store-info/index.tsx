@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import SVG from 'react-inlinesvg'
 // Styles
-import { Wrapper } from '~@components/store-info/styles'
+import { Wrapper } from '~/components/store-info/styles'
 // Assets
-import finder from '~@assets/icons/finder.svg'
+import finder from '~/assets/icons/finder.svg'
 // Types
-import { Props } from '~@components/store-info/types'
+import { Props } from '~/components/store-info/types'
 
 const StoreInfo: FC<Props> = ({ location, rating }) => (
 	<Wrapper>

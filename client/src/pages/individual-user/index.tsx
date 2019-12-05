@@ -1,19 +1,19 @@
 import React, { FC } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 // Utils
-import { getUserBadgeFromStoresAdded } from '~@utils/user'
+import { getUserBadgeFromStoresAdded } from '~/utils/user'
 // Components
-import Loading from '~@components/loading'
-import Error from '~@components/error'
-import Card from '~@components/card'
+import Loading from '~/components/loading'
+import Error from '~/components/error'
+import Card from '~/components/card'
 // Styles
-import { Cards } from '~@pages/all-stores/styles'
-import { PageContainer } from '~@styles/components/container'
-import { Title } from '~@styles/components/title'
+import { Cards } from '~/pages/all-stores/styles'
+import { PageContainer } from '~/styles/components/container'
+import { Title } from '~/styles/components/title'
 // Schema
-import { GET_INDIVIDUAL_USER } from '~@pages/individual-user/schema'
+import { GET_INDIVIDUAL_USER } from '~/pages/individual-user/schema'
 // Types
-import { Props, StoresProps } from '~@pages/individual-user/types'
+import { Props, StoresProps } from '~/pages/individual-user/types'
 
 const IndividualUser: FC<Props> = ({ match, history }) => {
 	const { loading, error, data } = useQuery(GET_INDIVIDUAL_USER, {

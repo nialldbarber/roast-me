@@ -1,7 +1,7 @@
 import { UserInputError } from 'apollo-server-express'
-import { Store } from '~@models/Store'
-import { User } from '~@models/User'
-import { checkAuth } from '~@utils/auth'
+import { Store } from '~/models/Store'
+import { User } from '~/models/User'
+import { checkAuth } from '~/utils/auth'
 
 export const rating = {
 	Mutation: {

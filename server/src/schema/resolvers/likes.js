@@ -1,6 +1,6 @@
 import { UserInputError } from 'apollo-server-core'
-import { Store } from '~@models/Store'
-import { checkAuth } from '~@utils/auth'
+import { Store } from '~/models/Store'
+import { checkAuth } from '~/utils/auth'
 
 export const likes = {
 	Mutation: {

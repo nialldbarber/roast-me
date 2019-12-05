@@ -1,15 +1,15 @@
 import React, { FC } from 'react'
 import SVG from 'react-inlinesvg'
 // Hooks
-import useLockBodyScroll from '~@hooks/useLockBodyScroll'
+import useLockBodyScroll from '~/hooks/useLockBodyScroll'
 // Components
-import Button from '~@components/button'
+import Button from '~/components/button'
 // Styles
-import { Container, Box } from '~@components/modal/styles'
+import { Container, Box } from '~/components/modal/styles'
 // Types
-import { Props } from '~@components/modal/types'
+import { Props } from '~/components/modal/types'
 // Assets
-import exit from '~@assets/icons/cross.svg'
+import exit from '~/assets/icons/cross.svg'
 
 const Modal: FC<Props> = ({ title, message, button, action, active, close }) => {
 	useLockBodyScroll()

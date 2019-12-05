@@ -2,15 +2,15 @@ import React, { FC, useState, useContext, Fragment } from 'react'
 import { Link, NavLink, withRouter } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
 // State
-import { AuthContext } from '~@state/auth'
+import { AuthContext } from '~/state/auth'
 // Components
-import Modal from '~@components/modal'
+import Modal from '~/components/modal'
 // Styles
-import { Nav } from '~@components/navbar/styles'
+import { Nav } from '~/components/navbar/styles'
 // Types
-import { Props } from '~@components/navbar/types'
+import { Props } from '~/components/navbar/types'
 // Assets
-import logo from '~@assets/images/logo.svg'
+import logo from '~/assets/images/logo.svg'
 
 const Navbar: FC<Props> = (props) => {
 	const { user, logout } = useContext(AuthContext)

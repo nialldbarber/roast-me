@@ -1,32 +1,32 @@
 import React, { FC, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 // Hooks
-import useForm from '~@hooks/useForm'
+import useForm from '~/hooks/useForm'
 // Components
-import Button from '~@components/button'
-import Loading from '~@components/loading'
-import Error from '~@components/error'
-import FormErrors from '~@components/form-errors'
-import { Props } from '~@components/add-comment/types'
+import Button from '~/components/button'
+import Loading from '~/components/loading'
+import Error from '~/components/error'
+import FormErrors from '~/components/form-errors'
+import { Props } from '~/components/add-comment/types'
 // Styles
-import { UserForm } from '~@styles/components/form'
-import { Wrapper } from '~@components/add-comment/styles'
+import { UserForm } from '~/styles/components/form'
+import { Wrapper } from '~/components/add-comment/styles'
 // Schema
-import { ADD_COMMENT } from '~@components/add-comment/schema'
-import { GET_STORES } from '~@pages/all-stores/schema'
+import { ADD_COMMENT } from '~/components/add-comment/schema'
+import { GET_STORES } from '~/pages/all-stores/schema'
 
 const AddComment: FC<Props> = ({ id }) => {
-	const [errors, setErrors] = useState<any>({})
+	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddComment, { _id: '', body: '' })
 
 	const { body }: any = values
 
-	const [addComment, { loading, error }] = useMutation(ADD_COMMENT, {
+	const [ addComment, { loading, error } ] = useMutation(ADD_COMMENT, {
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
 		variables: { _id: id, body },
-		refetchQueries: [{ query: GET_STORES }]
+		refetchQueries: [ { query: GET_STORES } ]
 	})
 
 	if (error) {

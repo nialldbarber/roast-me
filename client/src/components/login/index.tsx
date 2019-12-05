@@ -1,23 +1,23 @@
 import React, { FC, Fragment, useState, useContext } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 // State
-import { AuthContext } from '~@state/auth'
+import { AuthContext } from '~/state/auth'
 // Hooks
-import useForm from '~@hooks/useForm'
+import useForm from '~/hooks/useForm'
 // Components
-import Button from '~@components/button'
-import Loading from '~@components/loading'
-import FormErrors from '~@components/form-errors'
+import Button from '~/components/button'
+import Loading from '~/components/loading'
+import FormErrors from '~/components/form-errors'
 // Styles
-import { UserForm } from '~@styles/components/form'
+import { UserForm } from '~/styles/components/form'
 // Schema
-import { LOGIN_USER } from '~@components/login/schema'
+import { LOGIN_USER } from '~/components/login/schema'
 // Types
-import { Props, Values } from '~@components/login/types'
+import { Props, Values } from '~/components/login/types'
 
 const Login: FC<Props> = ({ visibility, page }) => {
 	const context = useContext(AuthContext)
-	const [errors, setErrors] = useState<any>({})
+	const [ errors, setErrors ] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleLoginUser, {
 		username: '',
 		password: ''
@@ -25,7 +25,7 @@ const Login: FC<Props> = ({ visibility, page }) => {
 
 	const { username, password }: Values = values
 
-	const [userLogin, { loading, error }] = useMutation(LOGIN_USER, {
+	const [ userLogin, { loading, error } ] = useMutation(LOGIN_USER, {
 		update(_, { data: { userLogin: userData } }) {
 			context.login(userData)
 			page.history.push('/')
