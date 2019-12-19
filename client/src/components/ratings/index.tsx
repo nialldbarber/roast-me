@@ -32,13 +32,13 @@ const Ratings: FC<RatingProps> = ({ ratingAverage }) => {
 	)
 
 	return (
-		<div>
-			<p>{taste || ''}</p>
-			<p>{variety || ''}</p>
-			<p>{atmosphere || ''}</p>
-			<p>{wifi || ''}</p>
-			<p>{seating || ''}</p>
-			<p>{restroomQuality || ''}</p>
+		<div style={{ background: 'white', padding: '1rem' }}>
+			<p>Taste: {taste || ''}</p>
+			<p>Variety: {variety || ''}</p>
+			<p>Atmosphere: {atmosphere || ''}</p>
+			<p>Wifi: {wifi || ''}</p>
+			<p>Seating: {seating || ''}</p>
+			<p>Restroom Quality: {restroomQuality || ''}</p>
 		</div>
 	)
 }

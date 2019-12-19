@@ -39,7 +39,7 @@ const IndividualStore: FC<Props> = ({ match }) => {
 			<Title className="stores">{name}</Title>
 			<Likes likes={likes} id={_id} />
 			<StoreInfo location={location} rating={rating} />
-			<Ratings ratingAverage={ratingAverage} />
+			{ratingAverage.length > 0 ? <Ratings ratingAverage={ratingAverage} /> : ''}
 			{user ? <AddComment id={_id} /> : ''}
 			{comments.length > 0 ? <Comments comments={comments} /> : ''}
 		</PageContainer>
