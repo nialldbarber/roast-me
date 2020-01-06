@@ -5,7 +5,7 @@ require('dotenv').config({ path: '.env' })
 connect(process.env.ATLAS_URI, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
-	useUnifiedTopology: true
+	useUnifiedTopology: false
 })
 
 connection.once('open', () => {
