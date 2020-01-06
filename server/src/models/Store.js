@@ -1,21 +1,9 @@
 import { Schema, model } from 'mongoose'
 
 const storeSchema = new Schema({
-	name: {
-		type: String,
-		trim: true,
-		required: true,
-		unique: false
-	},
-	location: {
-		type: String,
-		trim: true,
-		required: true
-	},
-	description: {
-		type: String,
-		trim: true
-	},
+	name: String,
+	location: String,
+	description: String,	
 	createdAt: {
 		type: Date,
 		default: Date.now
