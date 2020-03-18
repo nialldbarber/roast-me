@@ -1,7 +1,5 @@
 import React, { FC } from 'react'
-// Styles
 import { Wrapper } from '~/components/form-errors/styles'
-// Types
 import { Props } from '~/components/form-errors/types'
 
 const FormErrors: FC<Props> = ({ errors }) => (

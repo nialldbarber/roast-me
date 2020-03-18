@@ -1,10 +1,7 @@
 import React, { FC } from 'react'
-// Components
 import Button from '~/components/button'
-// Styles
 import { PageContainer } from '~/styles/components/container'
 import { Title } from '~/styles/components/title'
-// Types
 import { Props } from '~/components/error/types'
 
 const Error: FC<Props> = ({ message, history }) => (

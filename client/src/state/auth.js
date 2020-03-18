@@ -1,8 +1,6 @@
 import React, { createContext, useReducer } from 'react'
 import jwtDecode from 'jwt-decode'
-// Constants
 import { LOGIN, LOGOUT, webToken } from '~/constants/auth'
-// Reducers
 import { authReducer } from '~/reducers/auth'
 
 const initialState = {
@@ -21,12 +19,12 @@ if (localStorage.getItem(webToken)) {
 
 const AuthContext = createContext({
 	user: null,
-	login: (userData) => {},
-	logout: () => {}
+	login: (userData) => { },
+	logout: () => { }
 })
 
 const AuthProvider = (props) => {
-	const [ state, dispatch ] = useReducer(authReducer, initialState)
+	const [state, dispatch] = useReducer(authReducer, initialState)
 
 	const login = (userData) => {
 		localStorage.setItem(webToken, userData.token)

@@ -1,10 +1,7 @@
 import React, { FC } from 'react'
 import SVG from 'react-inlinesvg'
-// Styles
 import { Wrapper } from '~/components/like-count/styles'
-// Types
 import { Props } from '~/components/like-count/types'
-// Assets
 import mug from '~/assets/images/mug.svg'
 
 const LikeCount: FC<Props> = ({ likes }) => (

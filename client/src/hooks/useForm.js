@@ -11,8 +11,10 @@ const useForm = (callback, initialState = {}) => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		callback()
-		setValues(initialState)
+		resetValues()
 	}
+
+	const resetValues = () => setValues(initialState)
 
 	return {
 		values,

@@ -1,17 +1,12 @@
 import React, { FC, useState, useEffect, useContext } from 'react'
 import { useMutation } from '@apollo/react-hooks'
-// State
 import { AuthContext } from '~/state/auth'
-// Components
 import Button from '~/components/button'
 import Loading from '~/components/loading'
 import LikeCount from '~/components/like-count'
-// Styles
 import { Container, Wrapper } from '~/components/likes/styles'
-// Schema
 import { LIKE_STORE } from '~/components/likes/schema'
 import { GET_STORES } from '~/pages/all-stores/schema'
-// Types
 import { Props } from '~/components/likes/types'
 
 const Likes: FC<Props> = ({ likes, id }) => {
@@ -24,7 +19,7 @@ const Likes: FC<Props> = ({ likes, id }) => {
 
 	useEffect(
 		() => {
-			if (user && likes ?.find((like: any) => like.username === user.username)) {
+			if (user && likes?.find((like: any) => like.username === user.username)) {
 				setLiked(true)
 			} else {
 				setLiked(false)

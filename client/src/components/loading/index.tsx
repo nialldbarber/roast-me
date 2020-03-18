@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-// Components
 import { Container, SpinnerContainer, StyledSpinner } from '~/components/loading/styles'
 
 const Loading: FC = () => (

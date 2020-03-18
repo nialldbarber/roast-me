@@ -1,8 +1,6 @@
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
-// Styles
 import { Container, Wrapper } from '~/components/comments/styles'
-// Types
 import { Props, CommentProps } from '~/components/comments/types'
 
 const Comments: FC<Props> = ({ comments }) => (

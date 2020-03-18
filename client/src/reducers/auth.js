@@ -1,12 +1,15 @@
+import produce from 'immer'
 import { LOGIN, LOGOUT } from '~/constants/auth'
 
-export const authReducer = (state, action) => {
+export const authReducer = produce((draft, action) => {
 	switch (action.type) {
 		case LOGIN:
-			return { ...state, user: action.userData }
+			draft.user = action.userData
+			return
 		case LOGOUT:
-			return { ...state, user: null }
+			draft.user = null
+			return
 		default:
-			return state
+			return draft
 	}
-}
+})

@@ -1,23 +1,19 @@
 import React, { FC, Fragment, useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/react-hooks'
-// State
 import { AuthContext } from '~/state/auth'
-// Hooks
 import useForm from '~/hooks/useForm'
-// Components
 import Button from '~/components/button'
 import Loading from '~/components/loading'
 import FormErrors from '~/components/form-errors'
-// Styles
 import { UserForm } from '~/styles/components/form'
-// Schema
 import { LOGIN_USER } from '~/components/login/schema'
-// Types
 import { Props, Values } from '~/components/login/types'
 
-const Login: FC<Props> = ({ visibility, page }) => {
+const Login: FC<Props> = ({ visibility }) => {
+	const history = useHistory()
 	const context = useContext(AuthContext)
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleLoginUser, {
 		username: '',
 		password: ''
@@ -25,10 +21,10 @@ const Login: FC<Props> = ({ visibility, page }) => {
 
 	const { username, password }: Values = values
 
-	const [ userLogin, { loading, error } ] = useMutation(LOGIN_USER, {
+	const [userLogin, { loading, error }] = useMutation(LOGIN_USER, {
 		update(_, { data: { userLogin: userData } }) {
 			context.login(userData)
-			page.history.push('/')
+			history.push('/')
 		},
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)

@@ -1,16 +1,12 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
-// Components
 import Loading from '~/components/loading'
 import Error from '~/components/error'
 import Card from '~/components/card'
-// Styles
 import { Cards } from '~/pages/all-stores/styles'
 import { PageContainer } from '~/styles/components/container'
 import { Title } from '~/styles/components/title'
-// Schema
 import { GET_STORES } from '~/pages/all-stores/schema'
-// Types
 import { StoreProps } from '~/pages/all-stores/types'
 
 const AllStores = () => {

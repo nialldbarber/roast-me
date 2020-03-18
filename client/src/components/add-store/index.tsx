@@ -1,24 +1,21 @@
 import React, { FC, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/react-hooks'
-// Hooks
 import useForm from '~/hooks/useForm'
-// Components
 import Button from '~/components/button'
 import Loading from '~/components/loading'
 import Error from '~/components/error'
 import FormErrors from '~/components/form-errors'
-// Styles
 import { Wrapper } from '~/pages/login-register/styles'
 import { UserForm } from '~/styles/components/form'
-// Schema
 import { CREATE_STORE } from '~/components/add-store/schema'
 import { GET_STORES } from '~/pages/all-stores/schema'
 import { GET_ALL_USERS } from '~/pages/all-users/schema'
-// Types
 import { Props, Values } from '~/components/add-store/types'
 
-const AddStoreForm: FC<Props> = ({ visibility, page }) => {
-	const [ errors, setErrors ] = useState<any>({})
+const AddStoreForm: FC<Props> = ({ visibility }) => {
+	const history = useHistory()
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleAddStore, {
 		name: '',
 		location: '',
@@ -28,15 +25,15 @@ const AddStoreForm: FC<Props> = ({ visibility, page }) => {
 
 	const { name, location, description, rating }: Values = values
 
-	const [ createStore, { loading, error } ] = useMutation(CREATE_STORE, {
+	const [createStore, { loading, error }] = useMutation(CREATE_STORE, {
 		update() {
-			page.history.push('/')
+			history.push('/')
 		},
 		onError(err) {
 			setErrors(err.graphQLErrors[0].extensions.exception.errors)
 		},
 		variables: { name, location, description, rating: parseInt(rating) },
-		refetchQueries: [ { query: GET_STORES }, { query: GET_ALL_USERS } ]
+		refetchQueries: [{ query: GET_STORES }, { query: GET_ALL_USERS }]
 	})
 
 	if (error) {

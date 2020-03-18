@@ -1,23 +1,17 @@
 import React, { FC, useState, useContext } from 'react'
 import { useMutation } from '@apollo/react-hooks'
-// State
 import { AuthContext } from '~/state/auth'
-// Hooks
 import useForm from '~/hooks/useForm'
-// Components
 import Button from '~/components/button'
 import Loading from '~/components/loading'
 import FormErrors from '~/components/form-errors'
-// Styles
 import { UserForm } from '~/styles/components/form'
-// Schema
 import { REGISTER_USER } from '~/components/register/schema'
-// Types
 import { Props, Values } from '~/components/register/types'
 
 const Register: FC<Props> = ({ visibility, page }) => {
 	const context = useContext(AuthContext)
-	const [ errors, setErrors ] = useState<any>({})
+	const [errors, setErrors] = useState<any>({})
 	const { values, handleChange, handleSubmit } = useForm(handleRegisterUser, {
 		username: '',
 		email: '',
@@ -27,7 +21,7 @@ const Register: FC<Props> = ({ visibility, page }) => {
 
 	const { username, email, password, confirmPassword }: Values = values
 
-	const [ registerUser, { loading, error } ] = useMutation(REGISTER_USER, {
+	const [registerUser, { loading, error }] = useMutation(REGISTER_USER, {
 		update(_, { data: { registerUser: userData } }) {
 			context.login(userData)
 			page.history.push('/')

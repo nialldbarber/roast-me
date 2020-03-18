@@ -1,22 +1,21 @@
 import React, { FC, useState } from 'react'
-// Components
 import Register from '~/components/register'
 import Login from '~/components/login'
 import Tab from '~/components/tab'
-// Styles
 import { TabContainer, Wrapper } from '~/pages/login-register/styles'
 import { PageContainer } from '~/styles/components/container'
 import { Title } from '~/styles/components/title'
-// Types
 import { Props, StateProps } from '~/pages/login-register/types'
 
+type TabElem = React.FormEvent<HTMLFormElement>
+
 const LoginRegister: FC<Props> = (props) => {
-	const [ visibility, setVisibility ] = useState<StateProps>({
+	const [visibility, setVisibility] = useState<StateProps>({
 		signIn: true,
 		register: false
 	})
 
-	const handleVisibility = (e: any) => {
+	const handleVisibility = (e: TabElem): void => {
 		const target = e.target.name
 		if (target === 'signIn') setVisibility({ signIn: true, register: false })
 		if (target === 'register') setVisibility({ signIn: false, register: true })

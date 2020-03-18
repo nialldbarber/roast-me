@@ -1,10 +1,7 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
-// Utils
 import { randomCoffeeImageGenerator } from '~/utils'
-// Components
 import LikeCount from '~/components/like-count'
-// Types
 import { Props } from '~/components/card/types'
 
 const Card: FC<Props> = ({ id, name, likes, type }) => (

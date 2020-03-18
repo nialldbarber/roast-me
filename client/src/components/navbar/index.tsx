@@ -1,25 +1,21 @@
 import React, { FC, useState, useContext, Fragment } from 'react'
-import { Link, NavLink, withRouter } from 'react-router-dom'
+import { Link, NavLink, withRouter, useHistory } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
-// State
 import { AuthContext } from '~/state/auth'
-// Components
 import Modal from '~/components/modal'
-// Styles
 import { Nav } from '~/components/navbar/styles'
-// Types
 import { Props } from '~/components/navbar/types'
-// Assets
 import logo from '~/assets/images/logo.svg'
 
-const Navbar: FC<Props> = (props) => {
+const Navbar: FC<Props> = () => {
 	const { user, logout } = useContext(AuthContext)
-	const [ modal, setModal ] = useState(false)
+	const [modal, setModal] = useState<boolean>(false)
+	const history = useHistory()
 
 	const handleRemoveModal = (e: any) => {
 		if (e.target.id === 'close') setModal(false)
 		else {
-			props.history.push('/')
+			history.push('/')
 			logout()
 			setModal(false)
 		}
@@ -38,18 +34,18 @@ const Navbar: FC<Props> = (props) => {
 						<Fragment>
 							<li>
 								<NavLink to="#" className="inactive">
-									Hey, {user.username}!
+									Hey, {user?.username}!
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to={`/user/${user._id || user.id}`} activeClassName="active">
+								<NavLink to={`/user/${user?._id || user?.id}`} activeClassName="active">
 									Me
 								</NavLink>
 							</li>
 						</Fragment>
 					) : (
-						''
-					)}
+							''
+						)}
 					<Fragment>
 						<li>
 							<NavLink exact to="/" activeClassName="active">
@@ -76,12 +72,12 @@ const Navbar: FC<Props> = (props) => {
 							</li>
 						</Fragment>
 					) : (
-						<li>
-							<NavLink to="/login" activeClassName="active">
-								Login
+							<li>
+								<NavLink to="/login" activeClassName="active">
+									Login
 							</NavLink>
-						</li>
-					)}
+							</li>
+						)}
 				</ul>
 			</nav>
 			{modal && (
